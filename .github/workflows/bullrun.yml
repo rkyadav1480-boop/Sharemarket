@@ -1,39 +1,150 @@
-name: Bullrun Stock Alert
+import requests
+import csv
+import io
+import json
+import os
+from datetime import datetime
 
-on:
-  schedule:
-    - cron: '30 2 * * *'   # 8:00 AM IST
-    - cron: '30 14 * * *'  # 8:00 PM IST
-  workflow_dispatch:
+# =========================
+# CONFIG
+# =========================
 
-jobs:
-  run-bullrun:
-    runs-on: ubuntu-latest
+BOT_TOKEN = os.environ.get("BOT_TOKEN", "")
+CHAT_ID   = os.environ.get("CHAT_ID", "")
 
-    steps:
-      - name: Checkout repo
-        uses: actions/checkout@v3
+SPREADSHEET_ID = "1SnDY6-HjBN_HEDyJVPaqbA_1da5hv4tELmPBBoN6fhU"
+GID            = "1191767584"
 
-      - name: Python setup
-        uses: actions/setup-python@v4
-        with:
-          python-version: '3.11'
+JSON_FILE = "bullrun_history.json"  # Repo mein save hoga
 
-      - name: Install dependencies
-        run: |
-          pip install requests
+# =========================
+# GOOGLE SHEET CSV URL
+# =========================
 
-      - name: Run Bullrun Script
-        env:
-          BOT_TOKEN: ${{ secrets.BOT_TOKEN }}
-          CHAT_ID: ${{ secrets.MY_CHAT_ID }}
-        run: |
-          python bullrun.py
+SHEET_URL = (
+    f"https://docs.google.com/spreadsheets/d/"
+    f"{SPREADSHEET_ID}/export?format=csv&gid={GID}"
+)
 
-      - name: Save JSON to repo
-        run: |
-          git config user.name "GitHub Actions"
-          git config user.email "actions@github.com"
-          git add bullrun_history.json
-          git commit -m "📊 Bullrun history update $(date '+%d-%m-%Y %H:%M')" || echo "No changes to save"
-          git push
+# =========================
+# DOWNLOAD SHEET
+# =========================
+
+print("Downloading sheet...")
+
+response = requests.get(SHEET_URL)
+
+if response.status_code != 200:
+    print("Failed to download sheet")
+    exit()
+
+# =========================
+# READ CSV
+# =========================
+
+csv_reader = csv.reader(io.StringIO(response.text))
+
+stocks = []
+
+for row in csv_reader:
+
+    if not row:
+        continue
+
+    stock_name = row[0].strip()
+
+    if stock_name == "":
+        continue
+
+    if stock_name.upper() == "STOCK NAME":
+        continue
+
+    if stock_name not in stocks:
+        stocks.append(stock_name)
+
+# =========================
+# DATE
+# =========================
+
+today = datetime.now().strftime("%d-%m-%Y")
+
+# =========================
+# LOAD OLD JSON
+# =========================
+
+if os.path.exists(JSON_FILE):
+    try:
+        with open(JSON_FILE, "r") as f:
+            history = json.load(f)
+    except:
+        history = {}
+else:
+    history = {}
+
+# =========================
+# CREATE TODAY DATA
+# =========================
+
+history[today] = []
+
+# =========================
+# TELEGRAM MESSAGE
+# =========================
+
+message = (
+    f"📈 <b>Aaj Ke Stocks In Bull Run</b>\n"
+    f"📅 {today}\n\n"
+)
+
+# =========================
+# PROCESS STOCKS
+# =========================
+
+for i, stock in enumerate(stocks, start=1):
+
+    tradingview_link = (
+        f"https://www.tradingview.com/chart/"
+        f"?symbol=NSE:{stock}"
+    )
+
+    history[today].append({
+        "no": i,
+        "stock": stock,
+        "tradingview": tradingview_link
+    })
+
+    message += (
+        f"<b>{i}. {stock}</b>\n"
+        f"📊 <a href='{tradingview_link}'>Open Chart</a>\n\n"
+    )
+
+# =========================
+# SAVE JSON — hamesha save karo
+# =========================
+
+with open(JSON_FILE, "w") as f:
+    json.dump(history, f, indent=4)
+print("✅ JSON updated")
+
+# =========================
+# SEND TELEGRAM MESSAGE
+# =========================
+
+telegram_url = f"https://api.telegram.org/bot{BOT_TOKEN}/sendMessage"
+
+payload = {
+    "chat_id": CHAT_ID,
+    "text": message,
+    "parse_mode": "HTML",
+    "disable_web_page_preview": True
+}
+
+send = requests.post(telegram_url, data=payload)
+
+if send.status_code == 200:
+    print("✅ Telegram message sent successfully")
+else:
+    print("❌ Telegram send failed")
+    print(send.text)
+
+print("Done")
