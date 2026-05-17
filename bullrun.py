@@ -119,17 +119,12 @@ for i, stock in enumerate(stocks, start=1):
     )
 
 # =========================
-# SAVE JSON — sirf 4 PM ke baad
+# SAVE JSON — hamesha save karo
 # =========================
 
-current_hour = datetime.now().hour  # IST hour
-
-if current_hour >= 16:  # 16 = 4 PM
-    with open(JSON_FILE, "w") as f:
-        json.dump(history, f, indent=4)
-    print("✅ JSON updated (4 PM ke baad hai — save kiya)")
-else:
-    print("⏭ JSON save skip (abhi 4 PM se pehle hai — sirf message bheja)")
+with open(JSON_FILE, "w") as f:
+    json.dump(history, f, indent=4)
+print("✅ JSON updated")
 
 # =========================
 # SEND TELEGRAM MESSAGE
