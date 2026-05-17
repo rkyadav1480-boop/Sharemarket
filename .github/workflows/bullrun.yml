@@ -2,8 +2,8 @@ name: Bullrun Stock Alert
 
 on:
   schedule:
-    - cron: '30 2 * * *'   # 2:30 AM UTC = 8:00 AM IST
-    - cron: '30 14 * * *'  # 2:30 PM UTC = 8:00 PM IST
+    - cron: '30 2 * * *'   # 8:00 AM IST
+    - cron: '30 14 * * *'  # 8:00 PM IST
   workflow_dispatch:
 
 jobs:
@@ -29,3 +29,11 @@ jobs:
           CHAT_ID: ${{ secrets.MY_CHAT_ID }}
         run: |
           python bullrun.py
+
+      - name: Save JSON to repo
+        run: |
+          git config user.name "GitHub Actions"
+          git config user.email "actions@github.com"
+          git add bullrun_history.json
+          git commit -m "📊 Bullrun history update $(date '+%d-%m-%Y %H:%M')" || echo "No changes to save"
+          git push
