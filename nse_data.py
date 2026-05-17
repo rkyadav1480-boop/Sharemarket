@@ -6,7 +6,7 @@ from datetime import datetime, date
 # ══════════════════════════════════════════════════════════════════════════════
 
 BOT_TOKEN    = os.environ.get("BOT_TOKEN", "")
-CHAT_ID      = os.environ.get("CHAT_ID", "")
+CHAT_ID      = os.environ.get("MY_CHAT_ID", "")
 HISTORY_FILE = "nse_history.json"   # Repo mein save hoga (GitHub Actions)
 
 # ══════════════════════════════════════════════════════════════════════════════
