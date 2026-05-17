@@ -1,0 +1,31 @@
+name: Bullrun Stock Alert
+
+on:
+  schedule:
+    - cron: '30 2 * * *'   # 2:30 AM UTC = 8:00 AM IST
+    - cron: '30 14 * * *'  # 2:30 PM UTC = 8:00 PM IST
+  workflow_dispatch:
+
+jobs:
+  run-bullrun:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Python setup
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: |
+          pip install requests
+
+      - name: Run Bullrun Script
+        env:
+          BOT_TOKEN: ${{ secrets.BOT_TOKEN }}
+          CHAT_ID: ${{ secrets.MY_CHAT_ID }}
+        run: |
+          python bullrun.py
