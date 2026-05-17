@@ -1,0 +1,59 @@
+{
+    "17-05-2026": [
+        {
+            "no": 1,
+            "stock": "5/17/2026",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:5/17/2026"
+        },
+        {
+            "no": 2,
+            "stock": "HCC",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:HCC"
+        },
+        {
+            "no": 3,
+            "stock": "RHETAN",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:RHETAN"
+        },
+        {
+            "no": 4,
+            "stock": "KWIL",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:KWIL"
+        },
+        {
+            "no": 5,
+            "stock": "NSLNISP",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:NSLNISP"
+        },
+        {
+            "no": 6,
+            "stock": "ATGL",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:ATGL"
+        },
+        {
+            "no": 7,
+            "stock": "DELHIVERY",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:DELHIVERY"
+        },
+        {
+            "no": 8,
+            "stock": "DRREDDY",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:DRREDDY"
+        },
+        {
+            "no": 9,
+            "stock": "MANAPPURAM",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:MANAPPURAM"
+        },
+        {
+            "no": 10,
+            "stock": "WEBELSOLAR",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:WEBELSOLAR"
+        },
+        {
+            "no": 11,
+            "stock": "NYKAA",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:NYKAA"
+        }
+    ]
+}
