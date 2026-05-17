@@ -15,7 +15,7 @@ CHAT_ID   = os.environ.get("CHAT_ID", "")
 SPREADSHEET_ID = "1SnDY6-HjBN_HEDyJVPaqbA_1da5hv4tELmPBBoN6fhU"
 GID            = "1191767584"
 
-JSON_FILE = "/tmp/bullrun_history.json"
+JSON_FILE = "bullrun_history.json"  # Repo mein save hoga
 
 # =========================
 # GOOGLE SHEET CSV URL
