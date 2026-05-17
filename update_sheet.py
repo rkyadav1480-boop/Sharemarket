@@ -19,7 +19,7 @@ creds = Credentials.from_service_account_info(creds_dict, scopes=scope)
 client = gspread.authorize(creds)
 
 SPREADSHEET_ID = "1SnDY6-HjBN_HEDyJVPaqbA_1da5hv4tELmPBBoN6fhU"
-worksheet = client.open_by_key(SPREADSHEET_ID).worksheet("volume_BREAKOUT")
+worksheet = client.open_by_key(SPREADSHEET_ID).worksheet("Top 250 stocks")
 
 # ─── NSE DATA FETCH ───────────────────────────────────────
 def fetch_bhavcopy_for_date(date_obj):
