@@ -1,0 +1,41 @@
+name: NSE Market Update
+
+on:
+  schedule:
+    - cron: '0 5 * * 1-5'  # 5:00 AM UTC = 10:30 AM IST, Mon-Fri
+  workflow_dispatch:
+
+jobs:
+  run-nse:
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Python setup
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: |
+          pip install requests
+
+      - name: Run NSE Data Script
+        env:
+          BOT_TOKEN: ${{ secrets.BOT_TOKEN }}
+          CHAT_ID: ${{ secrets.CHAT_ID }}
+        run: |
+          python nse_data.py
+
+      - name: Save history to repo
+        run: |
+          git config user.name "GitHub Actions"
+          git config user.email "actions@github.com"
+          git add nse_history.json || true
+          git commit -m "📊 NSE history $(date '+%d-%m-%Y')" || echo "No changes"
+          git push || echo "Push failed"
