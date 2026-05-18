@@ -55,5 +55,67 @@
             "stock": "NYKAA",
             "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:NYKAA"
         }
+    ],
+    "18-05-2026": [
+        {
+            "no": 1,
+            "stock": "5/18/2026",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:5/18/2026"
+        },
+        {
+            "no": 2,
+            "stock": "HCC",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:HCC"
+        },
+        {
+            "no": 3,
+            "stock": "RHETAN",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:RHETAN"
+        },
+        {
+            "no": 4,
+            "stock": "WELSPUNLIV",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:WELSPUNLIV"
+        },
+        {
+            "no": 5,
+            "stock": "KWIL",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:KWIL"
+        },
+        {
+            "no": 6,
+            "stock": "NSLNISP",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:NSLNISP"
+        },
+        {
+            "no": 7,
+            "stock": "ATGL",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:ATGL"
+        },
+        {
+            "no": 8,
+            "stock": "DELHIVERY",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:DELHIVERY"
+        },
+        {
+            "no": 9,
+            "stock": "DRREDDY",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:DRREDDY"
+        },
+        {
+            "no": 10,
+            "stock": "MANAPPURAM",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:MANAPPURAM"
+        },
+        {
+            "no": 11,
+            "stock": "NYKAA",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:NYKAA"
+        },
+        {
+            "no": 12,
+            "stock": "LLOYDSENT",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:LLOYDSENT"
+        }
     ]
 }
