@@ -1,4 +1,4 @@
-import requests, os, json, sys
+import requests, os, json
 from datetime import datetime, date
 
 # ══════════════════════════════════════════════════════════════════════════════
@@ -6,8 +6,8 @@ from datetime import datetime, date
 # ══════════════════════════════════════════════════════════════════════════════
 
 BOT_TOKEN    = os.environ.get("BOT_TOKEN", "")
-CHAT_ID      = os.environ.get("MY_CHAT_ID", "")
-HISTORY_FILE = "nse_history.json"   # Repo mein save hoga (GitHub Actions)
+CHAT_ID      = os.environ.get("MY_CHAT_ID", "")   # ← MY_CHAT_ID secret
+HISTORY_FILE = "nse_history.json"
 
 # ══════════════════════════════════════════════════════════════════════════════
 #  NSE HOLIDAYS 2025-2026
@@ -56,9 +56,9 @@ def clean_old_history(history):
     return history
 
 def save_today_movers(big_movers):
-    today_str = date.today().strftime("%Y-%m-%d")
-    history   = load_history()
-    history   = clean_old_history(history)
+    today_str     = date.today().strftime("%Y-%m-%d")
+    history       = load_history()
+    history       = clean_old_history(history)
     today_symbols = set()
     for sector, stocks in big_movers.items():
         for sym, ltp, chg in stocks:
@@ -88,13 +88,11 @@ def tv_url(symbol):
     return f"https://www.tradingview.com/chart/?symbol=NSE%3A{symbol}"
 
 def send_telegram(text):
-    """Telegram pe message bhejo — 4096 char limit handle karo."""
-    url = f"https://api.telegram.org/bot{BOT_TOKEN}/sendMessage"
-    # Split if too long
+    url    = f"https://api.telegram.org/bot{BOT_TOKEN}/sendMessage"
     chunks = [text[i:i+4000] for i in range(0, len(text), 4000)]
     for chunk in chunks:
         r = requests.post(url, data={
-            "chat_id":                  CHAT_ID,
+            "chat_id":                  CHAT_ID,   # ← CHAT_ID variable (MY_CHAT_ID secret se)
             "text":                     chunk,
             "parse_mode":               "HTML",
             "disable_web_page_preview": True
@@ -105,7 +103,75 @@ def send_telegram(text):
             print(f"❌ Telegram error: {r.text}")
 
 # ══════════════════════════════════════════════════════════════════════════════
-#  MAIN FETCH
+#  YAHOO FINANCE — Index constituents fetch
+# ══════════════════════════════════════════════════════════════════════════════
+
+# Yahoo Finance index symbols
+INDICES = {
+    "NIFTY 50":          "^NSEI",
+    "NIFTY BANK":        "^NSEBANK",
+    "NIFTY IT":          "^CNXIT",
+    "NIFTY PHARMA":      "^CNXPHARMA",
+    "NIFTY FMCG":        "^CNXFMCG",
+    "NIFTY METAL":       "^CNXMETAL",
+    "NIFTY MIDCAP 100":  "^CNXMIDCAP",
+}
+
+# Top stocks per index (NSE symbols)
+INDEX_STOCKS = {
+    "NIFTY 50": [
+        "RELIANCE","TCS","HDFCBANK","INFY","ICICIBANK","HINDUNILVR","SBIN",
+        "BHARTIARTL","ITC","KOTAKBANK","LT","AXISBANK","ASIANPAINT","MARUTI",
+        "TITAN","BAJFINANCE","NESTLEIND","WIPRO","ULTRACEMCO","POWERGRID",
+        "NTPC","TECHM","HCLTECH","SUNPHARMA","ONGC","TATAMOTORS","TATASTEEL",
+        "JSWSTEEL","ADANIENT","ADANIPORTS","BAJAJFINSV","DIVISLAB","DRREDDY",
+        "EICHERMOT","GRASIM","HEROMOTOCO","HINDALCO","INDUSINDBK","M&M","SBILIFE",
+        "APOLLOHOSP","BAJAJ-AUTO","BPCL","BRITANNIA","CIPLA","COALINDIA",
+        "HDFCLIFE","LTIM","TATACONSUM","UPL"
+    ],
+    "NIFTY BANK": [
+        "HDFCBANK","ICICIBANK","SBIN","AXISBANK","KOTAKBANK","INDUSINDBK",
+        "BANDHANBNK","IDFCFIRSTB","FEDERALBNK","AUBANK","PNB","BANKBARODA"
+    ],
+    "NIFTY IT": [
+        "TCS","INFY","HCLTECH","WIPRO","TECHM","LTIM","MPHASIS",
+        "COFORGE","PERSISTENT","LTTS"
+    ],
+    "NIFTY PHARMA": [
+        "SUNPHARMA","DRREDDY","CIPLA","DIVISLAB","APOLLOHOSP",
+        "TORNTPHARM","ALKEM","BIOCON","LUPIN","AUROPHARMA"
+    ],
+    "NIFTY FMCG": [
+        "HINDUNILVR","ITC","NESTLEIND","BRITANNIA","DABUR",
+        "MARICO","GODREJCP","COLPAL","TATACONSUM","UBL"
+    ],
+    "NIFTY METAL": [
+        "TATASTEEL","JSWSTEEL","HINDALCO","SAIL","VEDL",
+        "COALINDIA","NMDC","MOIL","APLAPOLLO","JINDALSTEL"
+    ],
+    "NIFTY MIDCAP 100": [
+        "MUTHOOTFIN","PIIND","VOLTAS","GODREJPROP","AUROPHARMA",
+        "INDUSTOWER","OBEROIRLTY","PAGEIND","SYNGENE","ABFRL"
+    ],
+}
+
+def fetch_yahoo(symbol):
+    """Yahoo Finance se stock data fetch karo."""
+    url = f"https://query1.finance.yahoo.com/v8/finance/chart/{symbol}.NS"
+    headers = {"User-Agent": "Mozilla/5.0"}
+    try:
+        r    = requests.get(url, headers=headers, timeout=10)
+        data = r.json()
+        meta = data["chart"]["result"][0]["meta"]
+        ltp  = round(meta.get("regularMarketPrice", 0), 2)
+        prev = meta.get("chartPreviousClose") or meta.get("previousClose", ltp)
+        chg  = round(((ltp - prev) / prev) * 100, 2) if prev else 0
+        return ltp, chg
+    except:
+        return None, None
+
+# ══════════════════════════════════════════════════════════════════════════════
+#  MAIN
 # ══════════════════════════════════════════════════════════════════════════════
 
 def fetch_and_send():
@@ -115,63 +181,35 @@ def fetch_and_send():
         send_telegram(f"📅 <b>NSE Market Update</b>\n{reason}\nAaj script nahi chalegi.")
         return
 
-    base    = "https://www.nseindia.com"
-    indices = [
-        "NIFTY 50", "NIFTY NEXT 50", "NIFTY MIDCAP 100",
-        "NIFTY SMALLCAP 100", "NIFTY BANK", "NIFTY IT",
-        "NIFTY FMCG", "NIFTY PHARMA", "NIFTY METAL"
-    ]
-    headers = {
-        "User-Agent":      "Mozilla/5.0 (Linux; Android 10; Mobile)",
-        "Accept-Language": "en-US,en;q=0.9",
-        "Referer":         base
-    }
-
-    s = requests.Session()
-    s.headers.update(headers)
-
-    now_str    = datetime.now().strftime("%d-%m-%Y %I:%M %p")
-    today_str  = date.today().strftime("%d-%m-%Y")
-    summary    = {}
+    now_str   = datetime.now().strftime("%d-%m-%Y %I:%M %p")
+    today_str = date.today().strftime("%d-%m-%Y")
+    summary   = {}
     big_movers = {}
 
-    try:
-        s.get(base, timeout=10)
+    print("📥 Yahoo Finance se data fetch ho raha hai...")
 
-        for idx in indices:
-            try:
-                url  = f"{base}/api/equity-stockIndices?index={idx.replace(' ', '%20')}"
-                r    = s.get(url, timeout=15)
-                r.raise_for_status()
-                data = r.json().get("data", [])
-                if not data: continue
+    for index_name, stocks_list in INDEX_STOCKS.items():
+        total_chg        = 0
+        count            = 0
+        movers_in_sector = []
 
-                total_chg        = 0
-                movers_in_sector = []
-                for item in data:
-                    sym    = item.get("symbol", "")
-                    ltp    = item.get("lastPrice", 0)
-                    change = item.get("pChange", 0) or 0
-                    total_chg += change
-                    if abs(change) >= 3.0:
-                        movers_in_sector.append((sym, ltp, change))
+        for sym in stocks_list:
+            ltp, chg = fetch_yahoo(sym)
+            if ltp is None: continue
+            total_chg += chg
+            count     += 1
+            if abs(chg) >= 3.0:
+                movers_in_sector.append((sym, ltp, chg))
 
-                avg_chg     = round(total_chg / len(data), 2)
-                summary[idx] = avg_chg
-                if movers_in_sector:
-                    big_movers[idx] = movers_in_sector
-                print(f"✅ {idx}: {len(data)} stocks | Avg: {avg_chg:+.2f}%")
-
-            except Exception as e:
-                print(f"⚠️ {idx}: {e}")
-
-    except Exception as e:
-        print(f"❌ Main error: {e}")
-        send_telegram(f"❌ NSE fetch error: {e}")
-        return
+        if count > 0:
+            avg_chg         = round(total_chg / count, 2)
+            summary[index_name] = avg_chg
+            if movers_in_sector:
+                big_movers[index_name] = movers_in_sector
+            print(f"✅ {index_name}: {count} stocks | Avg: {avg_chg:+.2f}% | 3%+ movers: {len(movers_in_sector)}")
 
     # ══════════════════════════════════════════════════════
-    #  MESSAGE 1 — Index Summary + Aaj Ke Big Movers
+    #  MESSAGE 1 — Index Summary + Big Movers
     # ══════════════════════════════════════════════════════
 
     msg1 = (
@@ -189,10 +227,8 @@ def fetch_and_send():
         for sector, stocks in big_movers.items():
             gainers = sorted([s for s in stocks if s[2] > 0], key=lambda x: -x[2])
             losers  = sorted([s for s in stocks if s[2] < 0], key=lambda x:  x[2])
-
             if gainers or losers:
                 msg1 += f"\n📌 <b>{sector}</b>\n"
-
             if gainers:
                 msg1 += "🟢 <b>Gainers:</b>\n"
                 for sym, ltp, chg in gainers:
@@ -200,7 +236,6 @@ def fetch_and_send():
                         f"  • <b>{sym}</b> | ₹{ltp} | <b>+{chg:.2f}%</b>\n"
                         f"    📈 <a href='{tv_url(sym)}'>TradingView</a>\n"
                     )
-
             if losers:
                 msg1 += "🔴 <b>Losers:</b>\n"
                 for sym, ltp, chg in losers:
@@ -219,8 +254,7 @@ def fetch_and_send():
 
     if big_movers:
         updated_history = save_today_movers(big_movers)
-
-        today_gainers = set()
+        today_gainers   = set()
         for sector, stocks in big_movers.items():
             for sym, ltp, chg in stocks:
                 if chg >= 3.0:
@@ -235,8 +269,8 @@ def fetch_and_send():
             )
             for stock in common:
                 msg2 += (
-                    f"<b>{stock['no']}. {stock['symbol']}</b> "
-                    f"— {stock['days']} din\n"
+                    f"<b>{stock['no']}. {stock['symbol']}</b>"
+                    f" — {stock['days']} din\n"
                     f"📊 <a href='{stock['tv_link']}'>TradingView</a>\n\n"
                 )
             send_telegram(msg2)
@@ -246,10 +280,6 @@ def fetch_and_send():
                 "<i>Aaj ke stocks pichhle 30 dinon ke data mein common nahi hain.</i>"
             )
 
-
-# ══════════════════════════════════════════════════════════════════════════════
-#  ENTRY POINT
-# ══════════════════════════════════════════════════════════════════════════════
 
 if __name__ == "__main__":
     fetch_and_send()
