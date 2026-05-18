@@ -94,7 +94,7 @@ def send_telegram(text):
     chunks = [text[i:i+4000] for i in range(0, len(text), 4000)]
     for chunk in chunks:
         r = requests.post(url, data={
-            "MY_CHAT_ID":                  MY_CHAT_ID,
+            "chat_id":                  CHAT_ID,
             "text":                     chunk,
             "parse_mode":               "HTML",
             "disable_web_page_preview": True
