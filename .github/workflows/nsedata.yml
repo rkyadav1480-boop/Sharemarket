@@ -28,7 +28,7 @@ jobs:
       - name: Run NSE Data Script
         env:
           BOT_TOKEN: ${{ secrets.BOT_TOKEN }}
-          CHAT_ID: ${{ secrets.CHAT_ID }}
+          CHAT_ID: ${{ secrets.MY_CHAT_ID }}
         run: |
           python nse_data.py
 
