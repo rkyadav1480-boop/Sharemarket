@@ -8,7 +8,7 @@ on:
 jobs:
   run-nse:
     runs-on: ubuntu-latest
-
+    timeout-minutes: 15 
     permissions:
       contents: write
 
