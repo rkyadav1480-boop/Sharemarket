@@ -112,5 +112,72 @@
             "stock": "LLOYDSENT",
             "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:LLOYDSENT"
         }
+    ],
+    "19-05-2026": [
+        {
+            "no": 1,
+            "stock": "5/19/2026",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:5/19/2026"
+        },
+        {
+            "no": 2,
+            "stock": "YESBANK",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:YESBANK"
+        },
+        {
+            "no": 3,
+            "stock": "MANAPPURAM",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:MANAPPURAM"
+        },
+        {
+            "no": 4,
+            "stock": "KWIL",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:KWIL"
+        },
+        {
+            "no": 5,
+            "stock": "DELHIVERY",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:DELHIVERY"
+        },
+        {
+            "no": 6,
+            "stock": "PREMIERENE",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:PREMIERENE"
+        },
+        {
+            "no": 7,
+            "stock": "NSLNISP",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:NSLNISP"
+        },
+        {
+            "no": 8,
+            "stock": "NYKAA",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:NYKAA"
+        },
+        {
+            "no": 9,
+            "stock": "WEBELSOLAR",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:WEBELSOLAR"
+        },
+        {
+            "no": 10,
+            "stock": "WELSPUNLIV",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:WELSPUNLIV"
+        },
+        {
+            "no": 11,
+            "stock": "SMALLCAP",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:SMALLCAP"
+        },
+        {
+            "no": 12,
+            "stock": "STLNETWORK",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:STLNETWORK"
+        },
+        {
+            "no": 13,
+            "stock": "MOSMALL250",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:MOSMALL250"
+        }
     ]
 }
