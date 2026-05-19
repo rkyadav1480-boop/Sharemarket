@@ -126,43 +126,43 @@
         },
         {
             "no": 3,
-            "stock": "MANAPPURAM",
-            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:MANAPPURAM"
-        },
-        {
-            "no": 4,
             "stock": "KWIL",
             "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:KWIL"
         },
         {
-            "no": 5,
+            "no": 4,
             "stock": "DELHIVERY",
             "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:DELHIVERY"
         },
         {
-            "no": 6,
+            "no": 5,
             "stock": "PREMIERENE",
             "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:PREMIERENE"
         },
         {
-            "no": 7,
+            "no": 6,
             "stock": "NSLNISP",
             "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:NSLNISP"
         },
         {
-            "no": 8,
+            "no": 7,
             "stock": "NYKAA",
             "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:NYKAA"
         },
         {
+            "no": 8,
+            "stock": "MUKANDLTD",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:MUKANDLTD"
+        },
+        {
             "no": 9,
-            "stock": "WEBELSOLAR",
-            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:WEBELSOLAR"
+            "stock": "LLOYDSENT",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:LLOYDSENT"
         },
         {
             "no": 10,
-            "stock": "WELSPUNLIV",
-            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:WELSPUNLIV"
+            "stock": "WEBELSOLAR",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:WEBELSOLAR"
         },
         {
             "no": 11,
@@ -176,6 +176,11 @@
         },
         {
             "no": 13,
+            "stock": "HINDOILEXP",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:HINDOILEXP"
+        },
+        {
+            "no": 14,
             "stock": "MOSMALL250",
             "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:MOSMALL250"
         }
