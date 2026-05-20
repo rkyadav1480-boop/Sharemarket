@@ -1,5 +1,4 @@
 import os
-import re
 import json
 import hashlib
 import asyncio
@@ -59,156 +58,119 @@ def save_sent_news():
         json.dump(SENT_NEWS, f, indent=2)
 
 # =========================================================
-# DATE PATTERNS
-# =========================================================
-
-DATE_PATTERNS = [
-    r"\d{4}-\d{2}-\d{2}",
-    r"\d{2}-\d{2}-\d{4}",
-    r"\d{2}/\d{2}/\d{4}"
-]
-
-# =========================================================
-# FIND LATEST DATE
-# =========================================================
-
-def find_latest_date(data):
-
-    dates = []
-
-    def scan(obj):
-
-        if isinstance(obj, dict):
-
-            for v in obj.values():
-                scan(v)
-
-        elif isinstance(obj, list):
-
-            for i in obj:
-                scan(i)
-
-        elif isinstance(obj, str):
-
-            for pattern in DATE_PATTERNS:
-
-                found = re.findall(pattern, obj)
-
-                for d in found:
-
-                    try:
-
-                        if "-" in d and len(d.split("-")[0]) == 4:
-
-                            dt = datetime.strptime(
-                                d,
-                                "%Y-%m-%d"
-                            )
-
-                        elif "/" in d:
-
-                            dt = datetime.strptime(
-                                d,
-                                "%d/%m/%Y"
-                            )
-
-                        else:
-
-                            dt = datetime.strptime(
-                                d,
-                                "%d-%m-%Y"
-                            )
-
-                        dates.append(dt)
-
-                    except:
-                        pass
-
-    scan(data)
-
-    if not dates:
-        return None
-
-    return max(dates)
-
-# =========================================================
-# EXTRACT ONLY LATEST DATE STOCKS
+# EXTRACT LATEST STOCKS
 # =========================================================
 
 def extract_latest_stocks():
 
-    latest_global_date = None
-    all_data = []
+    latest_date = None
+    latest_stocks = []
 
     for file_name in JSON_FILES:
 
         if not os.path.exists(file_name):
             continue
 
-        with open(file_name, "r") as f:
+        try:
 
-            try:
+            with open(file_name, "r") as f:
                 data = json.load(f)
 
+        except Exception as e:
+
+            print("JSON ERROR:", file_name, e)
+            continue
+
+        # ===== GET ALL DATES =====
+
+        dates = []
+
+        for key in data.keys():
+
+            try:
+
+                # yyyy-mm-dd
+                if "-" in key and len(key.split("-")[0]) == 4:
+
+                    dt = datetime.strptime(
+                        key,
+                        "%Y-%m-%d"
+                    )
+
+                # dd-mm-yyyy
+                else:
+
+                    dt = datetime.strptime(
+                        key,
+                        "%d-%m-%Y"
+                    )
+
+                dates.append((dt, key))
+
             except:
-                continue
+                pass
 
-        latest_date = find_latest_date(data)
+        if not dates:
+            continue
 
-        all_data.append((data, latest_date))
+        current_latest_dt, current_key = max(dates)
 
-        if latest_date:
+        # ===== GLOBAL LATEST =====
+
+        if (
+            latest_date is None or
+            current_latest_dt > latest_date
+        ):
+
+            latest_date = current_latest_dt
+
+            latest_stocks = []
+
+            values = data[current_key]
+
+            # ===== LIST OF STRINGS =====
 
             if (
-                latest_global_date is None or
-                latest_date > latest_global_date
+                isinstance(values, list)
+                and len(values) > 0
+                and isinstance(values[0], str)
             ):
 
-                latest_global_date = latest_date
+                latest_stocks.extend(values)
 
-    if latest_global_date is None:
-        return []
+            # ===== LIST OF DICTS =====
 
-    latest_str = latest_global_date.strftime("%Y-%m-%d")
+            elif (
+                isinstance(values, list)
+                and len(values) > 0
+                and isinstance(values[0], dict)
+            ):
 
-    stocks = set()
+                for item in values:
 
-    def scan(obj):
+                    stock = item.get("stock")
 
-        if isinstance(obj, dict):
+                    if stock:
+                        latest_stocks.append(stock)
 
-            text = json.dumps(obj)
+    # ===== CLEAN =====
 
-            if latest_str in text:
+    cleaned = []
 
-                for v in obj.values():
+    for stock in latest_stocks:
 
-                    if isinstance(v, str):
+        s = (
+            str(stock)
+            .upper()
+            .replace("NSE:", "")
+            .replace(".NS", "")
+            .strip()
+        )
 
-                        stock = (
-                            v.upper()
-                            .replace("NSE:", "")
-                            .replace(".NS", "")
-                            .strip()
-                        )
+        if 2 <= len(s) <= 20:
+            cleaned.append(s)
 
-                        if 2 <= len(stock) <= 20:
-
-                            if stock.isupper():
-                                stocks.add(stock)
-
-            for v in obj.values():
-                scan(v)
-
-        elif isinstance(obj, list):
-
-            for i in obj:
-                scan(i)
-
-    for data, _ in all_data:
-        scan(data)
-
-    return sorted(list(stocks))
+    return sorted(list(set(cleaned)))
 
 # =========================================================
 # HASH
@@ -391,7 +353,7 @@ def get_all_news(stock):
     return news
 
 # =========================================================
-# BUILD TELEGRAM MESSAGE
+# BUILD MESSAGE
 # =========================================================
 
 def build_message(stock, items):
@@ -417,6 +379,8 @@ def build_message(stock, items):
 # =========================================================
 
 async def process_stock(stock):
+
+    print("PROCESSING:", stock)
 
     news = get_all_news(stock)
 
@@ -469,20 +433,18 @@ async def process_stock(stock):
 # =========================================================
 
 async def main():
+
     await bot.send_message(
-    chat_id=CHAT_ID,
-    text="BOT STARTED"
-)
+        chat_id=CHAT_ID,
+        text="BOT STARTED"
+    )
+
     try:
 
         stocks = extract_latest_stocks()
 
         print(
-            f"\n[{datetime.now()}]"
-        )
-
-        print(
-            "LATEST STOCKS:",
+            "EXTRACTED STOCKS:",
             stocks
         )
 
