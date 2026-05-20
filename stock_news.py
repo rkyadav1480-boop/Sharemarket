@@ -1,7 +1,6 @@
 import os
 import re
 import json
-import time
 import hashlib
 import asyncio
 import feedparser
@@ -17,8 +16,6 @@ from telegram import Bot
 
 BOT_TOKEN = os.getenv("BOT_TOKEN")
 CHAT_ID = os.getenv("MY_CHAT_ID")
-
-CHECK_INTERVAL = 300
 
 JSON_FILES = [
     "nse_history.json",
@@ -40,7 +37,7 @@ HEADERS = {
 bot = Bot(token=BOT_TOKEN)
 
 # =========================================================
-# LOAD DUPLICATE FILE
+# LOAD SENT NEWS
 # =========================================================
 
 if os.path.exists(SENT_FILE):
@@ -49,10 +46,11 @@ if os.path.exists(SENT_FILE):
         SENT_NEWS = json.load(f)
 
 else:
+
     SENT_NEWS = {}
 
 # =========================================================
-# SAVE DUPLICATE FILE
+# SAVE SENT NEWS
 # =========================================================
 
 def save_sent_news():
@@ -61,7 +59,7 @@ def save_sent_news():
         json.dump(SENT_NEWS, f, indent=2)
 
 # =========================================================
-# DATE DETECTION
+# DATE PATTERNS
 # =========================================================
 
 DATE_PATTERNS = [
@@ -69,6 +67,10 @@ DATE_PATTERNS = [
     r"\d{2}-\d{2}-\d{4}",
     r"\d{2}/\d{2}/\d{4}"
 ]
+
+# =========================================================
+# FIND LATEST DATE
+# =========================================================
 
 def find_latest_date(data):
 
@@ -130,15 +132,13 @@ def find_latest_date(data):
     return max(dates)
 
 # =========================================================
-# STOCK EXTRACTION ONLY FROM LATEST DATE
+# EXTRACT ONLY LATEST DATE STOCKS
 # =========================================================
 
 def extract_latest_stocks():
 
     latest_global_date = None
     all_data = []
-
-    # ===== LOAD FILES =====
 
     for file_name in JSON_FILES:
 
@@ -149,6 +149,7 @@ def extract_latest_stocks():
 
             try:
                 data = json.load(f)
+
             except:
                 continue
 
@@ -162,16 +163,15 @@ def extract_latest_stocks():
                 latest_global_date is None or
                 latest_date > latest_global_date
             ):
+
                 latest_global_date = latest_date
-
-    # ===== EXTRACT STOCKS =====
-
-    stocks = set()
 
     if latest_global_date is None:
         return []
 
     latest_str = latest_global_date.strftime("%Y-%m-%d")
+
+    stocks = set()
 
     def scan(obj):
 
@@ -193,7 +193,9 @@ def extract_latest_stocks():
                         )
 
                         if 2 <= len(stock) <= 20:
-                            stocks.add(stock)
+
+                            if stock.isupper():
+                                stocks.add(stock)
 
             for v in obj.values():
                 scan(v)
@@ -227,7 +229,6 @@ BULLISH = [
     "profit",
     "buy",
     "growth",
-    "up",
     "gain",
     "strong",
     "bullish",
@@ -237,7 +238,6 @@ BULLISH = [
 BEARISH = [
     "fall",
     "loss",
-    "down",
     "weak",
     "sell",
     "drop",
@@ -266,7 +266,7 @@ def sentiment(title):
     return "⚪ Neutral"
 
 # =========================================================
-# MONEYCONTROL
+# MONEYCONTROL NEWS
 # =========================================================
 
 def moneycontrol_news(stock):
@@ -373,7 +373,7 @@ def google_news(stock):
     return results
 
 # =========================================================
-# ALL NEWS
+# GET ALL NEWS
 # =========================================================
 
 def get_all_news(stock):
@@ -391,7 +391,7 @@ def get_all_news(stock):
     return news
 
 # =========================================================
-# MESSAGE
+# BUILD TELEGRAM MESSAGE
 # =========================================================
 
 def build_message(stock, items):
@@ -470,40 +470,36 @@ async def process_stock(stock):
 
 async def main():
 
-    while True:
+    try:
 
-        try:
+        stocks = extract_latest_stocks()
 
-            stocks = extract_latest_stocks()
-
-            print(
-                f"\n[{datetime.now()}]"
-            )
-
-            print(
-                "LATEST STOCKS:",
-                stocks
-            )
-
-            tasks = []
-
-            for stock in stocks:
-
-                tasks.append(
-                    process_stock(stock)
-                )
-
-            await asyncio.gather(*tasks)
-
-            save_sent_news()
-
-        except Exception as e:
-
-            print("MAIN ERROR:", e)
-
-        await asyncio.sleep(
-            CHECK_INTERVAL
+        print(
+            f"\n[{datetime.now()}]"
         )
+
+        print(
+            "LATEST STOCKS:",
+            stocks
+        )
+
+        tasks = []
+
+        for stock in stocks:
+
+            tasks.append(
+                process_stock(stock)
+            )
+
+        await asyncio.gather(*tasks)
+
+        save_sent_news()
+
+        print("DONE")
+
+    except Exception as e:
+
+        print("MAIN ERROR:", e)
 
 # =========================================================
 # START
