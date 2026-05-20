@@ -241,7 +241,7 @@ def google_news(stock):
             len(feed.entries)
         )
 
-        for entry in feed.entries[:01]:
+        for entry in feed.entries[:1]:
 
             title = entry.title
             link = entry.link
