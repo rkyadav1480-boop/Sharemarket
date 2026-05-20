@@ -7,10 +7,6 @@ import feedparser
 from datetime import datetime
 from telegram import Bot
 
-# =========================================================
-# CONFIG
-# =========================================================
-
 BOT_TOKEN = os.getenv("BOT_TOKEN")
 CHAT_ID = os.getenv("MY_CHAT_ID")
 
@@ -75,7 +71,6 @@ def extract_latest_stocks():
 
             try:
 
-                # yyyy-mm-dd
                 if "-" in key and len(key.split("-")[0]) == 4:
 
                     dt = datetime.strptime(
@@ -83,7 +78,6 @@ def extract_latest_stocks():
                         "%Y-%m-%d"
                     )
 
-                # dd-mm-yyyy
                 else:
 
                     dt = datetime.strptime(
@@ -112,8 +106,6 @@ def extract_latest_stocks():
 
             values = data[current_key]
 
-            # ===== LIST OF STRINGS =====
-
             if (
                 isinstance(values, list)
                 and len(values) > 0
@@ -121,8 +113,6 @@ def extract_latest_stocks():
             ):
 
                 latest_stocks.extend(values)
-
-            # ===== LIST OF DICTS =====
 
             elif (
                 isinstance(values, list)
@@ -241,7 +231,6 @@ def google_news(stock):
             len(feed.entries)
         )
 
-        # ONLY LATEST 1 NEWS
         for entry in feed.entries[:1]:
 
             title = entry.title
@@ -253,31 +242,11 @@ def google_news(stock):
                 ""
             )
 
-            lower_title = title.lower()
-
-            skip_words = [
-                "sports",
-                "football",
-                "movie",
-                "actor",
-                "festival",
-                "politics"
-            ]
-
-            if any(
-                w in lower_title
-                for w in skip_words
-            ):
-                continue
-
             results.append({
 
                 "source": "Google News",
-
                 "title": title,
-
                 "url": link,
-
                 "time": published
             })
 
@@ -292,43 +261,25 @@ def google_news(stock):
     return results
 
 # =========================================================
-# GET NEWS
-# =========================================================
-
-def get_all_news(stock):
-
-    return google_news(stock)
-
-# =========================================================
 # BUILD MESSAGE
 # =========================================================
 
-def build_message(stock, items):
+def build_message(stock, item):
+
+    s = sentiment(
+        item["title"]
+    )
 
     msg = (
         f"📈 <b>{stock}</b>\n\n"
+        f"{s}\n"
+        f"📰 <b>{item['title']}</b>\n"
+        f"🏢 {item['source']}\n"
+        f"⏰ {item['time']}\n"
+        f"{item['url']}"
     )
 
-    for n in items:
-
-        s = sentiment(
-            n["title"]
-        )
-
-        msg += (
-
-            f"{s}\n"
-
-            f"📰 <b>{n['title']}</b>\n"
-
-            f"🏢 {n['source']}\n"
-
-            f"⏰ {n['time']}\n"
-
-            f"{n['url']}\n\n"
-        )
-
-    return msg[:4000]
+    return msg
 
 # =========================================================
 # PROCESS STOCK
@@ -336,53 +287,34 @@ def build_message(stock, items):
 
 async def process_stock(stock):
 
-    print(
-        "PROCESSING:",
-        stock
-    )
+    print("PROCESSING:", stock)
 
-    news = get_all_news(stock)
+    news = google_news(stock)
 
     if not news:
 
-        print(
-            "NO NEWS:",
-            stock
-        )
-
+        print("NO NEWS:", stock)
         return
 
     latest = news[0]
-
-    # ===== UNIQUE HASH =====
 
     h = generate_hash(
         stock + latest["title"]
     )
 
-    # ===== DUPLICATE CHECK =====
-
     if h in SENT_NEWS:
 
-        print(
-            "DUPLICATE:",
-            stock
-        )
-
+        print("DUPLICATE:", stock)
         return
-
-    # ===== SAVE =====
 
     SENT_NEWS[h] = {
         "stock": stock,
         "time": str(datetime.now())
     }
 
-    # ===== BUILD MESSAGE =====
-
     message = build_message(
         stock,
-        [latest]
+        latest
     )
 
     try:
@@ -394,10 +326,7 @@ async def process_stock(stock):
             disable_web_page_preview=True
         )
 
-        print(
-            "SENT:",
-            stock
-        )
+        print("SENT:", stock)
 
     except Exception as e:
 
@@ -418,56 +347,29 @@ async def main():
         text="🚀 STOCK NEWS BOT STARTED"
     )
 
-    try:
+    stocks = extract_latest_stocks()
 
-        stocks = (
-            extract_latest_stocks()
+    print(
+        "EXTRACTED STOCKS:",
+        stocks
+    )
+
+    tasks = []
+
+    for stock in stocks:
+
+        tasks.append(
+            process_stock(stock)
         )
 
-        print(
-            "EXTRACTED STOCKS:",
-            stocks
-        )
+    await asyncio.gather(*tasks)
 
-        if not stocks:
+    save_sent_news()
 
-            await bot.send_message(
-                chat_id=CHAT_ID,
-                text="❌ No stocks found"
-            )
-
-            return
-
-        tasks = []
-
-        for stock in stocks:
-
-            tasks.append(
-                process_stock(stock)
-            )
-
-        await asyncio.gather(*tasks)
-
-        save_sent_news()
-
-        await bot.send_message(
-            chat_id=CHAT_ID,
-            text="✅ NEWS SCAN COMPLETE"
-        )
-
-        print("DONE")
-
-    except Exception as e:
-
-        print(
-            "MAIN ERROR:",
-            e
-        )
-
-        await bot.send_message(
-            chat_id=CHAT_ID,
-            text=f"❌ ERROR:\n{e}"
-        )
+    await bot.send_message(
+        chat_id=CHAT_ID,
+        text="✅ NEWS SCAN COMPLETE"
+    )
 
 # =========================================================
 # START
