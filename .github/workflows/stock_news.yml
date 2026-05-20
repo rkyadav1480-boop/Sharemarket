@@ -4,16 +4,21 @@ on:
   workflow_dispatch:
 
   schedule:
-    - cron: "*/5 * * * *"
+    # 8:00 AM IST
+    - cron: "30 2 * * *"
+
+    # 8:00 PM IST
+    - cron: "30 14 * * *"
 
 jobs:
+
   run-bot:
 
     runs-on: ubuntu-latest
 
     steps:
 
-      - name: Checkout Repo
+      - name: Checkout Repository
         uses: actions/checkout@v4
 
       - name: Setup Python
@@ -21,14 +26,14 @@ jobs:
         with:
           python-version: "3.11"
 
-      - name: Install Packages
+      - name: Install Dependencies
         run: |
           pip install requests
           pip install beautifulsoup4
           pip install python-telegram-bot
           pip install feedparser
 
-      - name: Run Bot
+      - name: Run Stock News Bot
         env:
           BOT_TOKEN: ${{ secrets.BOT_TOKEN }}
           MY_CHAT_ID: ${{ secrets.MY_CHAT_ID }}
