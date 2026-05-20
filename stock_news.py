@@ -19,7 +19,7 @@ CHAT_ID = os.getenv("MY_CHAT_ID")
 
 JSON_FILES = [
     "nse_history.json",
-    "bull_history.json"
+    "bullrun_history.json"
 ]
 
 SENT_FILE = "sent_news.json"
@@ -469,7 +469,10 @@ async def process_stock(stock):
 # =========================================================
 
 async def main():
-
+    await bot.send_message(
+    chat_id=CHAT_ID,
+    text="BOT STARTED"
+)
     try:
 
         stocks = extract_latest_stocks()
