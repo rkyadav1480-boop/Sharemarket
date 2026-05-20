@@ -112,7 +112,7 @@ def extract_latest_stocks():
 
             values = data[current_key]
 
-            # LIST OF STRINGS
+            # ===== LIST OF STRINGS =====
 
             if (
                 isinstance(values, list)
@@ -122,7 +122,7 @@ def extract_latest_stocks():
 
                 latest_stocks.extend(values)
 
-            # LIST OF DICTS
+            # ===== LIST OF DICTS =====
 
             elif (
                 isinstance(values, list)
@@ -215,7 +215,7 @@ def sentiment(title):
     return "⚪ Neutral"
 
 # =========================================================
-# GOOGLE NEWS INDIA STOCK SEARCH
+# GOOGLE NEWS
 # =========================================================
 
 def google_news(stock):
@@ -241,6 +241,7 @@ def google_news(stock):
             len(feed.entries)
         )
 
+        # ONLY LATEST 1 NEWS
         for entry in feed.entries[:1]:
 
             title = entry.title
@@ -251,8 +252,6 @@ def google_news(stock):
                 "published",
                 ""
             )
-
-            # FILTER BAD NEWS
 
             lower_title = title.lower()
 
@@ -337,16 +336,21 @@ def build_message(stock, items):
 
 async def process_stock(stock):
 
-    print("PROCESSING:", stock)
+    print(
+        "PROCESSING:",
+        stock
+    )
 
     news = get_all_news(stock)
 
     if not news:
 
-        print("NO NEWS:", stock)
-        return
+        print(
+            "NO NEWS:",
+            stock
+        )
 
-    # ===== ONLY LATEST NEWS =====
+        return
 
     latest = news[0]
 
@@ -390,7 +394,10 @@ async def process_stock(stock):
             disable_web_page_preview=True
         )
 
-        print("SENT:", stock)
+        print(
+            "SENT:",
+            stock
+        )
 
     except Exception as e:
 
@@ -398,7 +405,9 @@ async def process_stock(stock):
             "TG ERROR:",
             stock,
             e
-        ) =========================================================
+        )
+
+# =========================================================
 # MAIN
 # =========================================================
 
