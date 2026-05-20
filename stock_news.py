@@ -3,9 +3,7 @@ import json
 import hashlib
 import asyncio
 import feedparser
-import requests
 
-from bs4 import BeautifulSoup
 from datetime import datetime
 from telegram import Bot
 
@@ -22,16 +20,6 @@ JSON_FILES = [
 ]
 
 SENT_FILE = "sent_news.json"
-
-HEADERS = {
-    "User-Agent": (
-        "Mozilla/5.0 "
-        "(Windows NT 10.0; Win64; x64) "
-        "AppleWebKit/537.36 "
-        "(KHTML, like Gecko) "
-        "Chrome/122 Safari/537.36"
-    )
-}
 
 bot = Bot(token=BOT_TOKEN)
 
@@ -81,8 +69,6 @@ def extract_latest_stocks():
             print("JSON ERROR:", file_name, e)
             continue
 
-        # ===== GET ALL DATES =====
-
         dates = []
 
         for key in data.keys():
@@ -115,8 +101,6 @@ def extract_latest_stocks():
 
         current_latest_dt, current_key = max(dates)
 
-        # ===== GLOBAL LATEST =====
-
         if (
             latest_date is None or
             current_latest_dt > latest_date
@@ -128,7 +112,7 @@ def extract_latest_stocks():
 
             values = data[current_key]
 
-            # ===== LIST OF STRINGS =====
+            # LIST OF STRINGS
 
             if (
                 isinstance(values, list)
@@ -138,7 +122,7 @@ def extract_latest_stocks():
 
                 latest_stocks.extend(values)
 
-            # ===== LIST OF DICTS =====
+            # LIST OF DICTS
 
             elif (
                 isinstance(values, list)
@@ -152,8 +136,6 @@ def extract_latest_stocks():
 
                     if stock:
                         latest_stocks.append(stock)
-
-    # ===== CLEAN =====
 
     cleaned = []
 
@@ -194,7 +176,10 @@ BULLISH = [
     "gain",
     "strong",
     "bullish",
-    "record"
+    "record",
+    "jumps",
+    "rally",
+    "up"
 ]
 
 BEARISH = [
@@ -204,7 +189,9 @@ BEARISH = [
     "sell",
     "drop",
     "bearish",
-    "decline"
+    "decline",
+    "down",
+    "crash"
 ]
 
 def sentiment(title):
@@ -228,74 +215,7 @@ def sentiment(title):
     return "⚪ Neutral"
 
 # =========================================================
-# MONEYCONTROL NEWS
-# =========================================================
-
-def moneycontrol_news(stock):
-
-    results = []
-
-    try:
-
-        url = (
-            f"https://www.moneycontrol.com/news/tags/"
-            f"{stock.lower()}.html"
-        )
-
-        r = requests.get(
-            url,
-            headers=HEADERS,
-            timeout=20
-        )
-
-        soup = BeautifulSoup(
-            r.text,
-            "html.parser"
-        )
-
-        items = soup.find_all(
-            "li",
-            class_="clearfix"
-        )
-
-        for item in items[:5]:
-
-            h2 = item.find("h2")
-
-            if not h2:
-                continue
-
-            a = h2.find("a")
-
-            title = h2.get_text(strip=True)
-
-            link = ""
-
-            if a:
-                link = a.get("href")
-
-            span = item.find("span")
-
-            tm = ""
-
-            if span:
-                tm = span.get_text(strip=True)
-
-            results.append({
-                "source": "Moneycontrol",
-                "title": title,
-                "url": link,
-                "time": tm
-            })
-
-    except Exception as e:
-
-        print("MC ERROR:", stock, e)
-
-    return results
-
-# =========================================================
-# GOOGLE NEWS
+# GOOGLE NEWS INDIA STOCK SEARCH
 # =========================================================
 
 def google_news(stock):
@@ -304,53 +224,81 @@ def google_news(stock):
 
     try:
 
+        query = (
+            f"{stock} NSE share market india"
+        )
+
         rss = (
             "https://news.google.com/rss/search?"
-            f"q={stock}+share+stock"
+            f"q={query}"
         )
 
         feed = feedparser.parse(rss)
 
-        for entry in feed.entries[:5]:
+        print(
+            "GOOGLE ENTRIES:",
+            stock,
+            len(feed.entries)
+        )
+
+        for entry in feed.entries[:10]:
+
+            title = entry.title
+            link = entry.link
+
+            published = getattr(
+                entry,
+                "published",
+                ""
+            )
+
+            # FILTER BAD NEWS
+
+            lower_title = title.lower()
+
+            skip_words = [
+                "sports",
+                "football",
+                "movie",
+                "actor",
+                "festival",
+                "politics"
+            ]
+
+            if any(
+                w in lower_title
+                for w in skip_words
+            ):
+                continue
 
             results.append({
 
-                "source": "Google",
+                "source": "Google News",
 
-                "title": entry.title,
+                "title": title,
 
-                "url": entry.link,
+                "url": link,
 
-                "time": getattr(
-                    entry,
-                    "published",
-                    ""
-                )
+                "time": published
             })
 
     except Exception as e:
 
-        print("GOOGLE ERROR:", stock, e)
+        print(
+            "GOOGLE ERROR:",
+            stock,
+            e
+        )
 
     return results
 
 # =========================================================
-# GET ALL NEWS
+# GET NEWS
 # =========================================================
 
 def get_all_news(stock):
 
-    news = []
-
-    news.extend(
-        moneycontrol_news(stock)
-    )
-
-    news.extend(
-        google_news(stock)
-    )
-
-    return news
+    return google_news(stock)
 
 # =========================================================
 # BUILD MESSAGE
@@ -358,17 +306,26 @@ def get_all_news(stock):
 
 def build_message(stock, items):
 
-    msg = f"📈 <b>{stock}</b>\n\n"
+    msg = (
+        f"📈 <b>{stock}</b>\n\n"
+    )
 
     for n in items:
 
-        s = sentiment(n["title"])
+        s = sentiment(
+            n["title"]
+        )
 
         msg += (
+
             f"{s}\n"
+
             f"📰 <b>{n['title']}</b>\n"
+
             f"🏢 {n['source']}\n"
+
             f"⏰ {n['time']}\n"
+
             f"{n['url']}\n\n"
         )
 
@@ -380,11 +337,20 @@ def build_message(stock, items):
 
 async def process_stock(stock):
 
-    print("PROCESSING:", stock)
+    print(
+        "PROCESSING:",
+        stock
+    )
 
     news = get_all_news(stock)
 
     if not news:
+
+        print(
+            "NO NEWS:",
+            stock
+        )
+
         return
 
     unique = []
@@ -406,6 +372,12 @@ async def process_stock(stock):
         unique.append(n)
 
     if not unique:
+
+        print(
+            "DUPLICATE NEWS:",
+            stock
+        )
+
         return
 
     message = build_message(
@@ -422,11 +394,18 @@ async def process_stock(stock):
             disable_web_page_preview=True
         )
 
-        print("SENT:", stock)
+        print(
+            "SENT:",
+            stock
+        )
 
     except Exception as e:
 
-        print("TG ERROR:", stock, e)
+        print(
+            "TG ERROR:",
+            stock,
+            e
+        )
 
 # =========================================================
 # MAIN
@@ -436,17 +415,28 @@ async def main():
 
     await bot.send_message(
         chat_id=CHAT_ID,
-        text="BOT STARTED"
+        text="🚀 STOCK NEWS BOT STARTED"
     )
 
     try:
 
-        stocks = extract_latest_stocks()
+        stocks = (
+            extract_latest_stocks()
+        )
 
         print(
             "EXTRACTED STOCKS:",
             stocks
         )
+
+        if not stocks:
+
+            await bot.send_message(
+                chat_id=CHAT_ID,
+                text="❌ No stocks found"
+            )
+
+            return
 
         tasks = []
 
@@ -460,11 +450,24 @@ async def main():
 
         save_sent_news()
 
+        await bot.send_message(
+            chat_id=CHAT_ID,
+            text="✅ NEWS SCAN COMPLETE"
+        )
+
         print("DONE")
 
     except Exception as e:
 
-        print("MAIN ERROR:", e)
+        print(
+            "MAIN ERROR:",
+            e
+        )
+
+        await bot.send_message(
+            chat_id=CHAT_ID,
+            text=f"❌ ERROR:\n{e}"
+        )
 
 # =========================================================
 # START
