@@ -337,52 +337,48 @@ def build_message(stock, items):
 
 async def process_stock(stock):
 
-    print(
-        "PROCESSING:",
-        stock
-    )
+    print("PROCESSING:", stock)
 
     news = get_all_news(stock)
 
     if not news:
 
+        print("NO NEWS:", stock)
+        return
+
+    # ===== ONLY LATEST NEWS =====
+
+    latest = news[0]
+
+    # ===== UNIQUE HASH =====
+
+    h = generate_hash(
+        stock + latest["title"]
+    )
+
+    # ===== DUPLICATE CHECK =====
+
+    if h in SENT_NEWS:
+
         print(
-            "NO NEWS:",
+            "DUPLICATE:",
             stock
         )
 
         return
 
-    unique = []
+    # ===== SAVE =====
 
-    for n in news:
+    SENT_NEWS[h] = {
+        "stock": stock,
+        "time": str(datetime.now())
+    }
 
-        h = generate_hash(
-            stock + n["title"]
-        )
-
-        if h in SENT_NEWS:
-            continue
-
-        SENT_NEWS[h] = {
-            "stock": stock,
-            "time": str(datetime.now())
-        }
-
-        unique.append(n)
-
-    if not unique:
-
-        print(
-            "DUPLICATE NEWS:",
-            stock
-        )
-
-        return
+    # ===== BUILD MESSAGE =====
 
     message = build_message(
         stock,
-        unique
+        [latest]
     )
 
     try:
@@ -394,10 +390,7 @@ async def process_stock(stock):
             disable_web_page_preview=True
         )
 
-        print(
-            "SENT:",
-            stock
-        )
+        print("SENT:", stock)
 
     except Exception as e:
 
@@ -405,9 +398,7 @@ async def process_stock(stock):
             "TG ERROR:",
             stock,
             e
-        )
-
-# =========================================================
+        ) =========================================================
 # MAIN
 # =========================================================
 
