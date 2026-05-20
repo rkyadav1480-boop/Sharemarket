@@ -7,6 +7,10 @@ import feedparser
 from datetime import datetime
 from telegram import Bot
 
+# =========================================================
+# CONFIG
+# =========================================================
+
 BOT_TOKEN = os.getenv("BOT_TOKEN")
 CHAT_ID = os.getenv("MY_CHAT_ID")
 
@@ -71,6 +75,7 @@ def extract_latest_stocks():
 
             try:
 
+                # yyyy-mm-dd
                 if "-" in key and len(key.split("-")[0]) == 4:
 
                     dt = datetime.strptime(
@@ -78,6 +83,7 @@ def extract_latest_stocks():
                         "%Y-%m-%d"
                     )
 
+                # dd-mm-yyyy
                 else:
 
                     dt = datetime.strptime(
@@ -106,6 +112,8 @@ def extract_latest_stocks():
 
             values = data[current_key]
 
+            # LIST OF STRINGS
+
             if (
                 isinstance(values, list)
                 and len(values) > 0
@@ -113,6 +121,8 @@ def extract_latest_stocks():
             ):
 
                 latest_stocks.extend(values)
+
+            # LIST OF DICTS
 
             elif (
                 isinstance(values, list)
@@ -212,26 +222,39 @@ def google_news(stock):
 
     results = []
 
-    try:
+    queries = [
 
-        query = (
-            f"{stock} NSE share market india"
-        )
+        f"{stock} share",
 
-        rss = (
-            "https://news.google.com/rss/search?"
-            f"q={query}"
-        )
+        f"{stock} stock",
 
-        feed = feedparser.parse(rss)
+        f"{stock} NSE",
 
-        print(
-            "GOOGLE ENTRIES:",
-            stock,
-            len(feed.entries)
-        )
+        f"{stock} market"
+    ]
 
-        for entry in feed.entries[:1]:
+    for q in queries:
+
+        try:
+
+            rss = (
+                "https://news.google.com/rss/search?"
+                f"q={q}"
+            )
+
+            feed = feedparser.parse(rss)
+
+            print(
+                "QUERY:",
+                q,
+                "ENTRIES:",
+                len(feed.entries)
+            )
+
+            if not feed.entries:
+                continue
+
+            entry = feed.entries[0]
 
             title = entry.title
             link = entry.link
@@ -245,18 +268,24 @@ def google_news(stock):
             results.append({
 
                 "source": "Google News",
+
                 "title": title,
+
                 "url": link,
+
                 "time": published
             })
 
-    except Exception as e:
+            # FIRST SUCCESS ONLY
+            break
 
-        print(
-            "GOOGLE ERROR:",
-            stock,
-            e
-        )
+        except Exception as e:
+
+            print(
+                "GOOGLE ERROR:",
+                stock,
+                e
+            )
 
     return results
 
@@ -353,6 +382,15 @@ async def main():
         "EXTRACTED STOCKS:",
         stocks
     )
+
+    if not stocks:
+
+        await bot.send_message(
+            chat_id=CHAT_ID,
+            text="❌ No stocks found"
+        )
+
+        return
 
     tasks = []
 
