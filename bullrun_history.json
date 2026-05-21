@@ -255,36 +255,46 @@
         },
         {
             "no": 3,
+            "stock": "IFCI",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:IFCI"
+        },
+        {
+            "no": 4,
             "stock": "CGCL",
             "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:CGCL"
         },
         {
-            "no": 4,
+            "no": 5,
             "stock": "WEBELSOLAR",
             "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:WEBELSOLAR"
         },
         {
-            "no": 5,
+            "no": 6,
+            "stock": "MANKIND",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:MANKIND"
+        },
+        {
+            "no": 7,
             "stock": "NSLNISP",
             "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:NSLNISP"
         },
         {
-            "no": 6,
+            "no": 8,
             "stock": "INDUSINDBK",
             "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:INDUSINDBK"
         },
         {
-            "no": 7,
+            "no": 9,
             "stock": "ATGL",
             "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:ATGL"
         },
         {
-            "no": 8,
+            "no": 10,
             "stock": "NYKAA",
             "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:NYKAA"
         },
         {
-            "no": 9,
+            "no": 11,
             "stock": "ANTHEM",
             "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:ANTHEM"
         }
