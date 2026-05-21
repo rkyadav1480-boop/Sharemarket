@@ -97,7 +97,19 @@ def find_common_stocks(today_symbols, history):
         for sym in symbols:
             if sym in today_symbols:
                 freq[sym] = freq.get(sym, 0) + 1
-    return sorted(freq.items(), key=lambda x: -x[1])
+    # Max days nikalenge taaki dynamic strength bar ratio ban sake
+    max_days = max(freq.values()) if freq else 1
+    return sorted(freq.items(), key=lambda x: -x[1]), max_days
+
+def make_strength_bar(days, max_days):
+    """Days ke basis par ek balanced progress bar banayega (5 blocks total)"""
+    total_blocks = 5
+    filled_blocks = round((days / max_days) * total_blocks) if max_days > 0 else 1
+    if filled_blocks < 1: filled_blocks = 1
+    
+    # Visual grid indicator string create karega
+    bar = "🟩" * filled_blocks + "⬜" * (total_blocks - filled_blocks)
+    return bar
 
 # ==================== TELEGRAM & UTILS ====================
 def tv_url(symbol):
@@ -217,10 +229,10 @@ def fetch_and_send():
 
     if all_gainers:
         msg1 += f"\n<b>━━ TOP GAINERS (3%+) ━━</b>\n"
-        for sym, ltp, chg in all_gainers[:25]:  # Pehle message mein compact snapshot
+        for sym, ltp, chg in all_gainers[:25]:  # Compact summary top picks
             msg1 += (
                 f"🟢 <b>{sym}</b> | ₹{ltp} | <b>+{chg:.2f}%</b>\n"
-                f"   📈 <a href='{tv_url(sym)}'>TradingView</a>\n"
+                f"   📈 <a href='{tv_url(sym)}'>TradingView Chart</a>\n"
             )
         if len(all_gainers) > 25:
             msg1 += f"\n<i>...aur {len(all_gainers)-25} stocks (Poori list niche hai)</i>\n"
@@ -230,7 +242,7 @@ def fetch_and_send():
         for sym, ltp, chg in all_losers[:10]:
             msg1 += (
                 f"🔴 <b>{sym}</b> | ₹{ltp} | <b>{chg:.2f}%</b>\n"
-                f"   📉 <a href='{tv_url(sym)}'>TradingView</a>\n"
+                f"   📉 <a href='{tv_url(sym)}'>TradingView Chart</a>\n"
             )
 
     if not all_gainers and not all_losers:
@@ -238,26 +250,31 @@ def fetch_and_send():
 
     send_telegram(msg1)
 
-    # ━━ MESSAGE 2: TOTAL PERFORMERS LIST (COMPLETE) ━━
+    # ━━ MESSAGE 2: TOTAL PERFORMERS LIST (COMPLETE WITH CHART LINKS) ━━
     if all_gainers:
         msg2 = f"🔥 <b>TODAY'S TOTAL PERFORMERS ({len(all_gainers)})</b>\n"
         msg2 += f"<i>Aaj ke saare 3%+ gainers ki complete master list:</i>\n\n"
         
         for i, (sym, ltp, chg) in enumerate(all_gainers, 1):
-            msg2 += f"{i}. <b>{sym}</b> (+{chg:.2f}%) | <a href='{tv_url(sym)}'>TV</a>\n"
+            msg2 += f"{i}. <b>{sym}</b> (+{chg:.2f}%) | 📊 <a href='{tv_url(sym)}'>TradingView Chart</a>\n"
         
         send_telegram(msg2)
 
-        # ━━ MESSAGE 3: REPEAT PERFORMERS ANALYTICS ━━
+        # ━━ MESSAGE 3: REPEAT PERFORMERS ANALYTICS WITH STRENGTH BAR ━━
         updated_history = save_today_movers(all_gainers)
         today_symbols   = {sym for sym, _, chg in all_gainers}
-        common          = find_common_stocks(today_symbols, updated_history)
+        common, max_days = find_common_stocks(today_symbols, updated_history)
 
         if common:
             msg3 = "🔁 <b>Repeat Performers (30 Days History)</b>\n"
-            msg3 += "<i>Yeh stocks pichhle 30 dinon mein bhi 3%+ momentum mein the:</i>\n\n"
+            msg3 += "<i>Yeh stocks pichhle 30 dinon mein sabse zyada baar 3%+ badhe hain:</i>\n\n"
             for i, (sym, days) in enumerate(common, 1):
-                msg3 += f"🔥 <b>{sym}</b> — <b>{days} din</b> badha hai | <a href='{tv_url(sym)}'>Chart</a>\n"
+                s_bar = make_strength_bar(days, max_days)
+                msg3 += (
+                    f"<b>{i}. {sym}</b>\n"
+                    f"⚡ Strength: {s_bar} (<b>{days} Din</b>)\n"
+                    f"📊 <a href='{tv_url(sym)}'>TradingView Chart</a>\n\n"
+                )
         else:
             msg3 = (
                 "🔁 <b>Repeat Performers</b>\n\n"
