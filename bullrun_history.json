@@ -241,5 +241,52 @@
             "stock": "NYKAA",
             "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:NYKAA"
         }
+    ],
+    "21-05-2026": [
+        {
+            "no": 1,
+            "stock": "5/21/2026",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:5/21/2026"
+        },
+        {
+            "no": 2,
+            "stock": "YESBANK",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:YESBANK"
+        },
+        {
+            "no": 3,
+            "stock": "CGCL",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:CGCL"
+        },
+        {
+            "no": 4,
+            "stock": "WEBELSOLAR",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:WEBELSOLAR"
+        },
+        {
+            "no": 5,
+            "stock": "NSLNISP",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:NSLNISP"
+        },
+        {
+            "no": 6,
+            "stock": "INDUSINDBK",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:INDUSINDBK"
+        },
+        {
+            "no": 7,
+            "stock": "ATGL",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:ATGL"
+        },
+        {
+            "no": 8,
+            "stock": "NYKAA",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:NYKAA"
+        },
+        {
+            "no": 9,
+            "stock": "ANTHEM",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:ANTHEM"
+        }
     ]
 }
