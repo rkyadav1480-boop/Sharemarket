@@ -10,7 +10,7 @@ from concurrent.futures import ThreadPoolExecutor, as_completed
 BOT_TOKEN    = os.environ.get("BOT_TOKEN", "")
 CHAT_ID      = os.environ.get("MY_CHAT_ID", "")
 HISTORY_FILE = "nse_history.json"
-MAX_WORKERS  = 30  # Ek sath 30 requests parallel chalengi (Super Fast Speed)
+MAX_WORKERS  = 30  # Parallel worker threads
 
 # ==================== HOLIDAYS FUNCTION ====================
 def get_nse_holidays():
@@ -29,7 +29,6 @@ def get_nse_holidays():
         data = r.json()
 
         holidays = set()
-        # NSE response mein "CM" = Capital Market trading holidays
         for item in data.get("CM", []):
             date_str = item.get("tradingDate", "")
             if date_str:
@@ -44,7 +43,6 @@ def get_nse_holidays():
     except Exception as e:
         print(f"⚠️ Holiday fetch failed: {e} — fallback use kar raha hoon")
 
-    # Fallback updated for accurate 2026/2027 market calendar
     return {
         "2026-01-26", "2026-03-20", "2026-04-02", "2026-04-06", "2026-04-14",
         "2026-05-01", "2026-08-15", "2026-10-02", "2026-11-14", "2026-12-25",
@@ -97,19 +95,20 @@ def find_common_stocks(today_symbols, history):
         for sym in symbols:
             if sym in today_symbols:
                 freq[sym] = freq.get(sym, 0) + 1
-    # Max days nikalenge taaki dynamic strength bar ratio ban sake
-    max_days = max(freq.values()) if freq else 1
-    return sorted(freq.items(), key=lambda x: -x[1]), max_days
+    return sorted(freq.items(), key=lambda x: -x[1])
 
-def make_strength_bar(days, max_days):
-    """Days ke basis par ek balanced progress bar banayega (5 blocks total)"""
-    total_blocks = 5
-    filled_blocks = round((days / max_days) * total_blocks) if max_days > 0 else 1
-    if filled_blocks < 1: filled_blocks = 1
-    
-    # Visual grid indicator string create karega
-    bar = "🟩" * filled_blocks + "⬜" * (total_blocks - filled_blocks)
-    return bar
+def make_strength_bar(days):
+    """Consistent strength indicator based on fixed breakdown thresholds"""
+    if days >= 8:
+        return "🟩🟩🟩🟩🟩"
+    elif days >= 5:
+        return "🟩🟩🟩🟩⬜"
+    elif days >= 3:
+        return "🟩🟩🟩⬜⬜"
+    elif days >= 2:
+        return "🟩🟩⬜⬜⬜"
+    else:
+        return "🟩⬜⬜⬜⬜"
 
 # ==================== TELEGRAM & UTILS ====================
 def tv_url(symbol):
@@ -117,22 +116,20 @@ def tv_url(symbol):
 
 def send_telegram(text):
     if not BOT_TOKEN or not CHAT_ID:
-        print("⚠️ Telegram Config missing! Logging first 500 chars instead:")
+        print("⚠️ Telegram Config missing!")
         print(text[:500])
         return
-    url    = f"https://api.telegram.org/bot{BOT_TOKEN}/sendMessage"
-    chunks = [text[i:i+4000] for i in range(0, len(text), 4000)]
-    for chunk in chunks:
-        r = requests.post(url, data={
-            "chat_id":                  CHAT_ID,
-            "text":                     chunk,
-            "parse_mode":               "HTML",
-            "disable_web_page_preview": True
-        })
-        if r.status_code == 200:
-            print("✅ Telegram sent")
-        else:
-            print(f"❌ Telegram error: {r.text}")
+    url = f"https://api.telegram.org/bot{BOT_TOKEN}/sendMessage"
+    r = requests.post(url, data={
+        "chat_id":                  CHAT_ID,
+        "text":                     text,
+        "parse_mode":               "HTML",
+        "disable_web_page_preview": True
+    })
+    if r.status_code == 200:
+        print("✅ Telegram message chunk sent")
+    else:
+        print(f"❌ Telegram error: {r.text}")
 
 def get_nifty500_symbols():
     headers = {
@@ -155,7 +152,6 @@ def get_nifty500_symbols():
         except Exception as e:
             print(f"⚠️ NSE CSV error: {e}")
 
-    # Global array fallback map
     global NIFTY500_FALLBACK
     symbols = list(dict.fromkeys(NIFTY500_FALLBACK))
     print(f"⚠️ Fallback list use kar raha hoon: {len(symbols)} stocks")
@@ -229,7 +225,7 @@ def fetch_and_send():
 
     if all_gainers:
         msg1 += f"\n<b>━━ TOP GAINERS (3%+) ━━</b>\n"
-        for sym, ltp, chg in all_gainers[:25]:  # Compact summary top picks
+        for sym, ltp, chg in all_gainers[:25]:
             msg1 += (
                 f"🟢 <b>{sym}</b> | ₹{ltp} | <b>+{chg:.2f}%</b>\n"
                 f"   📈 <a href='{tv_url(sym)}'>TradingView Chart</a>\n"
@@ -250,43 +246,50 @@ def fetch_and_send():
 
     send_telegram(msg1)
 
-    # ━━ MESSAGE 2: TOTAL PERFORMERS LIST (COMPLETE WITH CHART LINKS) ━━
+    # ━━ MESSAGE 2: TOTAL PERFORMERS LIST (SAFE SPLITTING LOGIC) ━━
     if all_gainers:
-        msg2 = f"🔥 <b>TODAY'S TOTAL PERFORMERS ({len(all_gainers)})</b>\n"
-        msg2 += f"<i>Aaj ke saare 3%+ gainers ki complete master list:</i>\n\n"
-        
-        for i, (sym, ltp, chg) in enumerate(all_gainers, 1):
-            msg2 += f"{i}. <b>{sym}</b> (+{chg:.2f}%) | 📊 <a href='{tv_url(sym)}'>TradingView Chart</a>\n"
-        
-        send_telegram(msg2)
+        chunk_size = 30  # Ek message mein sirf 30 stocks links ke sath taaki limit cross na ho
+        for idx in range(0, len(all_gainers), chunk_size):
+            chunk = all_gainers[idx:idx+chunk_size]
+            
+            msg2 = f"🔥 <b>TODAY'S TOTAL PERFORMERS ({idx+1} to {min(idx+chunk_size, len(all_gainers))})</b>\n"
+            msg2 += f"<i>Aaj ke 3%+ gainers ki complete master list:</i>\n\n"
+            
+            for i, (sym, ltp, chg) in enumerate(chunk, idx + 1):
+                msg2 += f"{i}. <b>{sym}</b> (+{chg:.2f}%) | 📊 <a href='{tv_url(sym)}'>Chart</a>\n"
+            
+            send_telegram(msg2)
 
-        # ━━ MESSAGE 3: REPEAT PERFORMERS ANALYTICS WITH STRENGTH BAR ━━
+        # ━━ MESSAGE 3: REPEAT PERFORMERS ANALYTICS WITH CONSISTENT STRENGTH BAR ━━
         updated_history = save_today_movers(all_gainers)
         today_symbols   = {sym for sym, _, chg in all_gainers}
-        common, max_days = find_common_stocks(today_symbols, updated_history)
+        common          = find_common_stocks(today_symbols, updated_history)
 
         if common:
-            msg3 = "🔁 <b>Repeat Performers (30 Days History)</b>\n"
-            msg3 += "<i>Yeh stocks pichhle 30 dinon mein sabse zyada baar 3%+ badhe hain:</i>\n\n"
-            for i, (sym, days) in enumerate(common, 1):
-                s_bar = make_strength_bar(days, max_days)
-                msg3 += (
-                    f"<b>{i}. {sym}</b>\n"
-                    f"⚡ Strength: {s_bar} (<b>{days} Din</b>)\n"
-                    f"📊 <a href='{tv_url(sym)}'>TradingView Chart</a>\n\n"
-                )
+            # Safe chunking for repeat performers too
+            for idx in range(0, len(common), chunk_size):
+                chunk = common[idx:idx+chunk_size]
+                msg3 = f"🔁 <b>Repeat Performers (History Batch {idx//chunk_size + 1})</b>\n"
+                msg3 += "<i>Pichhle 30 dinon ke high momentum repeaters:</i>\n\n"
+                
+                for i, (sym, days) in enumerate(chunk, idx + 1):
+                    s_bar = make_strength_bar(days)
+                    msg3 += (
+                        f"<b>{i}. {sym}</b>\n"
+                        f"⚡ Strength: {s_bar} (<b>{days} Din</b>)\n"
+                        f"📊 <a href='{tv_url(sym)}'>TradingView Chart</a>\n\n"
+                    )
+                send_telegram(msg3)
         else:
             msg3 = (
                 "🔁 <b>Repeat Performers</b>\n\n"
                 "<i>Nayi Entry! Aaj ke saare gainers pichhle 30 dinon ke data mein fresh hain (koi repeat nahi).</i>"
             )
-        
-        send_telegram(msg3)
+            send_telegram(msg3)
 
 
 # ==================== MASTER FALLBACK DATA ====================
 NIFTY500_FALLBACK = [
-    # NIFTY 50
     "RELIANCE","TCS","HDFCBANK","INFY","ICICIBANK","HINDUNILVR","SBIN",
     "BHARTIARTL","ITC","KOTAKBANK","LT","AXISBANK","ASIANPAINT","MARUTI",
     "TITAN","BAJFINANCE","NESTLEIND","WIPRO","ULTRACEMCO","POWERGRID",
@@ -294,46 +297,41 @@ NIFTY500_FALLBACK = [
     "JSWSTEEL","ADANIENT","ADANIPORTS","BAJAJFINSV","DIVISLAB","DRREDDY",
     "EICHERMOT","GRASIM","HEROMOTOCO","HINDALCO","INDUSINDBK","M&M","SBILIFE",
     "APOLLOHOSP","BAJAJ-AUTO","BPCL","BRITANNIA","CIPLA","COALINDIA",
-    "HDFCLIFE","LTIM","TATACONSUM","UPL",
-    # NIFTY NEXT 50
-    "ADANIGREEN","ADANITRANS","AMBUJACEM","AUROPHARMA","BAJAJHLDNG",
-    "BANKBARODA","BEL","BERGEPAINT","BHEL","BIOCON","BOSCHLTD",
-    "CANBK","CHOLAFIN","COLPAL","DABUR","DMART","GAIL","GODREJCP",
-    "GODREJPROP","HAL","HAVELLS","HDFCAMC","ICICIGI",
+    "HDFCLIFE","LTIM","TATACONSUM","UPL","ADANIGREEN","ADANITRANS",
+    "AMBUJACEM","AUROPHARMA","BAJAJHLDNG","BANKBARODA","BEL","BERGEPAINT",
+    "BHEL","BIOCON","BOSCHLTD","CANBK","CHOLAFIN","COLPAL","DABUR","DMART",
+    "GAIL","GODREJCP","GODREJPROP","HAL","HAVELLS","HDFCAMC","ICICIGI",
     "INDHOTEL","INDUSTOWER","IRCTC","LICI","LUPIN","MARICO",
     "MOTHERSON","MUTHOOTFIN","NAUKRI","OBEROIRLTY","OFSS","PAGEIND",
     "PEL","PIDILITIND","PIIND","PNB","RECLTD","SBICARD","SHREECEM",
     "SIEMENS","SRF","TORNTPHARM","TRENT","TVSMOTOR","VBL","VEDL",
-    # NIFTY MIDCAP 100
-    "ABFRL","ALKEM","ASTRAL","AUBANK","BANDHANBNK",
-    "BHARATFORG","COFORGE","CONCOR","CROMPTON","CUMMINSIND","CYIENT",
-    "DEEPAKNTR","DIXON","DRLAL","ELGIEQUIP","EMAMILTD","ENDURANCE",
-    "ESCORTS","FEDERALBNK","GLENMARK","GMRINFRA","GRINDWELL",
-    "HGINFRA","IDFCFIRSTB","IIFL","INDUSTOWER","IPCA","JKCEMENT",
-    "JSWENERGY","JUBLFOOD","KANSAINER","KPIT","KPRMILL","L&TFH",
-    "LAURUSLABS","LALPATHLAB","LTTS","MANAPPURAM","MAXHEALTH",
-    "METROPOLIS","MFSL","MINDA","MPHASIS","NATCOPHARM","NCC",
-    "PERSISTENT","PFIZER","PNCINFRA","POLYCAB","RADICO","RAMCOCEM",
-    "RBLBANK","RVNL","SCHAEFFLER","SOLARINDS","SUNTV","SUPREMEIND",
-    "SYNGENE","TATACHEM","TATAELXSI","TATAINVEST","THERMAX",
-    "TIINDIA","TIMKEN","TORNTPOWER","TTKPRESTIG","UNIONBANK","VOLTAS",
-    "WHIRLPOOL","ZYDUSLIFE","ANGELONE","CAMS","KFINTECH",
-    "MOFSL","NUVAMA","IRFC","HUDCO","NBCC","SJVN","NHPC",
-    # NIFTY SMALLCAP 100
-    "HFCL","RAILTEL","IREDA","NTPCGREEN","RPOWER","JPPOWER",
-    "POWERMECH","KEC","KALPATPOWR","APAR","KEI","FINOLEX","RRKABEL",
-    "INOXWIND","SUZLON","PRAJIND","WAAREEENER","GREENPANEL","CENTURYPLY",
-    "PRINCEPIPE","APOLLOPIPE","TEXINFRA","BIKAJI","DEVYANI",
-    "SAPPHIRE","WESTLIFE","BARBEQUE","EASEMYTRIP","RATEGAIN","IXIGO",
-    "NAZARA","HAPPYMINDS","TANLA","ROUTE","LATENTVIEW","DATAMATICS",
-    "MASTEK","ZENSAR","JKPAPER","TNPL","AIAENG","CAMPUS","RELAXO",
-    "BATA","METROBRAND","MEDPLUS","VMART","SHOPERSTOP","SHALBY",
-    "RAINBOW","KRSNAA","VIJAYA","MEDANTA","YATHARTH","RPSGVENT",
-    "SOLARA","NEULANDLAB","MARKSANS","SUVENPHAR","NIITMTS","PGIL",
-    "GEOJITFSL","EMKAY","JMFINANCIL","EDELWEISS","SUBROS",
-    "FIEM","SANDHAR","CRAFTSMAN","MAHINDCIE","SUPRAJIT","SAMVARDHNA",
-    "UNIPARTS","SOM","GLOBUSSPR","TILAKNAGAR","GMBREW","GPPL",
-    "ESABINDIA","VOLTAMP","PENIND","AMBER","PFC"
+    "ABFRL","ALKEM","ASTRAL","AUBANK","BANDHANBNK","BHARATFORG",
+    "COFORGE","CONCOR","CROMPTON","CUMMINSIND","CYIENT","DEEPAKNTR",
+    "DIXON","DRLAL","ELGIEQUIP","EMAMILTD","ENDURANCE","ESCORTS",
+    "FEDERALBNK","GLENMARK","GMRINFRA","GRINDWELL","HGINFRA",
+    "IDFCFIRSTB","IIFL","INDUSTOWER","IPCA","JKCEMENT","JSWENERGY",
+    "JUBLFOOD","KANSAINER","KPIT","KPRMILL","L&TFH","LAURUSLABS",
+    "LALPATHLAB","LTTS","MANAPPURAM","MAXHEALTH","METROPOLIS","MFSL",
+    "MINDA","MPHASIS","NATCOPHARM","NCC","PERSISTENT","PFIZER",
+    "PNCINFRA","POLYCAB","RADICO","RAMCOCEM","RBLBANK","RVNL",
+    "SCHAEFFLER","SOLARINDS","SUNTV","SUPREMEIND","SYNGENE","TATACHEM",
+    "TATAELXSI","TATAINVEST","THERMAX","TIINDIA","TIMKEN","TORNTPOWER",
+    "TTKPRESTIG","UNIONBANK","VOLTAS","WHIRLPOOL","ZYDUSLIFE",
+    "ANGELONE","CAMS","KFINTECH","MOFSL","NUVAMA","IRFC","HUDCO",
+    "NBCC","SJVN","NHPC","HFCL","RAILTEL","IREDA","NTPCGREEN",
+    "RPOWER","JPPOWER","POWERMECH","KEC","KALPATPOWR","APAR","KEI",
+    "FINOLEX","RRKABEL","INOXWIND","SUZLON","PRAJIND","WAAREEENER",
+    "GREENPANEL","CENTURYPLY","PRINCEPIPE","APOLLOPIPE","TEXINFRA",
+    "BIKAJI","DEVYANI","SAPPHIRE","WESTLIFE","BARBEQUE","EASEMYTRIP",
+    "RATEGAIN","IXIGO","NAZARA","HAPPYMINDS","TANLA","ROUTE",
+    "LATENTVIEW","DATAMATICS","MASTEK","ZENSAR","JKPAPER","TNPL",
+    "AIAENG","CAMPUS","RELAXO","BATA","METROBRAND","MEDPLUS","VMART",
+    "SHOPERSTOP","SHALBY","RAINBOW","KRSNAA","VIJAYA","MEDANTA",
+    "YATHARTH","RPSGVENT","SOLARA","NEULANDLAB","MARKSANS","SUVENPHAR",
+    "NIITMTS","PGIL","GEOJITFSL","EMKAY","JMFINANCIL","EDELWEISS",
+    "SUBROS","FIEM","SANDHAR","CRAFTSMAN","MAHINDCIE","SUPRAJIT",
+    "SAMVARDHNA","UNIPARTS","SOM","GLOBUSSPR","TILAKNAGAR","GMBREW",
+    "GPPL","ESABINDIA","VOLTAMP","PENIND","AMBER","PFC"
 ]
 
 if __name__ == "__main__":
