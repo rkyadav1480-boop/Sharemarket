@@ -345,5 +345,47 @@
             "stock": "PREMIERENE",
             "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:PREMIERENE"
         }
+    ],
+    "23-05-2026": [
+        {
+            "no": 1,
+            "stock": "5/23/2026",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:5/23/2026"
+        },
+        {
+            "no": 2,
+            "stock": "YESBANK",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:YESBANK"
+        },
+        {
+            "no": 3,
+            "stock": "PREMIERENE",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:PREMIERENE"
+        },
+        {
+            "no": 4,
+            "stock": "IFCI",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:IFCI"
+        },
+        {
+            "no": 5,
+            "stock": "CGCL",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:CGCL"
+        },
+        {
+            "no": 6,
+            "stock": "NSLNISP",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:NSLNISP"
+        },
+        {
+            "no": 7,
+            "stock": "WEBELSOLAR",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:WEBELSOLAR"
+        },
+        {
+            "no": 8,
+            "stock": "LLOYDSENT",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:LLOYDSENT"
+        }
     ]
 }
