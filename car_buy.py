@@ -13,6 +13,7 @@ CHAT_ID = os.environ.get("MY_CHAT_ID")
 # --- MODIFIED: Sheet Name ki jagah Sheet ka poora URL yahan dalein ---
 SHEET_URL = "https://docs.google.com/spreadsheets/d/YOUR_SHEET_ID_HERE/edit#gid=0"
 
+
 def send_telegram_message(message):
     """Telegram pe message bhejne ka function"""
     url = f"https://api.telegram.org/bot{BOT_TOKEN}/sendMessage"
