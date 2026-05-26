@@ -466,5 +466,42 @@
             "stock": "NSLNISP",
             "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:NSLNISP"
         }
+    ],
+    "26-05-2026": [
+        {
+            "no": 1,
+            "stock": "5/26/2026",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:5/26/2026"
+        },
+        {
+            "no": 2,
+            "stock": "YESBANK",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:YESBANK"
+        },
+        {
+            "no": 3,
+            "stock": "NYKAA",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:NYKAA"
+        },
+        {
+            "no": 4,
+            "stock": "NSLNISP",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:NSLNISP"
+        },
+        {
+            "no": 5,
+            "stock": "DRREDDY",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:DRREDDY"
+        },
+        {
+            "no": 6,
+            "stock": "PREMIERENE",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:PREMIERENE"
+        },
+        {
+            "no": 7,
+            "stock": "DELHIVERY",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:DELHIVERY"
+        }
     ]
 }
