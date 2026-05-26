@@ -1,4 +1,4 @@
-name: Run Stock Telegram Bot
+name: CAR KE ANUSAR BUY KARO
 
 on:
   workflow_dispatch: # Isse aap GitHub par jaakar 'Run Workflow' button daba kar jab chahein chala sakte hain
