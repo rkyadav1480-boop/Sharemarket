@@ -1,0 +1,30 @@
+name: Run Stock Telegram Bot
+
+on:
+  workflow_dispatch: # Isse aap GitHub par jaakar 'Run Workflow' button daba kar jab chahein chala sakte hain
+  # schedule:
+  #   - cron: '30 10 * * 1-5' # Agar automatic chalana ho (Mon-Fri Indian Time dopehr 4 baje)
+
+jobs:
+  run-bot:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+
+      - name: Install Libraries
+        run: |
+          pip install gspread oauth2client requests
+
+      - name: Run Script
+        env:
+          GCP_CREDENTIALS: ${{ secrets.GCP_CREDENTIALS }}
+          BOT_TOKEN: ${{ secrets.BOT_TOKEN }}
+          MY_CHAT_ID: ${{ secrets.MY_CHAT_ID }}
+        run: python script.py
+        
