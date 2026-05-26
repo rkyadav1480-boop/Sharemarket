@@ -13,7 +13,6 @@ CHAT_ID = os.environ.get("MY_CHAT_ID", "").strip()
 # !!! APNI SHEET KA REAL URL YAHAN PASTE KAREIN !!!
 SHEET_URL = "https://docs.google.com/spreadsheets/d/YOUR_SHEET_ID_HERE/edit#gid=0"
 
-
 def send_telegram_message(message):
     """Telegram pe HTML formatting ke sath secure message bhejna"""
     if not BOT_TOKEN or not CHAT_ID:
