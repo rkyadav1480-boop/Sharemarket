@@ -1,5 +1,5 @@
 import os
-import json  # <-- Yahan 'jsen' ko 'json' kar diya hai
+import json  
 import time
 import requests
 import gspread
@@ -10,7 +10,8 @@ GCP_CREDS_STR = os.environ.get("GCP_CREDENTIALS")
 BOT_TOKEN = os.environ.get("BOT_TOKEN")
 CHAT_ID = os.environ.get("MY_CHAT_ID")
 
-SHEET_NAME = "My Stock Portfolio"  # Apni Google Sheet ka exact naam yahan likhein
+# --- MODIFIED: Sheet Name ki jagah Sheet ka poora URL yahan dalein ---
+SHEET_URL = "https://docs.google.com/spreadsheets/d/YOUR_SHEET_ID_HERE/edit#gid=0"
 
 def send_telegram_message(message):
     """Telegram pe message bhejne ka function"""
@@ -37,7 +38,9 @@ def scan_stocks_and_notify():
         creds = ServiceAccountCredentials.from_json_keyfile_dict(creds_dict, scope)
         client = gspread.authorize(creds)
         
-        worksheet = client.open(SHEET_NAME).get_worksheet(0)
+        # --- MODIFIED: URL se open kiya aur index 0 se first page (gid=0) select kiya ---
+        spreadsheet = client.open_by_url(SHEET_URL)
+        worksheet = spreadsheet.get_worksheet(0)
         
         # 'I' column (Stock List) se saare stocks nikalna
         all_stocks = worksheet.col_values(9)[1:]  # I column = 9th column
@@ -80,4 +83,3 @@ def scan_stocks_and_notify():
 
 if __name__ == "__main__":
     scan_stocks_and_notify()
-    
