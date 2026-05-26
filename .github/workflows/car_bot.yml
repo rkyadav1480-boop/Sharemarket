@@ -2,13 +2,13 @@ name: CAR_BOT_STOCK_ALERT
 
 on:
   schedule:
-    # भारतीय समयानुसार (IST) रोज सुबह 6:00 बजे ऑटोमैटिक चलेगा
-    - cron: '30 0 * * *'
+    - cron: '30 0 * * *'  # 12:30 AM UTC = 6:00 AM IST
   workflow_dispatch:
 
 jobs:
   run-bot:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout Code
         uses: actions/checkout@v3
@@ -20,7 +20,7 @@ jobs:
 
       - name: Install Libraries
         run: |
-          pip install gspread oauth2client requests
+          pip install gspread google-auth google-auth-oauthlib requests oauth2client
 
       - name: Run Script
         env:
@@ -28,4 +28,3 @@ jobs:
           BOT_TOKEN: ${{ secrets.BOT_TOKEN }}
           MY_CHAT_ID: ${{ secrets.MY_CHAT_ID }}
         run: python car_buy.py
-        
