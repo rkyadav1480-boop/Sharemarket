@@ -4,6 +4,7 @@ import time
 import requests
 import gspread
 from oauth2client.service_account import ServiceAccountCredentials
+from datetime import datetime
 
 # Environment variables
 GCP_CREDS_STR = os.environ.get("GCP_CREDENTIALS")
@@ -19,7 +20,6 @@ def send_telegram_message(message):
 
     url = f"https://api.telegram.org/bot{BOT_TOKEN}/sendMessage"
 
-    # 4096 limit se zyada ho toh split karo
     messages = []
     if len(message) > 4096:
         lines = message.split("\n")
@@ -50,6 +50,12 @@ def send_telegram_message(message):
         except Exception as e:
             print(f"[-] Exception: {e}")
         time.sleep(0.5)
+
+
+def get_tradingview_link(symbol):
+    """TradingView chart link banana NSE ke liye"""
+    symbol_clean = symbol.upper().strip()
+    return f"https://www.tradingview.com/chart/?symbol=NSE%3A{symbol_clean}"
 
 
 def scan_stocks_and_notify():
@@ -92,39 +98,33 @@ def scan_stocks_and_notify():
                 buy_stocks.append({
                     "name": stock_clean,
                     "avg": cumulative_avg,
-                    "signal": signal
+                    "signal": signal,
+                    "chart": get_tradingview_link(stock_clean)
                 })
 
-        # ══════════════════════════════════
-        #        REPORT FORMATTING
-        # ══════════════════════════════════
-        from datetime import datetime
+        # Report formatting
         now = datetime.now().strftime("%d %b %Y | %I:%M %p")
 
         report = ""
-        report += "┏━━━━━━━━━━━━━━━━━━━━━━━━━━┓\n"
-        report += "┃  📈 <b>STOCK BUY ALERT</b> 📈     ┃\n"
-        report += "┗━━━━━━━━━━━━━━━━━━━━━━━━━━┛\n"
+        report += f"📊 <b>STOCK BUY ALERT</b>\n"
         report += f"🕐 <i>{now}</i>\n"
-        report += "─────────────────────────────\n\n"
+        report += "━━━━━━━━━━━━━━━━━━━━\n\n"
 
         if buy_stocks:
             for i, s in enumerate(buy_stocks, 1):
-                report += f"🔰 <b>#{i} {s['name']}</b>\n"
-                report += f"   💰 Avg Price  : <code>{s['avg']}</code>\n"
-                report += f"   🚦 Signal     : <b>{s['signal']}</b>\n"
-                report += "   ─────────────────────\n"
+                report += f"<b>#{i} {s['name']}</b>\n"
+                report += f"💰 Avg : <code>{s['avg']}</code>\n"
+                report += f"🚦 Signal : <b>{s['signal']}</b>\n"
+                report += f"📉 Chart : <a href='{s['chart']}'>TradingView</a>\n"
+                report += "─────────────────────\n"
 
-            report += "\n"
-            report += "┌─────────────────────────┐\n"
-            report += f"│  ✅ BUY Stocks  : <b>{len(buy_stocks)}</b>        │\n"
-            report += f"│  🔍 Total Scanned: <b>{len([s for s in all_stocks if s.strip()])}</b>      │\n"
-            report += "└─────────────────────────┘\n"
-            report += "\n💡 <i>Invest wisely. DYOR always.</i>"
+            report += f"\n✅ BUY Stocks : <b>{len(buy_stocks)}</b>"
+            report += f"\n🔍 Scanned : <b>{len([s for s in all_stocks if s.strip()])}</b>"
+            report += "\n\n💡 <i>DYOR. Invest wisely.</i>"
 
         else:
-            report += "⚠️ <b>Aaj koi BUY signal nahi mila.</b>\n\n"
-            report += f"🔍 Total Scanned: <b>{len([s for s in all_stocks if s.strip()])}</b> stocks\n"
+            report += "⚠️ <b>Koi BUY signal nahi mila.</b>\n"
+            report += f"🔍 Scanned: <b>{len([s for s in all_stocks if s.strip()])}</b> stocks\n"
             report += "💡 <i>Market monitor hota rahega...</i>"
 
         send_telegram_message(report)
