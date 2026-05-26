@@ -5,21 +5,19 @@ import requests
 import gspread
 from oauth2client.service_account import ServiceAccountCredentials
 
-# 1. GitHub Secrets se environment variables fetch karna aur .strip() lagana (Crucial Fix for 404)
+# 1. GitHub Secrets se environment variables fetch karna aur clean karna
 GCP_CREDS_STR = os.environ.get("GCP_CREDENTIALS")
-
-# .strip() lagane se hidden spaces ya newline (\n) remove ho jayenge
 BOT_TOKEN = os.environ.get("BOT_TOKEN", "").strip()
 CHAT_ID = os.environ.get("MY_CHAT_ID", "").strip()
 
-# --- MODIFIED: Sheet Name ki jagah Sheet ka poora URL yahan dalein ---
+# --- Sheet URL (Apna exact URL yahan dalein) ---
 SHEET_URL = "https://docs.google.com/spreadsheets/d/YOUR_SHEET_ID_HERE/edit#gid=0"
 
 
 def send_telegram_message(message):
-    """Telegram pe message bhejne ka function"""
+    """Telegram pe message bhejne ka safe function"""
     if not BOT_TOKEN or not CHAT_ID:
-        print("[-] Error: BOT_TOKEN ya CHAT_ID missing hai!")
+        print("❌ CRITICAL ERROR: BOT_TOKEN ya CHAT_ID env variables se nahi mil pa raha hai!")
         return
 
     url = f"https://api.telegram.org/bot{BOT_TOKEN}/sendMessage"
@@ -29,68 +27,90 @@ def send_telegram_message(message):
         "parse_mode": "Markdown"
     }
     try:
-        response = requests.post(url, json=payload)
+        response = requests.post(url, json=payload, timeout=10)
         if response.status_code == 200:
             print("[+] Telegram pe message successfully bhej diya gaya!")
         else:
-            # Agar ab bhi error aaye, toh exact issue pata chal sake
-            print(f"[-] Telegram error: Status Code {response.status_code} - {response.text}")
+            print(f"[-] Telegram API Error (Status {response.status_code}): {response.text}")
     except Exception as e:
-        print(f"[-] Telegram bhejte waqt error aaya: {e}")
+        print(f"[-] Telegram request fail ho gayi: {e}")
+
 
 def scan_stocks_and_notify():
     try:
+        if not GCP_CREDS_STR:
+            print("❌ ERROR: GCP_CREDENTIALS missing hain!")
+            return
+
         # 2. Google Sheets Authentication
         scope = ["https://spreadsheets.google.com/feeds", "https://www.googleapis.com/auth/drive"]
         creds_dict = json.loads(GCP_CREDS_STR)
         creds = ServiceAccountCredentials.from_json_keyfile_dict(creds_dict, scope)
         client = gspread.authorize(creds)
         
-        # URL se open kiya aur index 0 se first page (gid=0) select kiya
         spreadsheet = client.open_by_url(SHEET_URL)
         worksheet = spreadsheet.get_worksheet(0)
         
         # 'I' column (Stock List) se saare stocks nikalna
         all_stocks = worksheet.col_values(9)[1:]  # I column = 9th column
         
+        print(f"[+] Total {len(all_stocks)} rows mili hain. Filtering & Processing...")
+
         telegram_report = "📊 *Latest Stock Signals Report*\n"
         telegram_report += "--------------------------------------\n"
         telegram_report += "`📈 Stock` | `💰 Avg` | `🚨 Signal`\n"
         telegram_report += "--------------------------------------\n"
         
-        print(f"[+] Total {len(all_stocks)} stocks mile. Processing shuru ho rahi hai...")
+        valid_stocks_processed = 0
 
         for stock in all_stocks:
-            if not stock or not stock.strip():
+            # Agar cell khali hai, None hai, ya sirf spaces hain toh bina crash kiye skip karo
+            if not stock or str(stock).strip() == "" or "None" in str(stock):
                 continue
                 
-            stock_clean = stock.strip()
+            stock_clean = str(stock).strip()
             
-            # B1 cell me stock push karein
-            worksheet.update_acell("B1", stock_clean)
-            
-            # Google Sheet ko calculate karne ke liye 2.5 seconds ka break dena
-            time.sleep(2.5)
-            
-            # Fix: .acell().value ki jagah .get() use kiya jo stable hai
-            cumulative_avg = worksheet.get("G2")
-            signal = worksheet.get("H2")
-            
-            # Report me stock ki details jodna
-            telegram_report += f"*{stock_clean}* | {cumulative_avg} | `{signal}`\n"
-            print(f"Processed: {stock_clean} -> {signal}")
+            try:
+                # B1 cell me stock push karein
+                worksheet.update_acell("B1", stock_clean)
+                
+                # Google Sheet calculation time ka delay
+                time.sleep(2.5)
+                
+                # G2 aur H2 se data nikalna (.get use karke)
+                # gspread .get() ek list of list deta hai (e.g. [['value']])
+                res_g2 = worksheet.get("G2")
+                res_h2 = worksheet.get("H2")
+                
+                # Safe formatting agar cell empty return karein
+                cumulative_avg = res_g2[0][0] if res_g2 and res_g2[0] else "N/A"
+                signal = res_h2[0][0] if res_h2 and res_h2[0] else "No Signal"
+                
+                # Report me data append karna
+                telegram_report += f"*{stock_clean}* | {cumulative_avg} | `{signal}`\n"
+                print(f"[+] Processed: {stock_clean} -> Avg: {cumulative_avg}, Signal: {signal}")
+                
+                valid_stocks_processed += 1
+                
+            except Exception as row_error:
+                # Agar kisi ek stock me error aaye toh poora bot crash na ho, agla stock check kare
+                print(f"[-] Row Error ({stock_clean}) skip ho raha hai: {row_error}")
+                continue
             
         telegram_report += "--------------------------------------\n"
         telegram_report += "✅ *Scanning Complete!*"
         
-        # Final report Telegram par bhej dena
-        send_telegram_message(telegram_report)
+        # Sirf tabhi message bhejein agar sach mein koi stock process hua ho
+        if valid_stocks_processed > 0:
+            send_telegram_message(telegram_report)
+        else:
+            print("[-] Koi bhi valid stock data nahi mila scan karne ke liye.")
 
     except Exception as e:
-        error_msg = f"❌ *Stock Bot Error:* {str(e)}"
-        # Agar error authentication ya sheet ka hai, toh telegram par alert chala jayega
-        send_telegram_message(error_msg)
-        print(f"[-] Error aaya: {e}")
+        print(f"[-] System level main error aaya: {e}")
+        # Final secure fallback alert
+        send_telegram_message(f"❌ *Stock Bot System Error:* {str(e)}")
+
 
 if __name__ == "__main__":
     scan_stocks_and_notify()
