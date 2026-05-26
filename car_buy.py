@@ -1,5 +1,5 @@
 import os
-import json
+import json  # <-- Yahan 'jsen' ko 'json' kar diya hai
 import time
 import requests
 import gspread
@@ -18,7 +18,7 @@ def send_telegram_message(message):
     payload = {
         "chat_id": CHAT_ID,
         "text": message,
-        "parse_mode": "Markdown"  # Isse text thoda design me dikhega
+        "parse_mode": "Markdown"
     }
     try:
         response = requests.post(url, json=payload)
@@ -31,7 +31,7 @@ def send_telegram_message(message):
 
 def scan_stocks_and_notify():
     try:
-        # 2. Google Sheets Authentication (JSON String se directly read karega)
+        # 2. Google Sheets Authentication
         scope = ["https://spreadsheets.google.com/feeds", "https://www.googleapis.com/auth/drive"]
         creds_dict = json.loads(GCP_CREDS_STR)
         creds = ServiceAccountCredentials.from_json_keyfile_dict(creds_dict, scope)
@@ -39,8 +39,8 @@ def scan_stocks_and_notify():
         
         worksheet = client.open(SHEET_NAME).get_worksheet(0)
         
-        # 'I' कॉलम (Stock List) se saare stocks ki list nikalna
-        all_stocks = worksheet.col_values(9)[1:]  # [1:] se header row chhoot jayegi
+        # 'I' column (Stock List) se saare stocks nikalna
+        all_stocks = worksheet.col_values(9)[1:]  # I column = 9th column
         
         telegram_report = "📊 *Latest Stock Signals Report*\n"
         telegram_report += "--------------------------------------\n"
@@ -70,7 +70,7 @@ def scan_stocks_and_notify():
         telegram_report += "--------------------------------------\n"
         telegram_report += "✅ *Scanning Complete!*"
         
-        # Saare stocks scan hone ke baad final report Telegram par bhej dena
+        # Final report Telegram par bhej dena
         send_telegram_message(telegram_report)
 
     except Exception as e:
@@ -80,4 +80,4 @@ def scan_stocks_and_notify():
 
 if __name__ == "__main__":
     scan_stocks_and_notify()
-
+    
