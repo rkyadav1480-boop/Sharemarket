@@ -23,7 +23,7 @@ client = gspread.authorize(creds)
 
 # ⚠️ Spreadsheet ID (URL नहीं, सिर्फ ID)
 spreadsheet_id = "1nZRvMKQ5PrbLJ36aaTm9b8Pwp4xolXB2XebWwa9SisA"
-worksheet = client.open_by_key(spreadsheet_id).worksheet("Top 250 Stocks")
+worksheet = client.open_by_key(spreadsheet_id).worksheet("Top 250 stocks")
 
 # 2. NSE Data Fetcher (TURNOVER LOGIC)
 def fetch_bhavcopy_for_date(date_obj):
