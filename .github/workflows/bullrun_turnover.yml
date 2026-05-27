@@ -1,0 +1,42 @@
+name: Bullrun Stock Alert turnover
+
+on:
+  schedule:
+    - cron: '30 2 * * *'
+    - cron: '30 14 * * *'
+  workflow_dispatch:
+
+jobs:
+  run-bullrun:
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Python setup
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: |
+          pip install requests
+
+      - name: Run Bullrun_turnover Script
+        env:
+          BOT_TOKEN: ${{ secrets.BOT_TOKEN }}
+          CHAT_ID: ${{ secrets.MY_CHAT_ID }}
+        run: |
+          python bullrun_turnover.py
+
+      - name: Save JSON to repo
+        run: |
+          git config user.name "GitHub Actions"
+          git config user.email "actions@github.com"
+          git add bullrun_turnover_history.json || true
+          git commit -m "📊 Bullrun history $(date '+%d-%m-%Y %H:%M')" || echo "No changes"
+          git push || echo "Push failed"
