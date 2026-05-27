@@ -143,3 +143,13 @@ for msg in messages_to_send:
         print(send.text)
 
 print("Done")
+# Sheet download ke baad
+print(f"Sheet status: {response.status_code}")
+print(f"First 200 chars: {response.text[:200]}")
+
+# Stocks ke baad  
+print(f"Total Bull Run stocks: {len(stocks)}")
+
+# Telegram ke baad
+print(f"Telegram response: {send.status_code}")
+print(f"Telegram response body: {send.text}")
