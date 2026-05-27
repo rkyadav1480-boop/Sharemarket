@@ -92,7 +92,7 @@ history[today] = []
 # =========================
 
 message = (
-    f"📈 <b>Aaj Ke Stocks In Bull Run</b>\n"
+    f"📈 <b>Aaj Ke Stocks In Bull Run VOLUME 250 SE</b>\n"
     f"📅 {today}\n\n"
 )
 
