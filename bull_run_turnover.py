@@ -10,7 +10,7 @@ from datetime import datetime
 # =========================
 BOT_TOKEN      = os.environ.get("BOT_TOKEN", "")
 CHAT_ID        = os.environ.get("CHAT_ID", "")
-SPREADSHEET_ID = "V1nZRvMKQ5PrbLJ36aaTm9b8Pwp4xolXB2XebWwa9SisA"  # ✅ नई ID
+SPREADSHEET_ID = "1nZRvMKQ5PrbLJ36aaTm9b8Pwp4xolXB2XebWwa9SisA"  # ✅ नई ID
 GID            = "1191767584"
 JSON_FILE      = "bullrun_turnover_history.json"
 
