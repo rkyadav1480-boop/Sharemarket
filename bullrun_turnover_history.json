@@ -1,0 +1,24 @@
+{
+    "27-05-2026": [
+        {
+            "no": 1,
+            "stock": "YESBANK",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:YESBANK"
+        },
+        {
+            "no": 2,
+            "stock": "NYKAA",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:NYKAA"
+        },
+        {
+            "no": 3,
+            "stock": "AHCL",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:AHCL"
+        },
+        {
+            "no": 4,
+            "stock": "CGCL",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:CGCL"
+        }
+    ]
+}
