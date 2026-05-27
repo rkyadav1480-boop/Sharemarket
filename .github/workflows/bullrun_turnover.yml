@@ -31,7 +31,7 @@ jobs:
           BOT_TOKEN: ${{ secrets.BOT_TOKEN }}
           CHAT_ID: ${{ secrets.MY_CHAT_ID }}
         run: |
-          python bullrun_turnover.py
+          python bull_run_turnover.py
 
       - name: Save JSON to repo
         run: |
