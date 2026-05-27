@@ -1,4 +1,4 @@
-name: NSE Sheet Auto Update
+name: NSE Sheet Auto Update2
 
 on:
   schedule:
