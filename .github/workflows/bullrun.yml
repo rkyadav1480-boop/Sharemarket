@@ -37,6 +37,6 @@ jobs:
         run: |
           git config user.name "GitHub Actions"
           git config user.email "actions@github.com"
-          git add bullrun_historyAA.json || true
+          git add bullrun_history.json || true
           git commit -m "📊 Bullrun history $(date '+%d-%m-%Y %H:%M')" || echo "No changes"
           git push || echo "Push failed"
