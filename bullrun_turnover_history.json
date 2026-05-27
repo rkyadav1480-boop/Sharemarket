@@ -2,23 +2,48 @@
     "27-05-2026": [
         {
             "no": 1,
+            "stock": "LT",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:LT"
+        },
+        {
+            "no": 2,
             "stock": "YESBANK",
             "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:YESBANK"
         },
         {
-            "no": 2,
+            "no": 3,
+            "stock": "DRREDDY",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:DRREDDY"
+        },
+        {
+            "no": 4,
+            "stock": "DIVISLAB",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:DIVISLAB"
+        },
+        {
+            "no": 5,
+            "stock": "GRSE",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:GRSE"
+        },
+        {
+            "no": 6,
             "stock": "NYKAA",
             "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:NYKAA"
         },
         {
-            "no": 3,
-            "stock": "AHCL",
-            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:AHCL"
+            "no": 7,
+            "stock": "ASIANPAINT",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:ASIANPAINT"
         },
         {
-            "no": 4,
-            "stock": "CGCL",
-            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:CGCL"
+            "no": 8,
+            "stock": "MOTILALOFS",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:MOTILALOFS"
+        },
+        {
+            "no": 9,
+            "stock": "DELHIVERY",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:DELHIVERY"
         }
     ]
 }
