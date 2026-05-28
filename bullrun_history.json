@@ -550,5 +550,32 @@
             "stock": "CGCL",
             "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:CGCL"
         }
+    ],
+    "28-05-2026": [
+        {
+            "no": 1,
+            "stock": "5/28/2026",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:5/28/2026"
+        },
+        {
+            "no": 2,
+            "stock": "YESBANK",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:YESBANK"
+        },
+        {
+            "no": 3,
+            "stock": "RBA",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:RBA"
+        },
+        {
+            "no": 4,
+            "stock": "NYKAA",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:NYKAA"
+        },
+        {
+            "no": 5,
+            "stock": "SENCO",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:SENCO"
+        }
     ]
 }
