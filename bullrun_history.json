@@ -577,5 +577,32 @@
             "stock": "SENCO",
             "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:SENCO"
         }
+    ],
+    "29-05-2026": [
+        {
+            "no": 1,
+            "stock": "5/29/2026",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:5/29/2026"
+        },
+        {
+            "no": 2,
+            "stock": "MEESHO",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:MEESHO"
+        },
+        {
+            "no": 3,
+            "stock": "RBA",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:RBA"
+        },
+        {
+            "no": 4,
+            "stock": "NYKAA",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:NYKAA"
+        },
+        {
+            "no": 5,
+            "stock": "SENCO",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:SENCO"
+        }
     ]
 }
