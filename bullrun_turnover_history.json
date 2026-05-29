@@ -102,5 +102,62 @@
             "stock": "DIVISLAB",
             "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:DIVISLAB"
         }
+    ],
+    "29-05-2026": [
+        {
+            "no": 1,
+            "stock": "LT",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:LT"
+        },
+        {
+            "no": 2,
+            "stock": "ASIANPAINT",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:ASIANPAINT"
+        },
+        {
+            "no": 3,
+            "stock": "MEESHO",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:MEESHO"
+        },
+        {
+            "no": 4,
+            "stock": "GRSE",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:GRSE"
+        },
+        {
+            "no": 5,
+            "stock": "MOTILALOFS",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:MOTILALOFS"
+        },
+        {
+            "no": 6,
+            "stock": "NYKAA",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:NYKAA"
+        },
+        {
+            "no": 7,
+            "stock": "SENCO",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:SENCO"
+        },
+        {
+            "no": 8,
+            "stock": "DRREDDY",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:DRREDDY"
+        },
+        {
+            "no": 9,
+            "stock": "CAMS",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:CAMS"
+        },
+        {
+            "no": 10,
+            "stock": "FLUOROCHEM",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:FLUOROCHEM"
+        },
+        {
+            "no": 11,
+            "stock": "DIVISLAB",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:DIVISLAB"
+        }
     ]
 }
