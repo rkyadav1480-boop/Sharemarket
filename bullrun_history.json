@@ -586,23 +586,43 @@
         },
         {
             "no": 2,
+            "stock": "YESBANK",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:YESBANK"
+        },
+        {
+            "no": 3,
             "stock": "MEESHO",
             "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:MEESHO"
         },
         {
-            "no": 3,
+            "no": 4,
+            "stock": "NSLNISP",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:NSLNISP"
+        },
+        {
+            "no": 5,
             "stock": "RBA",
             "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:RBA"
         },
         {
-            "no": 4,
+            "no": 6,
             "stock": "NYKAA",
             "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:NYKAA"
         },
         {
-            "no": 5,
+            "no": 7,
+            "stock": "GANDHAR",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:GANDHAR"
+        },
+        {
+            "no": 8,
             "stock": "SENCO",
             "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:SENCO"
+        },
+        {
+            "no": 9,
+            "stock": "WEBELSOLAR",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:WEBELSOLAR"
         }
     ]
 }
