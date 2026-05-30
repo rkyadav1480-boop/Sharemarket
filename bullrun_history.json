@@ -624,5 +624,57 @@
             "stock": "WEBELSOLAR",
             "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:WEBELSOLAR"
         }
+    ],
+    "30-05-2026": [
+        {
+            "no": 1,
+            "stock": "5/30/2026",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:5/30/2026"
+        },
+        {
+            "no": 2,
+            "stock": "YESBANK",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:YESBANK"
+        },
+        {
+            "no": 3,
+            "stock": "NYKAA",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:NYKAA"
+        },
+        {
+            "no": 4,
+            "stock": "MEESHO",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:MEESHO"
+        },
+        {
+            "no": 5,
+            "stock": "AHCL",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:AHCL"
+        },
+        {
+            "no": 6,
+            "stock": "DRREDDY",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:DRREDDY"
+        },
+        {
+            "no": 7,
+            "stock": "NSLNISP",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:NSLNISP"
+        },
+        {
+            "no": 8,
+            "stock": "ASIANPAINT",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:ASIANPAINT"
+        },
+        {
+            "no": 9,
+            "stock": "LT",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:LT"
+        },
+        {
+            "no": 10,
+            "stock": "CGCL",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:CGCL"
+        }
     ]
 }
