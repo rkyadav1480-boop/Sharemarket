@@ -231,5 +231,72 @@
             "stock": "MEESHO",
             "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:MEESHO"
         }
+    ],
+    "31-05-2026": [
+        {
+            "no": 1,
+            "stock": "LT",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:LT"
+        },
+        {
+            "no": 2,
+            "stock": "ASIANPAINT",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:ASIANPAINT"
+        },
+        {
+            "no": 3,
+            "stock": "YESBANK",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:YESBANK"
+        },
+        {
+            "no": 4,
+            "stock": "DRREDDY",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:DRREDDY"
+        },
+        {
+            "no": 5,
+            "stock": "MANKIND",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:MANKIND"
+        },
+        {
+            "no": 6,
+            "stock": "NYKAA",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:NYKAA"
+        },
+        {
+            "no": 7,
+            "stock": "DIVISLAB",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:DIVISLAB"
+        },
+        {
+            "no": 8,
+            "stock": "GRSE",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:GRSE"
+        },
+        {
+            "no": 9,
+            "stock": "INDUSINDBK",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:INDUSINDBK"
+        },
+        {
+            "no": 10,
+            "stock": "FORTIS",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:FORTIS"
+        },
+        {
+            "no": 11,
+            "stock": "PHOENIXLTD",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:PHOENIXLTD"
+        },
+        {
+            "no": 12,
+            "stock": "ANTHEM",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:ANTHEM"
+        },
+        {
+            "no": 13,
+            "stock": "MEESHO",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:MEESHO"
+        }
     ]
 }
