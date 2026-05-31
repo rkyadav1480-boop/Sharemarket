@@ -141,7 +141,112 @@ for msg in messages_to_send:
     else:
         print("❌ Telegram send failed")
         print(send.text)
+# =========================
+# WEEKLY CHARTS TO TELEGRAM
+# =========================
 
+import pandas as pd
+import yfinance as yf
+import mplfinance as mpf
+import pandas_ta as ta
+
+photo_url = f"https://api.telegram.org/bot{BOT_TOKEN}/sendPhoto"
+
+for stock in stocks:
+
+    try:
+
+        print(f"Creating chart for {stock}")
+
+        symbol = f"{stock}.NS"
+
+        df = yf.download(
+            symbol,
+            period="5y",
+            progress=False,
+            auto_adjust=True
+        )
+
+        if df.empty:
+            print(f"No data for {stock}")
+            continue
+
+        close = df["Close"]
+
+        df["DMA50"] = ta.sma(close, length=50)
+        df["DMA200"] = ta.sma(close, length=200)
+        df["RSI"] = ta.rsi(close, length=14)
+
+        chart_file = f"{stock}_weekly.png"
+
+        addplots = [
+
+            mpf.make_addplot(
+                df["DMA50"],
+                width=1
+            ),
+
+            mpf.make_addplot(
+                df["DMA200"],
+                width=1
+            ),
+
+            mpf.make_addplot(
+                df["RSI"],
+                panel=1,
+                ylabel="RSI"
+            )
+        ]
+
+        mpf.plot(
+            df,
+            type="candle",
+            style="yahoo",
+            volume=True,
+            addplot=addplots,
+            figsize=(12, 8),
+            savefig=chart_file
+        )
+
+        tradingview_link = (
+            f"https://www.tradingview.com/chart/"
+            f"?symbol=NSE:{stock}"
+        )
+
+        caption = (
+            f"📈 {stock}\n\n"
+            f"50 DMA & 200 DMA\n"
+            f"RSI(14)\n\n"
+            f"📊 {tradingview_link}"
+        )
+
+        with open(chart_file, "rb") as image_file:
+
+            r = requests.post(
+                photo_url,
+                data={
+                    "chat_id": CHAT_ID,
+                    "caption": caption
+                },
+                files={
+                    "photo": image_file
+                }
+            )
+
+            print(
+                f"{stock}:",
+                r.status_code
+            )
+
+        if os.path.exists(chart_file):
+            os.remove(chart_file)
+
+    except Exception as e:
+
+        print(
+            f"Chart error for {stock}:",
+            str(e)
+        )
 print("Done")
 # Sheet download ke baad
 print(f"Sheet status: {response.status_code}")
