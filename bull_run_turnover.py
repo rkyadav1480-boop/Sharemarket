@@ -7,25 +7,22 @@ from datetime import datetime
 import pandas as pd
 import yfinance as yf
 import mplfinance as mpf
+
 def calculate_rsi(close, period=14):
-
     delta = close.diff()
-
     gain = delta.where(delta > 0, 0.0)
     loss = -delta.where(delta < 0, 0.0)
-
     avg_gain = gain.rolling(period).mean()
     avg_loss = loss.rolling(period).mean()
-
     rs = avg_gain / avg_loss
-
     return 100 - (100 / (1 + rs))
+
 # =========================
 # CONFIG
 # =========================
 BOT_TOKEN      = os.environ.get("BOT_TOKEN", "")
 CHAT_ID        = os.environ.get("CHAT_ID", "")
-SPREADSHEET_ID = "1nZRvMKQ5PrbLJ36aaTm9b8Pwp4xolXB2XebWwa9SisA"  # ✅ नई ID
+SPREADSHEET_ID = "1nZRvMKQ5PrbLJ36aaTm9b8Pwp4xolXB2XebWwa9SisA"
 GID            = "1191767584"
 JSON_FILE      = "bullrun_turnover_history.json"
 
@@ -58,10 +55,8 @@ for row in csv_reader:
     stock_name = row[0].strip()
     if stock_name == "":
         continue
-    # ✅ Header rows skip करो
     if stock_name.upper() in ["STOCK NAME", "NSE CODE"]:
         continue
-    # ✅ Date row skip करो (जैसे 5/27/2026)
     if "/" in stock_name:
         continue
     if stock_name not in stocks:
@@ -130,7 +125,6 @@ print("✅ JSON updated")
 # =========================
 # SEND TELEGRAM MESSAGE
 # =========================
-# Telegram 4096 char limit handle करो
 MAX_LEN = 4096
 messages_to_send = []
 while len(message) > MAX_LEN:
@@ -142,6 +136,7 @@ while len(message) > MAX_LEN:
 messages_to_send.append(message)
 
 telegram_url = f"https://api.telegram.org/bot{BOT_TOKEN}/sendMessage"
+send = None
 
 for msg in messages_to_send:
     payload = {
@@ -156,20 +151,14 @@ for msg in messages_to_send:
     else:
         print("❌ Telegram send failed")
         print(send.text)
-# =========================
-# WEEKLY CHARTS TO TELEGRAM
-# =========================
 
 # =========================
 # WEEKLY CHARTS TO TELEGRAM
 # =========================
-
 photo_url = f"https://api.telegram.org/bot{BOT_TOKEN}/sendPhoto"
 
 for stock in stocks:
-
     try:
-
         print(f"Creating chart for {stock}")
 
         symbol = f"{stock}.NS"
@@ -183,13 +172,10 @@ for stock in stocks:
 
         if df.empty:
             continue
-            
-# ✅ YE ADD KARO
-if isinstance(df.columns, pd.MultiIndex):
-    df.columns = df.columns.get_level_values(0)
 
-# Weekly candles
-df = df.resample("W").agg({
+        # ✅ MultiIndex fix
+        if isinstance(df.columns, pd.MultiIndex):
+            df.columns = df.columns.get_level_values(0)
 
         # Weekly candles
         df = df.resample("W").agg({
@@ -200,27 +186,16 @@ df = df.resample("W").agg({
             "Volume": "sum"
         }).dropna()
 
-        df["DMA50"] = df["Close"].rolling(50).mean()
+        df["DMA50"]  = df["Close"].rolling(50).mean()
         df["DMA200"] = df["Close"].rolling(200).mean()
-        df["RSI"] = calculate_rsi(df["Close"])
+        df["RSI"]    = calculate_rsi(df["Close"])
 
         chart_file = f"{stock}_weekly.png"
 
         addplots = [
-
-            mpf.make_addplot(
-                df["DMA50"]
-            ),
-
-            mpf.make_addplot(
-                df["DMA200"]
-            ),
-
-            mpf.make_addplot(
-                df["RSI"],
-                panel=1,
-                ylabel="RSI"
-            )
+            mpf.make_addplot(df["DMA50"]),
+            mpf.make_addplot(df["DMA200"]),
+            mpf.make_addplot(df["RSI"], panel=1, ylabel="RSI")
         ]
 
         mpf.plot(
@@ -248,34 +223,29 @@ df = df.resample("W").agg({
         )
 
         with open(chart_file, "rb") as img:
-
             requests.post(
                 photo_url,
                 data={
                     "chat_id": CHAT_ID,
                     "caption": caption
                 },
-                files={
-                    "photo": img
-                }
+                files={"photo": img}
             )
 
         if os.path.exists(chart_file):
             os.remove(chart_file)
 
     except Exception as e:
+        print(f"Chart error for {stock}: {e}")
 
-        print(
-            f"Chart error for {stock}: {e}"
-        )
 print("Done")
-# Sheet download ke baad
+
+# =========================
+# DEBUG INFO
+# =========================
 print(f"Sheet status: {response.status_code}")
 print(f"First 200 chars: {response.text[:200]}")
-
-# Stocks ke baad  
 print(f"Total Bull Run stocks: {len(stocks)}")
-
-# Telegram ke baad
-print(f"Telegram response: {send.status_code}")
-print(f"Telegram response body: {send.text}")
+if send:
+    print(f"Telegram response: {send.status_code}")
+    print(f"Telegram response body: {send.text}")
