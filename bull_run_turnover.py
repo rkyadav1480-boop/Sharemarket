@@ -183,6 +183,13 @@ for stock in stocks:
 
         if df.empty:
             continue
+            
+# ✅ YE ADD KARO
+if isinstance(df.columns, pd.MultiIndex):
+    df.columns = df.columns.get_level_values(0)
+
+# Weekly candles
+df = df.resample("W").agg({
 
         # Weekly candles
         df = df.resample("W").agg({
