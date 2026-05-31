@@ -23,6 +23,6 @@ jobs:
       - name: Run Script
         env:
           BOT_TOKEN: ${{ secrets.BOT_TOKEN }}
-          CHAT_ID: ${{ secrets.CHAT_ID }}
+          CHAT_ID: ${{ secrets.MY_CHAT_ID }}
         run: |
           python bull_run_turnover.py
