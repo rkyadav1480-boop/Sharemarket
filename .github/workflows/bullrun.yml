@@ -1,4 +1,4 @@
-name: Bullrun Stock Alert volume 
+name: Bullrun Stock Alert volume
 
 on:
   schedule:
@@ -23,9 +23,8 @@ jobs:
           python-version: '3.11'
 
       - name: Install dependencies
-   run: |
-    pip install -r requirements.txt
-          
+        run: |
+          pip install -r requirements.txt
 
       - name: Run Bullrun Script
         env:
@@ -39,5 +38,5 @@ jobs:
           git config user.name "GitHub Actions"
           git config user.email "actions@github.com"
           git add bullrun_history.json || true
-          git commit -m "📊 Bullrun history $(date '+%d-%m-%Y %H:%M')" || echo "No changes"
+          git commit -m "📊 Bullrun history $(date '+%d-%m-%Y %H:%M')" || true
           git push || echo "Push failed"
