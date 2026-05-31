@@ -1,4 +1,4 @@
-name: Bullrun Stock Alert 
+name: Bullrun Stock Alert volume 
 
 on:
   schedule:
