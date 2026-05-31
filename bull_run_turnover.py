@@ -4,7 +4,22 @@ import io
 import json
 import os
 from datetime import datetime
+import pandas as pd
+import yfinance as yf
+import mplfinance as mpf
+def calculate_rsi(close, period=14):
 
+    delta = close.diff()
+
+    gain = delta.where(delta > 0, 0.0)
+    loss = -delta.where(delta < 0, 0.0)
+
+    avg_gain = gain.rolling(period).mean()
+    avg_loss = loss.rolling(period).mean()
+
+    rs = avg_gain / avg_loss
+
+    return 100 - (100 / (1 + rs))
 # =========================
 # CONFIG
 # =========================
@@ -145,10 +160,9 @@ for msg in messages_to_send:
 # WEEKLY CHARTS TO TELEGRAM
 # =========================
 
-import pandas as pd
-import yfinance as yf
-import mplfinance as mpf
-import pandas_ta as ta
+# =========================
+# WEEKLY CHARTS TO TELEGRAM
+# =========================
 
 photo_url = f"https://api.telegram.org/bot{BOT_TOKEN}/sendPhoto"
 
@@ -163,32 +177,36 @@ for stock in stocks:
         df = yf.download(
             symbol,
             period="5y",
-            progress=False,
-            auto_adjust=True
+            auto_adjust=True,
+            progress=False
         )
 
         if df.empty:
-            print(f"No data for {stock}")
             continue
 
-        close = df["Close"]
+        # Weekly candles
+        df = df.resample("W").agg({
+            "Open": "first",
+            "High": "max",
+            "Low": "min",
+            "Close": "last",
+            "Volume": "sum"
+        }).dropna()
 
-        df["DMA50"] = ta.sma(close, length=50)
-        df["DMA200"] = ta.sma(close, length=200)
-        df["RSI"] = ta.rsi(close, length=14)
+        df["DMA50"] = df["Close"].rolling(50).mean()
+        df["DMA200"] = df["Close"].rolling(200).mean()
+        df["RSI"] = calculate_rsi(df["Close"])
 
         chart_file = f"{stock}_weekly.png"
 
         addplots = [
 
             mpf.make_addplot(
-                df["DMA50"],
-                width=1
+                df["DMA50"]
             ),
 
             mpf.make_addplot(
-                df["DMA200"],
-                width=1
+                df["DMA200"]
             ),
 
             mpf.make_addplot(
@@ -215,27 +233,24 @@ for stock in stocks:
 
         caption = (
             f"📈 {stock}\n\n"
-            f"50 DMA & 200 DMA\n"
+            f"Weekly Chart\n"
+            f"50 DMA\n"
+            f"200 DMA\n"
             f"RSI(14)\n\n"
-            f"📊 {tradingview_link}"
+            f"{tradingview_link}"
         )
 
-        with open(chart_file, "rb") as image_file:
+        with open(chart_file, "rb") as img:
 
-            r = requests.post(
+            requests.post(
                 photo_url,
                 data={
                     "chat_id": CHAT_ID,
                     "caption": caption
                 },
                 files={
-                    "photo": image_file
+                    "photo": img
                 }
-            )
-
-            print(
-                f"{stock}:",
-                r.status_code
             )
 
         if os.path.exists(chart_file):
@@ -244,8 +259,7 @@ for stock in stocks:
     except Exception as e:
 
         print(
-            f"Chart error for {stock}:",
-            str(e)
+            f"Chart error for {stock}: {e}"
         )
 print("Done")
 # Sheet download ke baad
