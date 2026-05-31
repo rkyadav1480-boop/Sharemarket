@@ -4,23 +4,32 @@ import io
 import json
 import os
 from datetime import datetime
+import pandas as pd
+import yfinance as yf
+import mplfinance as mpf
+
+def calculate_rsi(close, period=14):
+    delta = close.diff()
+    gain = delta.where(delta > 0, 0.0)
+    loss = -delta.where(delta < 0, 0.0)
+    avg_gain = gain.rolling(period).mean()
+    avg_loss = loss.rolling(period).mean()
+    rs = avg_gain / avg_loss
+    return 100 - (100 / (1 + rs))
 
 # =========================
 # CONFIG
 # =========================
-
 BOT_TOKEN = os.environ.get("BOT_TOKEN", "")
 CHAT_ID   = os.environ.get("CHAT_ID", "")
 
 SPREADSHEET_ID = "1SnDY6-HjBN_HEDyJVPaqbA_1da5hv4tELmPBBoN6fhU"
 GID            = "1191767584"
-
-JSON_FILE = "bullrun_history.json"  # Repo mein save hoga
+JSON_FILE      = "bullrun_history.json"
 
 # =========================
 # GOOGLE SHEET CSV URL
 # =========================
-
 SHEET_URL = (
     f"https://docs.google.com/spreadsheets/d/"
     f"{SPREADSHEET_ID}/export?format=csv&gid={GID}"
@@ -29,11 +38,8 @@ SHEET_URL = (
 # =========================
 # DOWNLOAD SHEET
 # =========================
-
 print("Downloading sheet...")
-
 response = requests.get(SHEET_URL)
-
 if response.status_code != 200:
     print("Failed to download sheet")
     exit()
@@ -41,37 +47,30 @@ if response.status_code != 200:
 # =========================
 # READ CSV
 # =========================
-
 csv_reader = csv.reader(io.StringIO(response.text))
-
 stocks = []
 
 for row in csv_reader:
-
     if not row:
         continue
-
     stock_name = row[0].strip()
-
     if stock_name == "":
         continue
-
     if stock_name.upper() == "STOCK NAME":
         continue
-
     if stock_name not in stocks:
         stocks.append(stock_name)
+
+print(f"Total Bull Run stocks found: {len(stocks)}")
 
 # =========================
 # DATE
 # =========================
-
 today = datetime.now().strftime("%d-%m-%Y")
 
 # =========================
 # LOAD OLD JSON
 # =========================
-
 if os.path.exists(JSON_FILE):
     try:
         with open(JSON_FILE, "r") as f:
@@ -84,13 +83,11 @@ else:
 # =========================
 # CREATE TODAY DATA
 # =========================
-
 history[today] = []
 
 # =========================
 # TELEGRAM MESSAGE
 # =========================
-
 message = (
     f"📈 <b>Aaj Ke Stocks In Bull Run VOLUME 250 SE</b>\n"
     f"📅 {today}\n\n"
@@ -99,29 +96,24 @@ message = (
 # =========================
 # PROCESS STOCKS
 # =========================
-
 for i, stock in enumerate(stocks, start=1):
-
     tradingview_link = (
         f"https://www.tradingview.com/chart/"
         f"?symbol=NSE:{stock}"
     )
-
     history[today].append({
         "no": i,
         "stock": stock,
         "tradingview": tradingview_link
     })
-
     message += (
         f"<b>{i}. {stock}</b>\n"
         f"📊 <a href='{tradingview_link}'>Open Chart</a>\n\n"
     )
 
 # =========================
-# SAVE JSON — hamesha save karo
+# SAVE JSON
 # =========================
-
 with open(JSON_FILE, "w") as f:
     json.dump(history, f, indent=4)
 print("✅ JSON updated")
@@ -129,22 +121,127 @@ print("✅ JSON updated")
 # =========================
 # SEND TELEGRAM MESSAGE
 # =========================
+MAX_LEN = 4096
+messages_to_send = []
+while len(message) > MAX_LEN:
+    split_at = message.rfind("\n\n", 0, MAX_LEN)
+    if split_at == -1:
+        split_at = MAX_LEN
+    messages_to_send.append(message[:split_at])
+    message = message[split_at:].strip()
+messages_to_send.append(message)
 
 telegram_url = f"https://api.telegram.org/bot{BOT_TOKEN}/sendMessage"
+send = None
 
-payload = {
-    "chat_id": CHAT_ID,
-    "text": message,
-    "parse_mode": "HTML",
-    "disable_web_page_preview": True
-}
+for msg in messages_to_send:
+    payload = {
+        "chat_id": CHAT_ID,
+        "text": msg,
+        "parse_mode": "HTML",
+        "disable_web_page_preview": True
+    }
+    send = requests.post(telegram_url, data=payload)
+    if send.status_code == 200:
+        print("✅ Telegram message sent successfully")
+    else:
+        print("❌ Telegram send failed")
+        print(send.text)
 
-send = requests.post(telegram_url, data=payload)
+# =========================
+# WEEKLY CHARTS TO TELEGRAM
+# =========================
+photo_url = f"https://api.telegram.org/bot{BOT_TOKEN}/sendPhoto"
 
-if send.status_code == 200:
-    print("✅ Telegram message sent successfully")
-else:
-    print("❌ Telegram send failed")
-    print(send.text)
+for stock in stocks:
+    try:
+        print(f"Creating chart for {stock}")
+
+        symbol = f"{stock}.NS"
+
+        df = yf.download(
+            symbol,
+            period="5y",
+            auto_adjust=True,
+            progress=False
+        )
+
+        if df.empty:
+            continue
+
+        # ✅ MultiIndex fix
+        if isinstance(df.columns, pd.MultiIndex):
+            df.columns = df.columns.get_level_values(0)
+
+        # Weekly candles
+        df = df.resample("W").agg({
+            "Open": "first",
+            "High": "max",
+            "Low": "min",
+            "Close": "last",
+            "Volume": "sum"
+        }).dropna()
+
+        df["DMA50"]  = df["Close"].rolling(50).mean()
+        df["DMA200"] = df["Close"].rolling(200).mean()
+        df["RSI"]    = calculate_rsi(df["Close"])
+
+        chart_file = f"{stock}_weekly.png"
+
+        addplots = [
+            mpf.make_addplot(df["DMA50"]),
+            mpf.make_addplot(df["DMA200"]),
+            mpf.make_addplot(df["RSI"], panel=1, ylabel="RSI")
+        ]
+
+        mpf.plot(
+            df,
+            type="candle",
+            style="yahoo",
+            volume=True,
+            addplot=addplots,
+            figsize=(12, 8),
+            savefig=chart_file
+        )
+
+        tradingview_link = (
+            f"https://www.tradingview.com/chart/"
+            f"?symbol=NSE:{stock}"
+        )
+
+        caption = (
+            f"📈 {stock}\n\n"
+            f"Weekly Chart\n"
+            f"50 DMA\n"
+            f"200 DMA\n"
+            f"RSI(14)\n\n"
+            f"{tradingview_link}"
+        )
+
+        with open(chart_file, "rb") as img:
+            requests.post(
+                photo_url,
+                data={
+                    "chat_id": CHAT_ID,
+                    "caption": caption
+                },
+                files={"photo": img}
+            )
+
+        if os.path.exists(chart_file):
+            os.remove(chart_file)
+
+    except Exception as e:
+        print(f"Chart error for {stock}: {e}")
 
 print("Done")
+
+# =========================
+# DEBUG INFO
+# =========================
+print(f"Sheet status: {response.status_code}")
+print(f"First 200 chars: {response.text[:200]}")
+print(f"Total Bull Run stocks: {len(stocks)}")
+if send:
+    print(f"Telegram response: {send.status_code}")
+    print(f"Telegram response body: {send.text}")
