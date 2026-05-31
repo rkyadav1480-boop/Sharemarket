@@ -2,3 +2,7 @@ gspread
 google-auth
 pandas
 requests
+yfinance
+mplfinance
+pandas-ta
+matplotlib
