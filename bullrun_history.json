@@ -747,36 +747,46 @@
         },
         {
             "no": 4,
+            "stock": "BHARATCOAL",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:BHARATCOAL"
+        },
+        {
+            "no": 5,
             "stock": "NYKAA",
             "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:NYKAA"
         },
         {
-            "no": 5,
+            "no": 6,
             "stock": "MEESHO",
             "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:MEESHO"
         },
         {
-            "no": 6,
+            "no": 7,
             "stock": "AHCL",
             "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:AHCL"
         },
         {
-            "no": 7,
+            "no": 8,
             "stock": "DRREDDY",
             "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:DRREDDY"
         },
         {
-            "no": 8,
+            "no": 9,
             "stock": "ASIANPAINT",
             "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:ASIANPAINT"
         },
         {
-            "no": 9,
+            "no": 10,
             "stock": "LT",
             "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:LT"
         },
         {
-            "no": 10,
+            "no": 11,
+            "stock": "REDTAPE",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:REDTAPE"
+        },
+        {
+            "no": 12,
             "stock": "CGCL",
             "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:CGCL"
         }
