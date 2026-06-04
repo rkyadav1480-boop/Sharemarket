@@ -869,5 +869,32 @@
             "stock": "NAZARA",
             "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:NAZARA"
         }
+    ],
+    "04-06-2026": [
+        {
+            "no": 1,
+            "stock": "6/4/2026",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:6/4/2026"
+        },
+        {
+            "no": 2,
+            "stock": "JPPOWER",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:JPPOWER"
+        },
+        {
+            "no": 3,
+            "stock": "YESBANK",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:YESBANK"
+        },
+        {
+            "no": 4,
+            "stock": "NYKAA",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:NYKAA"
+        },
+        {
+            "no": 5,
+            "stock": "HDFCSML250",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:HDFCSML250"
+        }
     ]
 }
