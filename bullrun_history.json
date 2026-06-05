@@ -910,13 +910,13 @@
         },
         {
             "no": 3,
-            "stock": "AHCL",
-            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:AHCL"
+            "stock": "JBMA",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:JBMA"
         },
         {
             "no": 4,
-            "stock": "NYKAA",
-            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:NYKAA"
+            "stock": "AHCL",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:AHCL"
         }
     ]
 }
