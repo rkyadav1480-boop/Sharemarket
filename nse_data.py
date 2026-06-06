@@ -98,7 +98,6 @@ def find_common_stocks(today_symbols, history):
     return sorted(freq.items(), key=lambda x: -x[1])
 
 def make_strength_bar(days):
-    """Consistent strength indicator based on fixed breakdown thresholds"""
     if days >= 8:
         return "🟩🟩🟩🟩🟩"
     elif days >= 5:
@@ -119,17 +118,22 @@ def send_telegram(text):
         print("⚠️ Telegram Config missing!")
         print(text[:500])
         return
-    url = f"https://api.telegram.org/bot{BOT_TOKEN}/sendMessage"
-    r = requests.post(url, data={
-        "chat_id":                  CHAT_ID,
-        "text":                     text,
-        "parse_mode":               "HTML",
-        "disable_web_page_preview": True
-    })
-    if r.status_code == 200:
-        print("✅ Telegram message chunk sent")
-    else:
-        print(f"❌ Telegram error: {r.text}")
+
+    # Multiple chat IDs — comma se split karo
+    chat_ids = [cid.strip() for cid in CHAT_ID.split(",") if cid.strip()]
+
+    for cid in chat_ids:
+        url = f"https://api.telegram.org/bot{BOT_TOKEN}/sendMessage"
+        r = requests.post(url, data={
+            "chat_id":                  cid,
+            "text":                     text,
+            "parse_mode":               "HTML",
+            "disable_web_page_preview": True
+        })
+        if r.status_code == 200:
+            print(f"✅ Sent to {cid}")
+        else:
+            print(f"❌ Error ({cid}): {r.text}")
 
 def get_nifty500_symbols():
     headers = {
@@ -193,12 +197,11 @@ def fetch_and_send():
     print("🚀 Scanning stocks in parallel threads...")
     with ThreadPoolExecutor(max_workers=MAX_WORKERS) as executor:
         futures = {executor.submit(fetch_yahoo, sym): sym for sym in symbols}
-        
+
         for future in as_completed(futures):
             sym, ltp, chg = future.result()
-            if ltp is None or chg is None: 
+            if ltp is None or chg is None:
                 continue
-                
             total_chg += chg
             count     += 1
             if chg >= 3.0:
@@ -246,32 +249,27 @@ def fetch_and_send():
 
     send_telegram(msg1)
 
-    # ━━ MESSAGE 2: TOTAL PERFORMERS LIST (SAFE SPLITTING LOGIC) ━━
+    # ━━ MESSAGE 2: TOTAL PERFORMERS LIST ━━
     if all_gainers:
-        chunk_size = 30  # Ek message mein sirf 30 stocks links ke sath taaki limit cross na ho
+        chunk_size = 30
         for idx in range(0, len(all_gainers), chunk_size):
             chunk = all_gainers[idx:idx+chunk_size]
-            
-            msg2 = f"🔥 <b>TODAY'S TOTAL PERFORMERS ({idx+1} to {min(idx+chunk_size, len(all_gainers))})</b>\n"
+            msg2  = f"🔥 <b>TODAY'S TOTAL PERFORMERS ({idx+1} to {min(idx+chunk_size, len(all_gainers))})</b>\n"
             msg2 += f"<i>Aaj ke 3%+ gainers ki complete master list:</i>\n\n"
-            
             for i, (sym, ltp, chg) in enumerate(chunk, idx + 1):
                 msg2 += f"{i}. <b>{sym}</b> (+{chg:.2f}%) | 📊 <a href='{tv_url(sym)}'>Chart</a>\n"
-            
             send_telegram(msg2)
 
-        # ━━ MESSAGE 3: REPEAT PERFORMERS ANALYTICS WITH CONSISTENT STRENGTH BAR ━━
+        # ━━ MESSAGE 3: REPEAT PERFORMERS ━━
         updated_history = save_today_movers(all_gainers)
         today_symbols   = {sym for sym, _, chg in all_gainers}
         common          = find_common_stocks(today_symbols, updated_history)
 
         if common:
-            # Safe chunking for repeat performers too
             for idx in range(0, len(common), chunk_size):
                 chunk = common[idx:idx+chunk_size]
-                msg3 = f"🔁 <b>Repeat Performers (History Batch {idx//chunk_size + 1})</b>\n"
+                msg3  = f"🔁 <b>Repeat Performers (History Batch {idx//chunk_size + 1})</b>\n"
                 msg3 += "<i>Pichhle 30 dinon ke high momentum repeaters:</i>\n\n"
-                
                 for i, (sym, days) in enumerate(chunk, idx + 1):
                     s_bar = make_strength_bar(days)
                     msg3 += (
@@ -281,11 +279,10 @@ def fetch_and_send():
                     )
                 send_telegram(msg3)
         else:
-            msg3 = (
+            send_telegram(
                 "🔁 <b>Repeat Performers</b>\n\n"
-                "<i>Nayi Entry! Aaj ke saare gainers pichhle 30 dinon ke data mein fresh hain (koi repeat nahi).</i>"
+                "<i>Nayi Entry! Aaj ke saare gainers pichhle 30 dinon ke data mein fresh hain.</i>"
             )
-            send_telegram(msg3)
 
 
 # ==================== MASTER FALLBACK DATA ====================
