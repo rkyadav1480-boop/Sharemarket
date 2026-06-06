@@ -918,5 +918,37 @@
             "stock": "AHCL",
             "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:AHCL"
         }
+    ],
+    "06-06-2026": [
+        {
+            "no": 1,
+            "stock": "6/6/2026",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:6/6/2026"
+        },
+        {
+            "no": 2,
+            "stock": "JPPOWER",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:JPPOWER"
+        },
+        {
+            "no": 3,
+            "stock": "AHCL",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:AHCL"
+        },
+        {
+            "no": 4,
+            "stock": "MOSMALL250",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:MOSMALL250"
+        },
+        {
+            "no": 5,
+            "stock": "GSEC10YEAR",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:GSEC10YEAR"
+        },
+        {
+            "no": 6,
+            "stock": "NAZARA",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:NAZARA"
+        }
     ]
 }
