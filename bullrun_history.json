@@ -1001,33 +1001,38 @@
         },
         {
             "no": 4,
+            "stock": "TMPV",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:TMPV"
+        },
+        {
+            "no": 5,
             "stock": "AHCL",
             "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:AHCL"
         },
         {
-            "no": 5,
+            "no": 6,
             "stock": "WEBELSOLAR",
             "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:WEBELSOLAR"
         },
         {
-            "no": 6,
+            "no": 7,
             "stock": "MOSMALL250",
             "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:MOSMALL250"
         },
         {
-            "no": 7,
+            "no": 8,
             "stock": "CGCL",
             "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:CGCL"
         },
         {
-            "no": 8,
-            "stock": "GSEC10YEAR",
-            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:GSEC10YEAR"
+            "no": 9,
+            "stock": "EXIDEIND",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:EXIDEIND"
         },
         {
-            "no": 9,
-            "stock": "NAZARA",
-            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:NAZARA"
+            "no": 10,
+            "stock": "GSEC10YEAR",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:GSEC10YEAR"
         }
     ]
 }
