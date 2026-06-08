@@ -12,6 +12,195 @@ CHAT_ID      = os.environ.get("MY_CHAT_ID", "")
 HISTORY_FILE = "nse_history.json"
 MAX_WORKERS  = 30  # Parallel worker threads
 
+# ==================== SECTOR MAP ====================
+# Symbol → Sector mapping (Nifty 500 ke major stocks)
+SECTOR_MAP = {
+    # IT / Technology
+    "TCS": "IT", "INFY": "IT", "WIPRO": "IT", "HCLTECH": "IT", "TECHM": "IT",
+    "LTIM": "IT", "MPHASIS": "IT", "COFORGE": "IT", "PERSISTENT": "IT",
+    "OFSS": "IT", "KPIT": "IT", "HAPPYMINDS": "IT", "ZENSAR": "IT",
+    "MASTEK": "IT", "CYIENT": "IT", "LATENTVIEW": "IT", "DATAMATICS": "IT",
+    "NIITMTS": "IT", "ROUTE": "IT", "TANLA": "IT",
+
+    # Banking & Finance
+    "HDFCBANK": "Banking", "ICICIBANK": "Banking", "SBIN": "Banking",
+    "KOTAKBANK": "Banking", "AXISBANK": "Banking", "INDUSINDBK": "Banking",
+    "BANKBARODA": "Banking", "PNB": "Banking", "CANBK": "Banking",
+    "UNIONBANK": "Banking", "IDFCFIRSTB": "Banking", "FEDERALBNK": "Banking",
+    "RBLBANK": "Banking", "AUBANK": "Banking", "BANDHANBNK": "Banking",
+
+    # NBFC / Financial Services
+    "BAJFINANCE": "NBFC", "BAJAJFINSV": "NBFC", "CHOLAFIN": "NBFC",
+    "MUTHOOTFIN": "NBFC", "MANAPPURAM": "NBFC", "L&TFH": "NBFC",
+    "SBICARD": "NBFC", "HDFCAMC": "NBFC", "ICICIGI": "NBFC",
+    "SBILIFE": "NBFC", "HDFCLIFE": "NBFC", "LICI": "NBFC",
+    "MOFSL": "NBFC", "ANGELONE": "NBFC", "EDELWEISS": "NBFC",
+    "EMKAY": "NBFC", "GEOJITFSL": "NBFC", "JMFINANCIL": "NBFC",
+    "NUVAMA": "NBFC", "CAMS": "NBFC", "KFINTECH": "NBFC",
+    "PEL": "NBFC", "IIFL": "NBFC",
+
+    # Pharma / Healthcare
+    "SUNPHARMA": "Pharma", "DRREDDY": "Pharma", "CIPLA": "Pharma",
+    "DIVISLAB": "Pharma", "LUPIN": "Pharma", "AUROPHARMA": "Pharma",
+    "BIOCON": "Pharma", "GLENMARK": "Pharma", "TORNTPHARM": "Pharma",
+    "ALKEM": "Pharma", "IPCA": "Pharma", "NATCOPHARM": "Pharma",
+    "LAURUSLABS": "Pharma", "PFIZER": "Pharma", "SYNGENE": "Pharma",
+    "SOLARA": "Pharma", "NEULANDLAB": "Pharma", "MARKSANS": "Pharma",
+    "SUVENPHAR": "Pharma", "ZYDUSLIFE": "Pharma", "APOLLOHOSP": "Pharma",
+    "MAXHEALTH": "Pharma", "FORTIS": "Pharma", "RAINBOW": "Pharma",
+    "SHALBY": "Pharma", "MEDANTA": "Pharma", "KRSNAA": "Pharma",
+    "DRLAL": "Pharma", "METROPOLIS": "Pharma", "LALPATHLAB": "Pharma",
+    "VIJAYA": "Pharma",
+
+    # Auto & Auto Ancillaries
+    "MARUTI": "Auto", "TATAMOTORS": "Auto", "M&M": "Auto",
+    "BAJAJ-AUTO": "Auto", "HEROMOTOCO": "Auto", "EICHERMOT": "Auto",
+    "TVSMOTOR": "Auto", "MOTHERSON": "Auto", "BOSCHLTD": "Auto",
+    "BHARATFORG": "Auto", "ENDURANCE": "Auto", "MAHINDCIE": "Auto",
+    "SUBROS": "Auto", "FIEM": "Auto", "SANDHAR": "Auto",
+    "CRAFTSMAN": "Auto", "SUPRAJIT": "Auto", "UNIPARTS": "Auto",
+    "ESCORTS": "Auto", "TIINDIA": "Auto", "SAMVARDHNA": "Auto",
+
+    # Energy / Power
+    "NTPC": "Energy", "POWERGRID": "Energy", "ONGC": "Energy",
+    "BPCL": "Energy", "GAIL": "Energy", "COALINDIA": "Energy",
+    "ADANIGREEN": "Energy", "ADANITRANS": "Energy", "JSWENERGY": "Energy",
+    "TORNTPOWER": "Energy", "SJVN": "Energy", "NHPC": "Energy",
+    "NTPCGREEN": "Energy", "IREDA": "Energy", "RPOWER": "Energy",
+    "JPPOWER": "Energy", "INOXWIND": "Energy", "SUZLON": "Energy",
+    "PRAJIND": "Energy", "WAAREEENER": "Energy", "APAR": "Energy",
+    "KEC": "Energy", "KALPATPOWR": "Energy", "POWERMECH": "Energy",
+
+    # Infrastructure / Construction
+    "LT": "Infra", "ADANIPORTS": "Infra", "ADANIENT": "Infra",
+    "AMBUJACEM": "Infra", "SHREECEM": "Infra", "ULTRACEMCO": "Infra",
+    "GMRINFRA": "Infra", "CONCOR": "Infra", "IRCTC": "Infra",
+    "IRFC": "Infra", "HUDCO": "Infra", "NBCC": "Infra",
+    "RVNL": "Infra", "HGINFRA": "Infra", "PNCINFRA": "Infra",
+    "NCC": "Infra", "TEXINFRA": "Infra", "GPPL": "Infra",
+    "RAJESHEXPO": "Infra",
+
+    # Metals & Mining
+    "TATASTEEL": "Metals", "JSWSTEEL": "Metals", "HINDALCO": "Metals",
+    "VEDL": "Metals", "SAIL": "Metals", "NATIONALUM": "Metals",
+    "HINDZINC": "Metals", "NMDC": "Metals", "MOIL": "Metals",
+    "WELCORP": "Metals",
+
+    # FMCG / Consumer
+    "HINDUNILVR": "FMCG", "ITC": "FMCG", "NESTLEIND": "FMCG",
+    "BRITANNIA": "FMCG", "DABUR": "FMCG", "MARICO": "FMCG",
+    "GODREJCP": "FMCG", "COLPAL": "FMCG", "EMAMILTD": "FMCG",
+    "TATACONSUM": "FMCG", "VBL": "FMCG", "RADICO": "FMCG",
+    "TILAKNAGAR": "FMCG", "GMBREW": "FMCG", "SOM": "FMCG",
+    "BIKAJI": "FMCG",
+
+    # Chemicals / Specialty
+    "PIDILITIND": "Chemicals", "DEEPAKNTR": "Chemicals", "SRF": "Chemicals",
+    "PIIND": "Chemicals", "AAVAS": "Chemicals", "ATUL": "Chemicals",
+    "TATACHEM": "Chemicals", "UPL": "Chemicals", "SOLARINDS": "Chemicals",
+
+    # Telecom
+    "BHARTIARTL": "Telecom", "INDUSTOWER": "Telecom", "TTML": "Telecom",
+    "HFCL": "Telecom", "RAILTEL": "Telecom", "TEJASNET": "Telecom",
+
+    # Capital Goods / Engineering
+    "SIEMENS": "Cap Goods", "HAVELLS": "Cap Goods", "ABB": "Cap Goods",
+    "CUMMINSIND": "Cap Goods", "THERMAX": "Cap Goods", "BEL": "Cap Goods",
+    "HAL": "Cap Goods", "BHEL": "Cap Goods", "KEI": "Cap Goods",
+    "FINOLEX": "Cap Goods", "RRKABEL": "Cap Goods", "FINCABLES": "Cap Goods",
+    "POLYCAB": "Cap Goods", "AMBER": "Cap Goods", "DIXON": "Cap Goods",
+    "CROMPTON": "Cap Goods", "VOLTAMP": "Cap Goods", "ESABINDIA": "Cap Goods",
+    "GRINDWELL": "Cap Goods", "PENIND": "Cap Goods", "ELGIEQUIP": "Cap Goods",
+    "AIAENG": "Cap Goods", "JYOTICNC": "Cap Goods", "ELECON": "Cap Goods",
+    "TIMKEN": "Cap Goods", "SCHAEFFLER": "Cap Goods",
+
+    # Realty
+    "GODREJPROP": "Realty", "OBEROIRLTY": "Realty", "DLF": "Realty",
+    "PRESTIGE": "Realty", "BRIGADE": "Realty",
+
+    # Media & Entertainment
+    "ZEEL": "Media", "SUNTV": "Media", "SAREGAMA": "Media",
+    "NAZARA": "Media", "PVR": "Media",
+
+    # Consumer Discretionary / Retail
+    "TITAN": "Consumer", "ASIANPAINT": "Consumer", "BERGEPAINT": "Consumer",
+    "KANSAINER": "Consumer", "RELAXO": "Consumer", "BATA": "Consumer",
+    "METROBRAND": "Consumer", "CAMPUS": "Consumer", "PAGEIND": "Consumer",
+    "TRENT": "Consumer", "DMART": "Consumer", "VMART": "Consumer",
+    "SHOPERSTOP": "Consumer", "MEDPLUS": "Consumer",
+    "TTKPRESTIG": "Consumer", "WHIRLPOOL": "Consumer",
+
+    # Hospitality & Travel
+    "INDHOTEL": "Hospitality", "DEVYANI": "Hospitality",
+    "WESTLIFE": "Hospitality", "BARBEQUE": "Hospitality",
+    "SAPPHIRE": "Hospitality", "JUBLFOOD": "Hospitality",
+    "EASEMYTRIP": "Hospitality", "IXIGO": "Hospitality",
+    "RATEGAIN": "Hospitality",
+
+    # Paper & Wood
+    "JKPAPER": "Paper", "TNPL": "Paper",
+    "GREENPANEL": "Paper", "CENTURYPLY": "Paper",
+
+    # Pipes & Building Materials
+    "PRINCEPIPE": "Building Mat", "APOLLOPIPE": "Building Mat",
+    "ASTRAL": "Building Mat", "SUPREMEIND": "Building Mat",
+
+    # Diversified / Conglomerate
+    "RELIANCE": "Diversified", "BAJAJHLDNG": "Diversified",
+    "TATAINVEST": "Diversified", "MFSL": "Diversified",
+    "GRASIM": "Diversified",
+
+    # Steel & Industrial
+    "PENIND": "Industrial", "PFC": "Industrial", "RECLTD": "Industrial",
+    "NAUKRI": "Industrial",
+}
+
+def get_sector_performance(results):
+    """
+    results: list of (symbol, ltp, chg) tuples — sabse pehle fetch hone ke baad pass karo
+    Returns: sorted list of (sector, avg_chg, count, gainers, losers)
+    """
+    sector_data = {}  # sector → {total_chg, count, gainers, losers}
+
+    for sym, ltp, chg in results:
+        if ltp is None or chg is None:
+            continue
+        sector = SECTOR_MAP.get(sym, "Others")
+        if sector not in sector_data:
+            sector_data[sector] = {"total": 0.0, "count": 0, "gainers": 0, "losers": 0}
+        sector_data[sector]["total"]  += chg
+        sector_data[sector]["count"]  += 1
+        if chg > 0:
+            sector_data[sector]["gainers"] += 1
+        elif chg < 0:
+            sector_data[sector]["losers"]  += 1
+
+    result = []
+    for sec, d in sector_data.items():
+        avg = round(d["total"] / d["count"], 2) if d["count"] > 0 else 0
+        result.append((sec, avg, d["count"], d["gainers"], d["losers"]))
+
+    # Average change se sort (best to worst)
+    result.sort(key=lambda x: -x[1])
+    return result
+
+def format_sector_message(sector_perf):
+    """Sector performance ka Telegram-ready message banao"""
+    lines = ["<b>━━ SECTOR PERFORMANCE ━━</b>\n"]
+    for sec, avg, count, gainers, losers in sector_perf:
+        if avg > 0.5:
+            icon = "🟢"
+        elif avg < -0.5:
+            icon = "🔴"
+        else:
+            icon = "🟡"
+        bar = "▲" if avg > 0 else "▼"
+        lines.append(
+            f"{icon} <b>{sec}</b>: {bar}{abs(avg):.2f}%  "
+            f"<i>({count} stocks | ↑{gainers} ↓{losers})</i>"
+        )
+    return "\n".join(lines)
+
 # ==================== HOLIDAYS FUNCTION ====================
 def get_nse_holidays():
     """NSE API se holidays fetch karo — fallback mein hardcoded list"""
@@ -119,7 +308,6 @@ def send_telegram(text):
         print(text[:500])
         return
 
-    # Multiple chat IDs — comma se split karo
     chat_ids = [cid.strip() for cid in CHAT_ID.split(",") if cid.strip()]
 
     for cid in chat_ids:
@@ -189,6 +377,7 @@ def fetch_and_send():
     symbols = get_nifty500_symbols()
     print(f"📋 Total stocks to scan: {len(symbols)}")
 
+    all_results = []   # (sym, ltp, chg) — saare stocks
     all_gainers = []
     all_losers  = []
     total_chg   = 0
@@ -202,6 +391,7 @@ def fetch_and_send():
             sym, ltp, chg = future.result()
             if ltp is None or chg is None:
                 continue
+            all_results.append((sym, ltp, chg))
             total_chg += chg
             count     += 1
             if chg >= 3.0:
@@ -215,7 +405,10 @@ def fetch_and_send():
     all_gainers.sort(key=lambda x: -x[2])
     all_losers.sort(key=lambda x: x[2])
 
-    # ━━ MESSAGE 1: MARKET OVERVIEW & SUMMARY ━━
+    # ━━━━━ SECTOR PERFORMANCE CALCULATE KARO ━━━━━
+    sector_perf = get_sector_performance(all_results)
+
+    # ━━ MESSAGE 1: MARKET OVERVIEW + SECTOR PERFORMANCE ━━
     arrow = "🟢▲" if avg_chg > 0 else "🔴▼"
     msg1  = (
         f"📊 <b>NIFTY 500 Market Update</b>\n"
@@ -223,29 +416,10 @@ def fetch_and_send():
         f"{arrow} <b>Average Change:</b> {avg_chg:+.2f}%\n"
         f"📈 Gainers 3%+: <b>{len(all_gainers)}</b>\n"
         f"📉 Losers 3%-: <b>{len(all_losers)}</b>\n"
-        f"🔍 Total scanned: <b>{count}</b> stocks\n"
+        f"🔍 Total scanned: <b>{count}</b> stocks\n\n"
     )
 
-    if all_gainers:
-        msg1 += f"\n<b>━━ TOP GAINERS (3%+) ━━</b>\n"
-        for sym, ltp, chg in all_gainers[:25]:
-            msg1 += (
-                f"🟢 <b>{sym}</b> | ₹{ltp} | <b>+{chg:.2f}%</b>\n"
-                f"   📈 <a href='{tv_url(sym)}'>TradingView Chart</a>\n"
-            )
-        if len(all_gainers) > 25:
-            msg1 += f"\n<i>...aur {len(all_gainers)-25} stocks (Poori list niche hai)</i>\n"
-
-    if all_losers:
-        msg1 += f"\n<b>━━ TOP LOSERS (3%-) ━━</b>\n"
-        for sym, ltp, chg in all_losers[:10]:
-            msg1 += (
-                f"🔴 <b>{sym}</b> | ₹{ltp} | <b>{chg:.2f}%</b>\n"
-                f"   📉 <a href='{tv_url(sym)}'>TradingView Chart</a>\n"
-            )
-
-    if not all_gainers and not all_losers:
-        msg1 += "\n📭 Aaj koi stock 3% se zyada nahi badla."
+    msg1 += format_sector_message(sector_perf)
 
     send_telegram(msg1)
 
@@ -306,30 +480,4 @@ NIFTY500_FALLBACK = [
     "COFORGE","CONCOR","CROMPTON","CUMMINSIND","CYIENT","DEEPAKNTR",
     "DIXON","DRLAL","ELGIEQUIP","EMAMILTD","ENDURANCE","ESCORTS",
     "FEDERALBNK","GLENMARK","GMRINFRA","GRINDWELL","HGINFRA",
-    "IDFCFIRSTB","IIFL","INDUSTOWER","IPCA","JKCEMENT","JSWENERGY",
-    "JUBLFOOD","KANSAINER","KPIT","KPRMILL","L&TFH","LAURUSLABS",
-    "LALPATHLAB","LTTS","MANAPPURAM","MAXHEALTH","METROPOLIS","MFSL",
-    "MINDA","MPHASIS","NATCOPHARM","NCC","PERSISTENT","PFIZER",
-    "PNCINFRA","POLYCAB","RADICO","RAMCOCEM","RBLBANK","RVNL",
-    "SCHAEFFLER","SOLARINDS","SUNTV","SUPREMEIND","SYNGENE","TATACHEM",
-    "TATAELXSI","TATAINVEST","THERMAX","TIINDIA","TIMKEN","TORNTPOWER",
-    "TTKPRESTIG","UNIONBANK","VOLTAS","WHIRLPOOL","ZYDUSLIFE",
-    "ANGELONE","CAMS","KFINTECH","MOFSL","NUVAMA","IRFC","HUDCO",
-    "NBCC","SJVN","NHPC","HFCL","RAILTEL","IREDA","NTPCGREEN",
-    "RPOWER","JPPOWER","POWERMECH","KEC","KALPATPOWR","APAR","KEI",
-    "FINOLEX","RRKABEL","INOXWIND","SUZLON","PRAJIND","WAAREEENER",
-    "GREENPANEL","CENTURYPLY","PRINCEPIPE","APOLLOPIPE","TEXINFRA",
-    "BIKAJI","DEVYANI","SAPPHIRE","WESTLIFE","BARBEQUE","EASEMYTRIP",
-    "RATEGAIN","IXIGO","NAZARA","HAPPYMINDS","TANLA","ROUTE",
-    "LATENTVIEW","DATAMATICS","MASTEK","ZENSAR","JKPAPER","TNPL",
-    "AIAENG","CAMPUS","RELAXO","BATA","METROBRAND","MEDPLUS","VMART",
-    "SHOPERSTOP","SHALBY","RAINBOW","KRSNAA","VIJAYA","MEDANTA",
-    "YATHARTH","RPSGVENT","SOLARA","NEULANDLAB","MARKSANS","SUVENPHAR",
-    "NIITMTS","PGIL","GEOJITFSL","EMKAY","JMFINANCIL","EDELWEISS",
-    "SUBROS","FIEM","SANDHAR","CRAFTSMAN","MAHINDCIE","SUPRAJIT",
-    "SAMVARDHNA","UNIPARTS","SOM","GLOBUSSPR","TILAKNAGAR","GMBREW",
-    "GPPL","ESABINDIA","VOLTAMP","PENIND","AMBER","PFC"
-]
-
-if __name__ == "__main__":
-    fetch_and_send()
+    "IDFCFIRSTB"
