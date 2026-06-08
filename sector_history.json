@@ -1,0 +1,24 @@
+{
+  "2026-06-08": {
+    "Industrial": "neutral",
+    "Pharma": "neutral",
+    "FMCG": "neutral",
+    "Banking": "negative",
+    "Consumer": "negative",
+    "Chemicals": "negative",
+    "Auto": "negative",
+    "Hospitality": "negative",
+    "Energy": "negative",
+    "IT": "negative",
+    "Building Mat": "negative",
+    "Infra": "negative",
+    "Others": "negative",
+    "Cap Goods": "negative",
+    "Media": "negative",
+    "Diversified": "negative",
+    "NBFC": "negative",
+    "Realty": "negative",
+    "Metals": "negative",
+    "Telecom": "negative"
+  }
+}
