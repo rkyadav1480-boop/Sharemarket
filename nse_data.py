@@ -408,7 +408,7 @@ def fetch_and_send():
     # ━━━━━ SECTOR PERFORMANCE CALCULATE KARO ━━━━━
     sector_perf = get_sector_performance(all_results)
 
-    # ━━ MESSAGE 1: MARKET OVERVIEW + SECTOR PERFORMANCE ━━
+    # ━━ MESSAGE 1A: MARKET OVERVIEW ━━
     arrow = "🟢▲" if avg_chg > 0 else "🔴▼"
     msg1  = (
         f"📊 <b>NIFTY 500 Market Update</b>\n"
@@ -416,12 +416,31 @@ def fetch_and_send():
         f"{arrow} <b>Average Change:</b> {avg_chg:+.2f}%\n"
         f"📈 Gainers 3%+: <b>{len(all_gainers)}</b>\n"
         f"📉 Losers 3%-: <b>{len(all_losers)}</b>\n"
-        f"🔍 Total scanned: <b>{count}</b> stocks\n\n"
+        f"🔍 Total scanned: <b>{count}</b> stocks"
     )
-
-    msg1 += format_sector_message(sector_perf)
-
     send_telegram(msg1)
+
+    # ━━ MESSAGE 1B: SECTOR PERFORMANCE ━━
+    # Telegram 4096 char limit — sectors ko chunks mein bhejo
+    CHUNK_SIZE = 20
+    for idx in range(0, len(sector_perf), CHUNK_SIZE):
+        chunk = sector_perf[idx:idx + CHUNK_SIZE]
+        lines = []
+        if idx == 0:
+            lines.append("🏭 <b>SECTOR PERFORMANCE</b>\n")
+        for sec, avg, count_s, gainers, losers in chunk:
+            if avg > 0.5:
+                icon = "🟢"
+            elif avg < -0.5:
+                icon = "🔴"
+            else:
+                icon = "🟡"
+            bar = "▲" if avg > 0 else "▼"
+            lines.append(
+                f"{icon} <b>{sec}</b>: {bar}{abs(avg):.2f}%  "
+                f"<i>({count_s} stocks | ↑{gainers} ↓{losers})</i>"
+            )
+        send_telegram("\n".join(lines))
 
     # ━━ MESSAGE 2: TOTAL PERFORMERS LIST ━━
     if all_gainers:
@@ -469,15 +488,4 @@ NIFTY500_FALLBACK = [
     "EICHERMOT","GRASIM","HEROMOTOCO","HINDALCO","INDUSINDBK","M&M","SBILIFE",
     "APOLLOHOSP","BAJAJ-AUTO","BPCL","BRITANNIA","CIPLA","COALINDIA",
     "HDFCLIFE","LTIM","TATACONSUM","UPL","ADANIGREEN","ADANITRANS",
-    "AMBUJACEM","AUROPHARMA","BAJAJHLDNG","BANKBARODA","BEL","BERGEPAINT",
-    "BHEL","BIOCON","BOSCHLTD","CANBK","CHOLAFIN","COLPAL","DABUR","DMART",
-    "GAIL","GODREJCP","GODREJPROP","HAL","HAVELLS","HDFCAMC","ICICIGI",
-    "INDHOTEL","INDUSTOWER","IRCTC","LICI","LUPIN","MARICO",
-    "MOTHERSON","MUTHOOTFIN","NAUKRI","OBEROIRLTY","OFSS","PAGEIND",
-    "PEL","PIDILITIND","PIIND","PNB","RECLTD","SBICARD","SHREECEM",
-    "SIEMENS","SRF","TORNTPHARM","TRENT","TVSMOTOR","VBL","VEDL",
-    "ABFRL","ALKEM","ASTRAL","AUBANK","BANDHANBNK","BHARATFORG",
-    "COFORGE","CONCOR","CROMPTON","CUMMINSIND","CYIENT","DEEPAKNTR",
-    "DIXON","DRLAL","ELGIEQUIP","EMAMILTD","ENDURANCE","ESCORTS",
-    "FEDERALBNK","GLENMARK","GMRINFRA","GRINDWELL","HGINFRA",
-    "IDFCFIRSTB"
+    "AMBUJACEM","AUROPHARMA","BAJAJHLDNG"
