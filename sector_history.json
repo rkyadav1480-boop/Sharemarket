@@ -42,5 +42,27 @@
     "Telecom": "negative",
     "IT": "negative",
     "Media": "negative"
+  },
+  "2026-06-10": {
+    "FMCG": "positive",
+    "Consumer": "neutral",
+    "Chemicals": "neutral",
+    "Auto": "neutral",
+    "Hospitality": "neutral",
+    "Pharma": "neutral",
+    "Infra": "neutral",
+    "Building Mat": "neutral",
+    "Industrial": "neutral",
+    "Diversified": "neutral",
+    "Banking": "neutral",
+    "Cap Goods": "neutral",
+    "Others": "negative",
+    "IT": "negative",
+    "Realty": "negative",
+    "Energy": "negative",
+    "NBFC": "negative",
+    "Telecom": "negative",
+    "Metals": "negative",
+    "Media": "negative"
   }
 }
