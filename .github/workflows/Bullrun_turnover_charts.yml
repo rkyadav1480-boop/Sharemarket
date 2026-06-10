@@ -31,7 +31,7 @@ jobs:
       env:
         BOT_TOKEN: ${{ secrets.BOT_TOKEN }}
         CHAT_ID: ${{ secrets.CHAT_ID }}
-      run: python your_script_name.py       # Make sure this matches your exact filename
+      run: python bull_run_turnover.py       # Make sure this matches your exact filename
 
     - name: Commit and Push JSON Changes
       run: |
