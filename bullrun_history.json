@@ -1076,5 +1076,42 @@
             "stock": "MOSCHIP",
             "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:MOSCHIP"
         }
+    ],
+    "10-06-2026": [
+        {
+            "no": 1,
+            "stock": "6/10/2026",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:6/10/2026"
+        },
+        {
+            "no": 2,
+            "stock": "YESBANK",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:YESBANK"
+        },
+        {
+            "no": 3,
+            "stock": "TMPV",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:TMPV"
+        },
+        {
+            "no": 4,
+            "stock": "WEBELSOLAR",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:WEBELSOLAR"
+        },
+        {
+            "no": 5,
+            "stock": "MOSCHIP",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:MOSCHIP"
+        },
+        {
+            "no": 6,
+            "stock": "HDFCSML250",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:HDFCSML250"
+        },
+        {
+            "no": 7,
+            "stock": "NAZARA",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:NAZARA"
+        }
     ]
 }
