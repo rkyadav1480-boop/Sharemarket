@@ -1090,26 +1090,31 @@
         },
         {
             "no": 3,
+            "stock": "BHARATCOAL",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:BHARATCOAL"
+        },
+        {
+            "no": 4,
+            "stock": "HCC",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:HCC"
+        },
+        {
+            "no": 5,
             "stock": "TMPV",
             "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:TMPV"
         },
         {
-            "no": 4,
+            "no": 6,
             "stock": "WEBELSOLAR",
             "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:WEBELSOLAR"
         },
         {
-            "no": 5,
-            "stock": "MOSCHIP",
-            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:MOSCHIP"
-        },
-        {
-            "no": 6,
+            "no": 7,
             "stock": "HDFCSML250",
             "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:HDFCSML250"
         },
         {
-            "no": 7,
+            "no": 8,
             "stock": "NAZARA",
             "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:NAZARA"
         }
