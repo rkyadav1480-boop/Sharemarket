@@ -1118,5 +1118,42 @@
             "stock": "NAZARA",
             "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:NAZARA"
         }
+    ],
+    "11-06-2026": [
+        {
+            "no": 1,
+            "stock": "6/11/2026",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:6/11/2026"
+        },
+        {
+            "no": 2,
+            "stock": "YESBANK",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:YESBANK"
+        },
+        {
+            "no": 3,
+            "stock": "BHARATCOAL",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:BHARATCOAL"
+        },
+        {
+            "no": 4,
+            "stock": "HCC",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:HCC"
+        },
+        {
+            "no": 5,
+            "stock": "TMPV",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:TMPV"
+        },
+        {
+            "no": 6,
+            "stock": "VINCOFE",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:VINCOFE"
+        },
+        {
+            "no": 7,
+            "stock": "NAZARA",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:NAZARA"
+        }
     ]
 }
