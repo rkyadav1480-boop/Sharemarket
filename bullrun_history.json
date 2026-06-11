@@ -1142,16 +1142,11 @@
         },
         {
             "no": 5,
-            "stock": "TMPV",
-            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:TMPV"
-        },
-        {
-            "no": 6,
             "stock": "VINCOFE",
             "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:VINCOFE"
         },
         {
-            "no": 7,
+            "no": 6,
             "stock": "NAZARA",
             "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:NAZARA"
         }
