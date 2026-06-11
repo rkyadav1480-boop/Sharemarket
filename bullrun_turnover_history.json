@@ -298,5 +298,42 @@
             "stock": "MEESHO",
             "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:MEESHO"
         }
+    ],
+    "11-06-2026": [
+        {
+            "no": 1,
+            "stock": "ASIANPAINT",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:ASIANPAINT"
+        },
+        {
+            "no": 2,
+            "stock": "DIVISLAB",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:DIVISLAB"
+        },
+        {
+            "no": 3,
+            "stock": "YESBANK",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:YESBANK"
+        },
+        {
+            "no": 4,
+            "stock": "FORTIS",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:FORTIS"
+        },
+        {
+            "no": 5,
+            "stock": "BOSCHLTD",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:BOSCHLTD"
+        },
+        {
+            "no": 6,
+            "stock": "INDUSINDBK",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:INDUSINDBK"
+        },
+        {
+            "no": 7,
+            "stock": "BHARATCOAL",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:BHARATCOAL"
+        }
     ]
 }
