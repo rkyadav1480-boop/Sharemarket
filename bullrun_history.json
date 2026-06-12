@@ -1179,16 +1179,21 @@
         },
         {
             "no": 6,
+            "stock": "GMRAIRPORT",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:GMRAIRPORT"
+        },
+        {
+            "no": 7,
             "stock": "NBCC",
             "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:NBCC"
         },
         {
-            "no": 7,
+            "no": 8,
             "stock": "TMPV",
             "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:TMPV"
         },
         {
-            "no": 8,
+            "no": 9,
             "stock": "WELSPUNLIV",
             "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:WELSPUNLIV"
         }
