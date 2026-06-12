@@ -335,5 +335,62 @@
             "stock": "BHARATCOAL",
             "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:BHARATCOAL"
         }
+    ],
+    "12-06-2026": [
+        {
+            "no": 1,
+            "stock": "VINCOFE",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:VINCOFE"
+        },
+        {
+            "no": 2,
+            "stock": "TMPV",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:TMPV"
+        },
+        {
+            "no": 3,
+            "stock": "SUZLON",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:SUZLON"
+        },
+        {
+            "no": 4,
+            "stock": "YESBANK",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:YESBANK"
+        },
+        {
+            "no": 5,
+            "stock": "ASIANPAINT",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:ASIANPAINT"
+        },
+        {
+            "no": 6,
+            "stock": "GMRAIRPORT",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:GMRAIRPORT"
+        },
+        {
+            "no": 7,
+            "stock": "INDUSINDBK",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:INDUSINDBK"
+        },
+        {
+            "no": 8,
+            "stock": "DIVISLAB",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:DIVISLAB"
+        },
+        {
+            "no": 9,
+            "stock": "NBCC",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:NBCC"
+        },
+        {
+            "no": 10,
+            "stock": "BOSCHLTD",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:BOSCHLTD"
+        },
+        {
+            "no": 11,
+            "stock": "BHARATCOAL",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:BHARATCOAL"
+        }
     ]
 }
