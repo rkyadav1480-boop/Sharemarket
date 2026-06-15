@@ -506,5 +506,47 @@
             "stock": "DIVISLAB",
             "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:DIVISLAB"
         }
+    ],
+    "15-06-2026": [
+        {
+            "no": 1,
+            "stock": "SUZLON",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:SUZLON"
+        },
+        {
+            "no": 2,
+            "stock": "BOSCHLTD",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:BOSCHLTD"
+        },
+        {
+            "no": 3,
+            "stock": "TMPV",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:TMPV"
+        },
+        {
+            "no": 4,
+            "stock": "ASIANPAINT",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:ASIANPAINT"
+        },
+        {
+            "no": 5,
+            "stock": "VINCOFE",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:VINCOFE"
+        },
+        {
+            "no": 6,
+            "stock": "NBCC",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:NBCC"
+        },
+        {
+            "no": 7,
+            "stock": "BHARATCOAL",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:BHARATCOAL"
+        },
+        {
+            "no": 8,
+            "stock": "DIVISLAB",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:DIVISLAB"
+        }
     ]
 }
