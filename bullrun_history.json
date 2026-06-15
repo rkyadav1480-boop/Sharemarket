@@ -1320,38 +1320,38 @@
         },
         {
             "no": 2,
-            "stock": "YESBANK",
-            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:YESBANK"
-        },
-        {
-            "no": 3,
             "stock": "SUZLON",
             "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:SUZLON"
         },
         {
-            "no": 4,
+            "no": 3,
             "stock": "BHARATCOAL",
             "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:BHARATCOAL"
         },
         {
-            "no": 5,
+            "no": 4,
             "stock": "NBCC",
             "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:NBCC"
         },
         {
-            "no": 6,
+            "no": 5,
             "stock": "VINCOFE",
             "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:VINCOFE"
         },
         {
-            "no": 7,
+            "no": 6,
             "stock": "TMPV",
             "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:TMPV"
         },
         {
-            "no": 8,
+            "no": 7,
             "stock": "MOSMALL250",
             "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:MOSMALL250"
+        },
+        {
+            "no": 8,
+            "stock": "PNBGILTS",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:PNBGILTS"
         },
         {
             "no": 9,
