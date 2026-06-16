@@ -26,7 +26,7 @@ jobs:
           BOT_TOKEN: ${{ secrets.BOT_TOKEN }}
           MY_CHAT_ID: ${{ secrets.MY_CHAT_ID }}
           GCP_CREDENTIALS: ${{ secrets.GCP_CREDENTIALS }}
-        run: python gtt_alert.py
+        run: python gtt_alert_full_updated.py
 
       - name: Save JSON (commit back)
         run: |
