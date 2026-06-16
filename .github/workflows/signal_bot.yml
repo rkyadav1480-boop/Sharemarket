@@ -3,7 +3,7 @@ name: GTT Signal Bot
 on:
   schedule:
     # 16:15 IST (10:45 UTC)
-    - cron: '45 10 * * 1-5'
+   # - cron: '45 10 * * 1-5'
 
   workflow_dispatch:
 
