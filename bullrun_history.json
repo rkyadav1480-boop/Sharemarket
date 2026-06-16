@@ -1358,5 +1358,57 @@
             "stock": "RBA",
             "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:RBA"
         }
+    ],
+    "16-06-2026": [
+        {
+            "no": 1,
+            "stock": "6/16/2026",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:6/16/2026"
+        },
+        {
+            "no": 2,
+            "stock": "OLAELEC",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:OLAELEC"
+        },
+        {
+            "no": 3,
+            "stock": "NBCC",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:NBCC"
+        },
+        {
+            "no": 4,
+            "stock": "BHARATCOAL",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:BHARATCOAL"
+        },
+        {
+            "no": 5,
+            "stock": "TMPV",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:TMPV"
+        },
+        {
+            "no": 6,
+            "stock": "VINCOFE",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:VINCOFE"
+        },
+        {
+            "no": 7,
+            "stock": "EXIDEIND",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:EXIDEIND"
+        },
+        {
+            "no": 8,
+            "stock": "RBA",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:RBA"
+        },
+        {
+            "no": 9,
+            "stock": "INDUSINDBK",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:INDUSINDBK"
+        },
+        {
+            "no": 10,
+            "stock": "MOSMALL250",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:MOSMALL250"
+        }
     ]
 }
