@@ -18,7 +18,7 @@ from google.oauth2.service_account import Credentials
 BOT_TOKEN      = os.environ["BOT_TOKEN"]
 CHAT_ID        = os.environ["MY_CHAT_ID"]
 GCP_CREDS_JSON = os.environ["GCP_CREDENTIALS"]
-SPREADSHEET    = "GTT Tracker"
+SPREADSHEET    = "https://docs.google.com/spreadsheets/d/1vwtYZZb5una04I7p8CrDIRUTBWl1moDjHfO9w2tpYxU/edit?gid=1258719905#gid=1258719905"
 SHEET_NAME     = "Sheet7"
 JSON_FILE      = "gtt_stocks.json"
 GTT_MULT       = 1.05
