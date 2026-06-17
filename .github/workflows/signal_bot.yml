@@ -1,4 +1,4 @@
-name: GTT Signal Bot
+name : GTT Signal Bot
 
 on:
   schedule:
