@@ -600,5 +600,37 @@
             "stock": "PHOENIXLTD",
             "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:PHOENIXLTD"
         }
+    ],
+    "17-06-2026": [
+        {
+            "no": 1,
+            "stock": "OLAELEC",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:OLAELEC"
+        },
+        {
+            "no": 2,
+            "stock": "ASIANPAINT",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:ASIANPAINT"
+        },
+        {
+            "no": 3,
+            "stock": "DIVISLAB",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:DIVISLAB"
+        },
+        {
+            "no": 4,
+            "stock": "PHOENIXLTD",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:PHOENIXLTD"
+        },
+        {
+            "no": 5,
+            "stock": "NBCC",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:NBCC"
+        },
+        {
+            "no": 6,
+            "stock": "FORTIS",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:FORTIS"
+        }
     ]
 }
