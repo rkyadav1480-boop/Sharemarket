@@ -16,7 +16,7 @@ BOT_TOKEN = os.environ.get("TELEGRAM_BOT_TOKEN")
 CHAT_ID = os.environ.get("TELEGRAM_CHAT_ID")
 
 # Google Sheets Settings
-SPREADSHEET_URL = os.environ.get("SPREADSHEET_URL")
+SPREADSHEET_URL = os.environ.get("https://docs.google.com/spreadsheets/d/1vwtYZZb5una04I7p8CrDIRUTBWl1moDjHfO9w2tpYxU/edit?gid=1258719905#gid=1258719905")
 GSPREAD_CREDS_JSON = os.environ.get("GSPREAD_CREDENTIALS")
 
 now = datetime.today().strftime("%Y-%m-%d %H:%M:%S")
