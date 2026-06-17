@@ -1,4 +1,4 @@
-name: GTT Alert Daily
+name : GTT Alert Daily
 
 on:
   schedule:
