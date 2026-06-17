@@ -2,8 +2,7 @@ import os
 import json
 import requests
 from datetime import datetime, timedelta
-import gspread
-from oauth2client.service_account import ServiceAccountCredentials
+import pandas as pd
 import yfinance as yf
 
 # --- CONFIGURATION ---
@@ -15,9 +14,8 @@ JSON_FILE = "gtt_stocks.json"
 BOT_TOKEN = os.environ.get("TELEGRAM_BOT_TOKEN")
 CHAT_ID = os.environ.get("TELEGRAM_CHAT_ID")
 
-# Google Sheets Settings
+# Google Sheets Settings (GitHub Secrets se aayega)
 SPREADSHEET_URL = os.environ.get("https://docs.google.com/spreadsheets/d/1vwtYZZb5una04I7p8CrDIRUTBWl1moDjHfO9w2tpYxU/edit?gid=1258719905#gid=1258719905")
-GSPREAD_CREDS_JSON = os.environ.get("GSPREAD_CREDENTIALS")
 
 now = datetime.today().strftime("%Y-%m-%d %H:%M:%S")
 
@@ -34,25 +32,29 @@ def send_telegram(text):
         print(f"❌ Telegram send failed: {e}")
 
 def get_sheet_stocks():
-    if not SPREADSHEET_URL or not GSPREAD_CREDS_JSON:
-        print("⚠️ Google Sheet credentials missing!")
+    if not SPREADSHEET_URL:
+        print("⚠️ Google Sheet URL missing in GitHub Secrets!")
         return []
     try:
-        creds_dict = json.loads(GSPREAD_CREDS_JSON)
-        scope = ["https://spreadsheets.google.com/feeds", "https://www.googleapis.com/auth/drive"]
-        creds = ServiceAccountCredentials.from_json_keyfile_dict(creds_dict, scope)
-        client = gspread.authorize(creds)
+        # Public sheet URL ko CSV export format mein badalna
+        if "/edit" in SPREADSHEET_URL:
+            csv_url = SPREADSHEET_URL.split("/edit")[0] + "/export?format=csv"
+        else:
+            csv_url = SPREADSHEET_URL
+            
+        # Direct Pandas se bina kisi login ke read karein
+        df = pd.read_csv(csv_url)
         
-        sheet = client.open_by_url(SPREADSHEET_URL).sheet1
-        col_values = sheet.col_values(1)  # Column A
-        
-        # Header skip aur khali rows filter karein
-        stocks = [r.strip() for r in col_values if r.strip()]
-        if stocks and (stocks[0].upper() == "STOCKS" or "SYMBOL" in stocks[0].upper()):
-            stocks = stocks[1:]
+        if df.empty:
+            print("⚠️ Sheet khali dikh rahi hai.")
+            return []
+            
+        # Pehla column uthayein aur khali rows hatayein
+        col_values = df.iloc[:, 0].dropna().tolist()
+        stocks = [str(r).strip() for r in col_values if str(r).strip()]
         return stocks
     except Exception as e:
-        print(f"❌ Error fetching from Google Sheet: {e}")
+        print(f"❌ Error fetching from Public Google Sheet: {e}")
         return []
 
 def to_yf_symbol(raw):
@@ -115,12 +117,8 @@ def save_json(data):
 def main():
     saved = load_saved_stocks()
     
-    try:
-        sheet_stocks = get_sheet_stocks()
-        print(f"📋 Sheet se mile stocks: {sheet_stocks}")
-    except Exception as e:
-        print(f"❌ Sheet read karne mein error aayi: {str(e)}")
-        sheet_stocks = []
+    sheet_stocks = get_sheet_stocks()
+    print(f"📋 Sheet se mile stocks: {sheet_stocks}")
         
     newly_added = []
     
