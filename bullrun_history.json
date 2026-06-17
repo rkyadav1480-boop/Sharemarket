@@ -1429,16 +1429,11 @@
         },
         {
             "no": 4,
-            "stock": "TMPV",
-            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:TMPV"
-        },
-        {
-            "no": 5,
             "stock": "NIVABUPA",
             "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:NIVABUPA"
         },
         {
-            "no": 6,
+            "no": 5,
             "stock": "RBA",
             "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:RBA"
         }
