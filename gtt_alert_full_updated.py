@@ -111,22 +111,48 @@ def main():
     # Permanent JSON tracking
     newly_added = []
 
-   # Permanent JSON tracking newly_added = []
-    for raw_original in sheet_stocks:
-        raw = raw_original.strip().upper()  # Capitalize kar diya taaki nse:sbin -> NSE:SBIN ban jaye
+ for raw_original in sheet_stocks:
+        raw = raw_original.strip().upper()  # nse:sbin -> NSE:SBIN
+        
         if raw not in saved:
             symbol = to_yf_symbol(raw)
+            print(f"🔄 Processing stock from sheet: {raw} ({symbol})")
+            
+            # Low aur GTT fetch karne ki koshish karein
             low_25, gtt = get_25d_low_and_gtt(symbol)
-            if low_25 and gtt:
-                saved[raw] = {
-                    "symbol": symbol,
-                    "low_25": low_25,
-                    "gtt_price": gtt,
-                    "added_date": datetime.today().strftime("%Y-%m-%d"),
-                    "alerted": False,
-                    "active": True
-                }
-                newly_added.append(raw)
+            
+            # Agar yfinance fail bhi ho jaye, tab bhi stock naam save hoga!
+            saved[raw] = {
+                "symbol": symbol,
+                "low_25": low_25 if low_25 else 0.0,
+                "gtt_price": gtt if gtt else 0.0,
+                "added_date": datetime.today().strftime("%Y-%m-%d"),
+                "alerted": False,
+                "active": True,
+                "status": "Success" if low_25 else "YFinance_Failed"
+            }
+            newly_added.append(raw)for raw_original in sheet_stocks:
+        raw = raw_original.strip().upper()  # nse:sbin -> NSE:SBIN
+        
+        if raw not in saved:
+            symbol = to_yf_symbol(raw)
+            print(f"🔄 Processing stock from sheet: {raw} ({symbol})")
+            
+            # Low aur GTT fetch karne ki koshish karein
+            low_25, gtt = get_25d_low_and_gtt(symbol)
+            
+            # Agar yfinance fail bhi ho jaye, tab bhi stock naam save hoga!
+            saved[raw] = {
+                "symbol": symbol,
+                "low_25": low_25 if low_25 else 0.0,
+                "gtt_price": gtt if gtt else 0.0,
+                "added_date": datetime.today().strftime("%Y-%m-%d"),
+                "alerted": False,
+                "active": True,
+                "status": "Success" if low_25 else "YFinance_Failed"
+            }
+            newly_added.append(raw)
+           
                   
 
     # Existing stocks NEVER removed from JSON
