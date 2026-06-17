@@ -1,37 +1,59 @@
-
-"""
-GTT Alert Script - With JSON Persistence (Permanent Tracking)
-- Sheet se stocks padhta hai → JSON mein save karta hai
-- JSON se track karta hai (chahe sheet se hata diya jaye)
-- Roz CMP check karta hai → GTT hit? → Telegram alert
-- Stock once added => JSON se auto remove nahi hoga
-"""
-
 import os
 import json
-import gspread
-import yfinance as yf
 import requests
 from datetime import datetime, timedelta
-from google.oauth2.service_account import Credentials
+import gspread
+from oauth2client.service_account import ServiceAccountCredentials
+import yfinance as yf
 
-BOT_TOKEN      = os.environ["BOT_TOKEN"]
-CHAT_ID        = os.environ["MY_CHAT_ID"]
-GCP_CREDS_JSON = os.environ["GCP_CREDENTIALS"]
-SPREADSHEET    = "https://docs.google.com/spreadsheets/d/1vwtYZZb5una04I7p8CrDIRUTBWl1moDjHfO9w2tpYxU/edit?gid=1258719905#gid=1258719905"
-SHEET_NAME     = "Sheet7"
-JSON_FILE      = "gtt_stocks.json"
-GTT_MULT       = 1.05
-LOW_PERIOD     = 25
+# --- CONFIGURATION ---
+LOW_PERIOD = 25
+GTT_MULT = 0.97
+JSON_FILE = "gtt_stocks.json"
 
-def send_telegram(msg):
-    url = f"https://api.telegram.org/bot{BOT_TOKEN}/sendMessage"
-    resp = requests.post(url, data={
-        "chat_id": CHAT_ID,
-        "text": msg,
-        "parse_mode": "HTML"
-    })
-    return resp.ok
+# Telegram Settings
+BOT_TOKEN = os.environ.get("TELEGRAM_BOT_TOKEN")
+CHAT_ID = os.environ.get("TELEGRAM_CHAT_ID")
+
+# Google Sheets Settings
+SPREADSHEET_URL = os.environ.get("SPREADSHEET_URL")
+GSPREAD_CREDS_JSON = os.environ.get("GSPREAD_CREDENTIALS")
+
+now = datetime.today().strftime("%Y-%m-%d %H:%M:%S")
+
+def send_telegram(text):
+    if not BOT_TOKEN or not CHAT_ID:
+        print("⚠️ Telegram credentials missing!")
+        return
+    url = f"https://api.telegram.com/bot{BOT_TOKEN}/sendMessage"
+    payload = {"chat_id": CHAT_ID, "text": text, "parse_mode": "HTML"}
+    try:
+        res = requests.post(url, json=payload)
+        print(f"✉️ Telegram status: {res.status_code}")
+    except Exception as e:
+        print(f"❌ Telegram send failed: {e}")
+
+def get_sheet_stocks():
+    if not SPREADSHEET_URL or not GSPREAD_CREDS_JSON:
+        print("⚠️ Google Sheet credentials missing!")
+        return []
+    try:
+        creds_dict = json.loads(GSPREAD_CREDS_JSON)
+        scope = ["https://spreadsheets.google.com/feeds", "https://www.googleapis.com/auth/drive"]
+        creds = ServiceAccountCredentials.from_json_keyfile_dict(creds_dict, scope)
+        client = gspread.authorize(creds)
+        
+        sheet = client.open_by_url(SPREADSHEET_URL).sheet1
+        col_values = sheet.col_values(1)  # Column A
+        
+        # Header skip aur khali rows filter karein
+        stocks = [r.strip() for r in col_values if r.strip()]
+        if stocks and (stocks[0].upper() == "STOCKS" or "SYMBOL" in stocks[0].upper()):
+            stocks = stocks[1:]
+        return stocks
+    except Exception as e:
+        print(f"❌ Error fetching from Google Sheet: {e}")
+        return []
 
 def to_yf_symbol(raw):
     raw = raw.strip().upper()
@@ -41,107 +63,77 @@ def to_yf_symbol(raw):
         return raw.replace("BOM:", "") + ".BO"
     return raw + ".NS"
 
-def load_json():
-    if os.path.exists(JSON_FILE):
-        with open(JSON_FILE, "r") as f:
-            return json.load(f)
-    return {}
-
-def save_json(data):
-    with open(JSON_FILE, "w") as f:
-        json.dump(data, f, indent=2)
-
-def get_sheet_stocks():
-    creds_dict = json.loads(GCP_CREDS_JSON)
-    scopes = ["https://www.googleapis.com/auth/spreadsheets.readonly"]
-    creds = Credentials.from_service_account_info(creds_dict, scopes=scopes)
-    gc = gspread.authorize(creds)
-    sh = gc.open(SPREADSHEET)
-    ws = sh.worksheet(SHEET_NAME)
-    rows = ws.get_all_values()
-
-    stocks = []
-    for row in rows[1:]:
-        if row and row[0].strip():
-            stocks.append(row[0].strip())
-    return stocks
-
 def get_25d_low_and_gtt(symbol):
     try:
-        end = datetime.today()
-        start = end - timedelta(days=60)
-        tk = yf.Ticker(symbol)
-        hist = tk.history(
-            start=start.strftime("%Y-%m-%d"),
-            end=end.strftime("%Y-%m-%d"),
-            auto_adjust=True
-        )
-
-        if hist is None or len(hist) < LOW_PERIOD:
+        session = requests.Session()
+        session.headers.update({
+            'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36'
+        })
+        
+        tk = yf.Ticker(symbol, session=session)
+        hist = tk.history(period="2mo", auto_adjust=True)
+        
+        if hist is None or hist.empty or len(hist) < LOW_PERIOD:
+            print(f"⚠️ {symbol} ka data nahi mila ya rows kam hain.")
             return None, None
-
+            
         lows = hist["Low"].dropna().tolist()[-LOW_PERIOD:]
         low_25 = round(min(lows), 2)
         gtt = round(low_25 * GTT_MULT, 2)
         return low_25, gtt
-    except:
+    except Exception as e:
+        print(f"❌ {symbol} fetch karne mein error aayi: {str(e)}")
         return None, None
 
 def get_cmp(symbol):
     try:
-        tk = yf.Ticker(symbol)
-        return round(float(tk.fast_info["last_price"]), 2)
+        session = requests.Session()
+        session.headers.update({
+            'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36'
+        })
+        tk = yf.Ticker(symbol, session=session)
+        hist = tk.history(period="1d")
+        if not hist.empty:
+            return round(hist["Close"].iloc[-1], 2)
     except:
+        pass
+    return None
+
+def load_saved_stocks():
+    if os.path.exists(JSON_FILE):
         try:
-            hist = tk.history(period="1d")
-            return round(float(hist["Close"].iloc[-1]), 2)
+            with open(JSON_FILE, "r") as f:
+                return json.load(f)
         except:
-            return None
+            return {}
+    return {}
+
+def save_json(data):
+    with open(JSON_FILE, "w") as f:
+        json.dump(data, f, indent=4)
 
 def main():
-    now = datetime.now().strftime("%d-%b-%Y %H:%M")
-
-    saved = load_json()
-
+    saved = load_saved_stocks()
+    
     try:
         sheet_stocks = get_sheet_stocks()
-    except:
+        print(f"📋 Sheet se mile stocks: {sheet_stocks}")
+    except Exception as e:
+        print(f"❌ Sheet read karne mein error aayi: {str(e)}")
         sheet_stocks = []
-
-    # Permanent JSON tracking
+        
     newly_added = []
-
- for raw_original in sheet_stocks:
-        raw = raw_original.strip().upper()  # nse:sbin -> NSE:SBIN
+    
+    # New Stocks Tracking From Sheet
+    for raw_original in sheet_stocks:
+        raw = raw_original.strip().upper()
         
         if raw not in saved:
             symbol = to_yf_symbol(raw)
             print(f"🔄 Processing stock from sheet: {raw} ({symbol})")
             
-            # Low aur GTT fetch karne ki koshish karein
             low_25, gtt = get_25d_low_and_gtt(symbol)
             
-            # Agar yfinance fail bhi ho jaye, tab bhi stock naam save hoga!
-            saved[raw] = {
-                "symbol": symbol,
-                "low_25": low_25 if low_25 else 0.0,
-                "gtt_price": gtt if gtt else 0.0,
-                "added_date": datetime.today().strftime("%Y-%m-%d"),
-                "alerted": False,
-                "active": True,
-                "status": "Success" if low_25 else "YFinance_Failed"
-            }
-            newly_added.append(raw)for raw_original in sheet_stocks:
-        raw = raw_original.strip().upper()  # nse:sbin -> NSE:SBIN
-        
-        if raw not in saved:
-            symbol = to_yf_symbol(raw)
-            print(f"🔄 Processing stock from sheet: {raw} ({symbol})")
-            
-            # Low aur GTT fetch karne ki koshish karein
-            low_25, gtt = get_25d_low_and_gtt(symbol)
-            
-            # Agar yfinance fail bhi ho jaye, tab bhi stock naam save hoga!
             saved[raw] = {
                 "symbol": symbol,
                 "low_25": low_25 if low_25 else 0.0,
@@ -152,33 +144,16 @@ def main():
                 "status": "Success" if low_25 else "YFinance_Failed"
             }
             newly_added.append(raw)
-           
-                  
 
-    # Existing stocks NEVER removed from JSON
-
-    for raw, info in saved.items():
-        symbol = info["symbol"]
-
-        low_25, gtt = get_25d_low_and_gtt(symbol)
-
-        if low_25 and gtt:
-            saved[raw]["low_25"] = low_25
-            saved[raw]["gtt_price"] = gtt
-            saved[raw]["alerted"] = False
-
+    # Price comparison aur Alert check
     alerts = []
-
     for raw, info in saved.items():
-
         cmp_price = get_cmp(info["symbol"])
-
         if cmp_price is None:
             continue
-
+            
         gtt = info["gtt_price"]
-
-        if cmp_price >= gtt:
+        if gtt > 0 and cmp_price <= gtt:
             alerts.append({
                 "name": raw,
                 "cmp": cmp_price,
@@ -187,11 +162,11 @@ def main():
             })
 
     save_json(saved)
+    print(f"💾 JSON file updated successfully. Newly added: {newly_added}")
 
+    # Telegram Notification System
     if alerts:
-
         msg = f"🚨 <b>GTT BUY ALERT</b>\n📅 {now}\n"
-
         for a in alerts:
             msg += (
                 f"\n\n📌 <b>{a['name']}</b>"
@@ -199,9 +174,7 @@ def main():
                 f"\n25D Low : ₹{a['low_25']}"
                 f"\nGTT : ₹{a['gtt']}"
             )
-
         send_telegram(msg)
-
     else:
         send_telegram(
             f"📊 GTT Scan Complete\n"
