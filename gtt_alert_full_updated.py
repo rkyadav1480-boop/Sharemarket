@@ -7,7 +7,7 @@ import yfinance as yf
 
 # --- CONFIGURATION ---
 LOW_PERIOD = 25
-GTT_MULT = 0.97
+GTT_MULT = 1.05  # 25-day low ka 105% - GTT trigger price
 JSON_FILE = "gtt_stocks.json"
 
 # Telegram Settings
@@ -15,7 +15,7 @@ BOT_TOKEN = os.environ.get("TELEGRAM_BOT_TOKEN")
 CHAT_ID = os.environ.get("TELEGRAM_CHAT_ID")
 
 # Google Sheets Settings (GitHub Secrets se aayega)
-SPREADSHEET_URL = os.environ.get("https://docs.google.com/spreadsheets/d/1vwtYZZb5una04I7p8CrDIRUTBWl1moDjHfO9w2tpYxU/edit?gid=1258719905#gid=1258719905")
+SPREADSHEET_URL = os.environ.get("SPREADSHEET_URL", "https://docs.google.com/spreadsheets/d/1vwtYZZb5una04I7p8CrDIRUTBWl1moDjHfO9w2tpYxU/edit?gid=1258719905#gid=1258719905")
 
 now = datetime.today().strftime("%Y-%m-%d %H:%M:%S")
 
@@ -32,6 +32,7 @@ def send_telegram(text):
         print(f"❌ Telegram send failed: {e}")
 
 def get_sheet_stocks():
+    """Google Sheet se stocks fetch karo (public CSV export)"""
     if not SPREADSHEET_URL:
         print("⚠️ Google Sheet URL missing in GitHub Secrets!")
         return []
@@ -58,6 +59,7 @@ def get_sheet_stocks():
         return []
 
 def to_yf_symbol(raw):
+    """Stock symbol ko YFinance format mein convert karo"""
     raw = raw.strip().upper()
     if raw.startswith("NSE:"):
         return raw.replace("NSE:", "") + ".NS"
@@ -66,6 +68,7 @@ def to_yf_symbol(raw):
     return raw + ".NS"
 
 def get_25d_low_and_gtt(symbol):
+    """25-day ka low aur GTT price fetch karo"""
     try:
         session = requests.Session()
         session.headers.update({
@@ -81,13 +84,14 @@ def get_25d_low_and_gtt(symbol):
             
         lows = hist["Low"].dropna().tolist()[-LOW_PERIOD:]
         low_25 = round(min(lows), 2)
-        gtt = round(low_25 * GTT_MULT, 2)
+        gtt = round(low_25 * GTT_MULT, 2)  # 25-day low * 1.05
         return low_25, gtt
     except Exception as e:
         print(f"❌ {symbol} fetch karne mein error aayi: {str(e)}")
         return None, None
 
 def get_cmp(symbol):
+    """Current market price fetch karo"""
     try:
         session = requests.Session()
         session.headers.update({
@@ -102,83 +106,143 @@ def get_cmp(symbol):
     return None
 
 def load_saved_stocks():
+    """Saved JSON file se stocks load karo"""
     if os.path.exists(JSON_FILE):
         try:
             with open(JSON_FILE, "r") as f:
-                return json.load(f)
-        except:
+                data = json.load(f)
+                print(f"📂 Loaded {len(data)} stocks from JSON")
+                return data
+        except Exception as e:
+            print(f"⚠️ JSON load error: {e}")
             return {}
+    print(f"📂 JSON file nahi mila, naya create hoga")
     return {}
 
 def save_json(data):
-    with open(JSON_FILE, "w") as f:
-        json.dump(data, f, indent=4)
+    """JSON file ko save karo"""
+    try:
+        with open(JSON_FILE, "w") as f:
+            json.dump(data, f, indent=4)
+        print(f"💾 JSON saved with {len(data)} stocks")
+    except Exception as e:
+        print(f"❌ JSON save error: {e}")
 
 def main():
+    print(f"🚀 Script started at {now}")
+    
+    # Load pehle se saved stocks
     saved = load_saved_stocks()
     
+    # Sheet se fresh stocks fetch karo
     sheet_stocks = get_sheet_stocks()
-    print(f"📋 Sheet se mile stocks: {sheet_stocks}")
-        
+    print(f"📋 Sheet se {len(sheet_stocks)} stocks mile: {sheet_stocks}")
+    
     newly_added = []
     
-    # New Stocks Tracking From Sheet
+    # === STEP 1: NEW STOCKS ADD KARO ===
     for raw_original in sheet_stocks:
         raw = raw_original.strip().upper()
         
+        # Agar stock pehle se nahi hai to add karo
         if raw not in saved:
             symbol = to_yf_symbol(raw)
-            print(f"🔄 Processing stock from sheet: {raw} ({symbol})")
+            print(f"\n✨ NEW STOCK: {raw} ({symbol})")
             
             low_25, gtt = get_25d_low_and_gtt(symbol)
             
-            saved[raw] = {
-                "symbol": symbol,
-                "low_25": low_25 if low_25 else 0.0,
-                "gtt_price": gtt if gtt else 0.0,
-                "added_date": datetime.today().strftime("%Y-%m-%d"),
-                "alerted": False,
-                "active": True,
-                "status": "Success" if low_25 else "YFinance_Failed"
-            }
-            newly_added.append(raw)
-
-    # Price comparison aur Alert check
+            # Agar data mil gaya to save karo
+            if low_25 and gtt:
+                saved[raw] = {
+                    "symbol": symbol,
+                    "low_25": low_25,
+                    "gtt_price": gtt,
+                    "added_date": datetime.today().strftime("%Y-%m-%d"),
+                    "alerted": False,
+                    "active": True,
+                    "status": "Active"
+                }
+                newly_added.append(raw)
+                print(f"   ✅ Added: {raw} | 25D Low: ₹{low_25} | GTT: ₹{gtt}")
+            else:
+                # Agar data nahi mila to bhi entry save karo but inactive
+                saved[raw] = {
+                    "symbol": symbol,
+                    "low_25": 0.0,
+                    "gtt_price": 0.0,
+                    "added_date": datetime.today().strftime("%Y-%m-%d"),
+                    "alerted": False,
+                    "active": False,
+                    "status": "YFinance_Failed"
+                }
+                print(f"   ❌ Failed: {raw} | YFinance data nahi mila")
+        else:
+            print(f"ℹ️  Already tracked: {raw}")
+    
+    # === STEP 2: GTT ALERT CHECK KARO ===
+    print(f"\n🔍 Checking GTT alerts...")
     alerts = []
+    
     for raw, info in saved.items():
-        cmp_price = get_cmp(info["symbol"])
-        if cmp_price is None:
+        if not info["active"]:
             continue
             
+        symbol = info["symbol"]
+        cmp_price = get_cmp(symbol)
+        
+        if cmp_price is None:
+            print(f"   ⚠️  {raw}: CMP fetch nahi hua")
+            continue
+        
         gtt = info["gtt_price"]
+        low_25 = info["low_25"]
+        
+        # Alert check: agar CMP GTT price se kam ya barabar ho
         if gtt > 0 and cmp_price <= gtt:
             alerts.append({
                 "name": raw,
                 "cmp": cmp_price,
                 "gtt": gtt,
-                "low_25": info["low_25"]
+                "low_25": low_25
             })
-
+            print(f"   🚨 ALERT: {raw} | CMP: ₹{cmp_price} <= GTT: ₹{gtt}")
+        else:
+            print(f"   ✓ {raw} | CMP: ₹{cmp_price} | GTT: ₹{gtt}")
+    
+    # === STEP 3: JSON SAVE KARO ===
     save_json(saved)
-    print(f"💾 JSON file updated successfully. Newly added: {newly_added}")
-
-    # Telegram Notification System
+    
+    # === STEP 4: TELEGRAM NOTIFICATION ===
+    print(f"\n📤 Sending Telegram notification...")
+    
     if alerts:
-        msg = f"🚨 <b>GTT BUY ALERT</b>\n📅 {now}\n"
+        msg = f"🚨 <b>GTT BUY ALERT</b>\n📅 {now}\n\n"
+        msg += f"<b>⚠️ {len(alerts)} stocks GTT hit!</b>\n"
+        
         for a in alerts:
             msg += (
-                f"\n\n📌 <b>{a['name']}</b>"
-                f"\nCMP : ₹{a['cmp']}"
-                f"\n25D Low : ₹{a['low_25']}"
-                f"\nGTT : ₹{a['gtt']}"
+                f"\n📌 <b>{a['name']}</b>"
+                f"\n   CMP: ₹{a['cmp']}"
+                f"\n   25D Low: ₹{a['low_25']}"
+                f"\n   GTT: ₹{a['gtt']}"
+                f"\n   → Set GTT order at ₹{a['gtt']}"
             )
         send_telegram(msg)
     else:
-        send_telegram(
-            f"📊 GTT Scan Complete\n"
-            f"Stocks tracked : {len(saved)}\n"
-            f"GTT Hit today : 0"
+        msg = (
+            f"📊 <b>GTT Scan Complete</b>\n"
+            f"📅 {now}\n\n"
+            f"📈 Total stocks tracked: {len(saved)}\n"
+            f"✅ Active: {sum(1 for s in saved.values() if s['active'])}\n"
+            f"❌ Failed: {sum(1 for s in saved.values() if not s['active'])}\n"
+            f"🚨 GTT Hit today: 0\n"
+            f"✨ Newly added: {len(newly_added)}"
         )
+        if newly_added:
+            msg += f"\n\n🆕 New: {', '.join(newly_added)}"
+        send_telegram(msg)
+    
+    print(f"✅ Scan complete!\n")
 
 if __name__ == "__main__":
     main()
