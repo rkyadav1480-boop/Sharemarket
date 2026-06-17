@@ -111,12 +111,12 @@ def main():
     # Permanent JSON tracking
     newly_added = []
 
-    for raw in sheet_stocks:
+   # Permanent JSON tracking newly_added = []
+    for raw_original in sheet_stocks:
+        raw = raw_original.strip().upper()  # Capitalize kar diya taaki nse:sbin -> NSE:SBIN ban jaye
         if raw not in saved:
-
             symbol = to_yf_symbol(raw)
             low_25, gtt = get_25d_low_and_gtt(symbol)
-
             if low_25 and gtt:
                 saved[raw] = {
                     "symbol": symbol,
@@ -127,6 +127,7 @@ def main():
                     "active": True
                 }
                 newly_added.append(raw)
+                  
 
     # Existing stocks NEVER removed from JSON
 
