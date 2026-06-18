@@ -174,5 +174,27 @@
     "FMCG": "negative",
     "Building Mat": "negative",
     "Media": "negative"
+  },
+  "2026-06-18": {
+    "Media": "positive",
+    "Hospitality": "positive",
+    "Diversified": "positive",
+    "Consumer": "positive",
+    "Pharma": "positive",
+    "Others": "positive",
+    "Chemicals": "positive",
+    "Telecom": "positive",
+    "NBFC": "neutral",
+    "Banking": "neutral",
+    "Realty": "neutral",
+    "Energy": "neutral",
+    "Cap Goods": "neutral",
+    "Auto": "neutral",
+    "Metals": "neutral",
+    "Building Mat": "neutral",
+    "Infra": "neutral",
+    "FMCG": "neutral",
+    "IT": "negative",
+    "Industrial": "negative"
   }
 }
