@@ -1437,5 +1437,37 @@
             "stock": "RBA",
             "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:RBA"
         }
+    ],
+    "18-06-2026": [
+        {
+            "no": 1,
+            "stock": "6/18/2026",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:6/18/2026"
+        },
+        {
+            "no": 2,
+            "stock": "OLAELEC",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:OLAELEC"
+        },
+        {
+            "no": 3,
+            "stock": "NBCC",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:NBCC"
+        },
+        {
+            "no": 4,
+            "stock": "ALPHA",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:ALPHA"
+        },
+        {
+            "no": 5,
+            "stock": "MOSMALL250",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:MOSMALL250"
+        },
+        {
+            "no": 6,
+            "stock": "RBA",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:RBA"
+        }
     ]
 }
