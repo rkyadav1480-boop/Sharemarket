@@ -632,5 +632,42 @@
             "stock": "FORTIS",
             "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:FORTIS"
         }
+    ],
+    "18-06-2026": [
+        {
+            "no": 1,
+            "stock": "OLAELEC",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:OLAELEC"
+        },
+        {
+            "no": 2,
+            "stock": "NBCC",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:NBCC"
+        },
+        {
+            "no": 3,
+            "stock": "FORTIS",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:FORTIS"
+        },
+        {
+            "no": 4,
+            "stock": "DIVISLAB",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:DIVISLAB"
+        },
+        {
+            "no": 5,
+            "stock": "ASIANPAINT",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:ASIANPAINT"
+        },
+        {
+            "no": 6,
+            "stock": "PHOENIXLTD",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:PHOENIXLTD"
+        },
+        {
+            "no": 7,
+            "stock": "BOSCHLTD",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:BOSCHLTD"
+        }
     ]
 }
