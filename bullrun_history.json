@@ -1483,11 +1483,16 @@
         },
         {
             "no": 3,
+            "stock": "IDFCFIRSTB",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:IDFCFIRSTB"
+        },
+        {
+            "no": 4,
             "stock": "NBCC",
             "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:NBCC"
         },
         {
-            "no": 4,
+            "no": 5,
             "stock": "RBA",
             "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:RBA"
         }
