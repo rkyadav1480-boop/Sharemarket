@@ -790,5 +790,52 @@
             "stock": "BOSCHLTD",
             "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:BOSCHLTD"
         }
+    ],
+    "22-06-2026": [
+        {
+            "no": 1,
+            "stock": "AXISBANK",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:AXISBANK"
+        },
+        {
+            "no": 2,
+            "stock": "INDUSINDBK",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:INDUSINDBK"
+        },
+        {
+            "no": 3,
+            "stock": "EICHERMOT",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:EICHERMOT"
+        },
+        {
+            "no": 4,
+            "stock": "OLAELEC",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:OLAELEC"
+        },
+        {
+            "no": 5,
+            "stock": "DIVISLAB",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:DIVISLAB"
+        },
+        {
+            "no": 6,
+            "stock": "NBCC",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:NBCC"
+        },
+        {
+            "no": 7,
+            "stock": "ASIANPAINT",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:ASIANPAINT"
+        },
+        {
+            "no": 8,
+            "stock": "BOSCHLTD",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:BOSCHLTD"
+        },
+        {
+            "no": 9,
+            "stock": "CARTRADE",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:CARTRADE"
+        }
     ]
 }
