@@ -1574,13 +1574,18 @@
         },
         {
             "no": 5,
+            "stock": "PVTBANKADD",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:PVTBANKADD"
+        },
+        {
+            "no": 6,
             "stock": "INDUSINDBK",
             "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:INDUSINDBK"
         },
         {
-            "no": 6,
-            "stock": "JSWINFRA",
-            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:JSWINFRA"
+            "no": 7,
+            "stock": "AXISBANK",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:AXISBANK"
         }
     ]
 }
