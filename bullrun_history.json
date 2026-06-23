@@ -1587,5 +1587,47 @@
             "stock": "AXISBANK",
             "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:AXISBANK"
         }
+    ],
+    "23-06-2026": [
+        {
+            "no": 1,
+            "stock": "6/23/2026",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:6/23/2026"
+        },
+        {
+            "no": 2,
+            "stock": "OLAELEC",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:OLAELEC"
+        },
+        {
+            "no": 3,
+            "stock": "IDFCFIRSTB",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:IDFCFIRSTB"
+        },
+        {
+            "no": 4,
+            "stock": "NBCC",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:NBCC"
+        },
+        {
+            "no": 5,
+            "stock": "MOSMALL250",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:MOSMALL250"
+        },
+        {
+            "no": 6,
+            "stock": "FEDFINA",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:FEDFINA"
+        },
+        {
+            "no": 7,
+            "stock": "AXISBANK",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:AXISBANK"
+        },
+        {
+            "no": 8,
+            "stock": "INDUSINDBK",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:INDUSINDBK"
+        }
     ]
 }
