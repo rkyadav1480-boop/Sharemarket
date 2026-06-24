@@ -879,5 +879,67 @@
             "stock": "DIVISLAB",
             "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:DIVISLAB"
         }
+    ],
+    "24-06-2026": [
+        {
+            "no": 1,
+            "stock": "LT",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:LT"
+        },
+        {
+            "no": 2,
+            "stock": "AXISBANK",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:AXISBANK"
+        },
+        {
+            "no": 3,
+            "stock": "OLAELEC",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:OLAELEC"
+        },
+        {
+            "no": 4,
+            "stock": "MANKIND",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:MANKIND"
+        },
+        {
+            "no": 5,
+            "stock": "ASIANPAINT",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:ASIANPAINT"
+        },
+        {
+            "no": 6,
+            "stock": "IDFCFIRSTB",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:IDFCFIRSTB"
+        },
+        {
+            "no": 7,
+            "stock": "EICHERMOT",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:EICHERMOT"
+        },
+        {
+            "no": 8,
+            "stock": "GRSE",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:GRSE"
+        },
+        {
+            "no": 9,
+            "stock": "DIVISLAB",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:DIVISLAB"
+        },
+        {
+            "no": 10,
+            "stock": "BOSCHLTD",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:BOSCHLTD"
+        },
+        {
+            "no": 11,
+            "stock": "GAIL",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:GAIL"
+        },
+        {
+            "no": 12,
+            "stock": "CAMS",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:CAMS"
+        }
     ]
 }
