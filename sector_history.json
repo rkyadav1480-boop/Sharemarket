@@ -262,5 +262,27 @@
     "Building Mat": "negative",
     "Telecom": "negative",
     "Metals": "negative"
+  },
+  "2026-06-24": {
+    "IT": "positive",
+    "Banking": "positive",
+    "Realty": "positive",
+    "Building Mat": "positive",
+    "Industrial": "positive",
+    "Infra": "neutral",
+    "Consumer": "neutral",
+    "Pharma": "neutral",
+    "NBFC": "neutral",
+    "Chemicals": "neutral",
+    "FMCG": "neutral",
+    "Others": "neutral",
+    "Metals": "neutral",
+    "Energy": "neutral",
+    "Hospitality": "neutral",
+    "Telecom": "neutral",
+    "Diversified": "neutral",
+    "Auto": "neutral",
+    "Cap Goods": "negative",
+    "Media": "negative"
   }
 }
