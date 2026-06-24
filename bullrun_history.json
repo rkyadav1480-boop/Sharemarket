@@ -1653,23 +1653,43 @@
         },
         {
             "no": 5,
+            "stock": "BANKBARODA",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:BANKBARODA"
+        },
+        {
+            "no": 6,
+            "stock": "GAIL",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:GAIL"
+        },
+        {
+            "no": 7,
             "stock": "AXISBANK",
             "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:AXISBANK"
         },
         {
-            "no": 6,
+            "no": 8,
             "stock": "SMALLCAP",
             "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:SMALLCAP"
         },
         {
-            "no": 7,
+            "no": 9,
             "stock": "MOSMALL250",
             "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:MOSMALL250"
         },
         {
-            "no": 8,
+            "no": 10,
+            "stock": "JSWCEMENT",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:JSWCEMENT"
+        },
+        {
+            "no": 11,
             "stock": "VINCOFE",
             "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:VINCOFE"
+        },
+        {
+            "no": 12,
+            "stock": "PETRONET",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:PETRONET"
         }
     ]
 }
