@@ -1691,5 +1691,57 @@
             "stock": "PETRONET",
             "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:PETRONET"
         }
+    ],
+    "25-06-2026": [
+        {
+            "no": 1,
+            "stock": "6/25/2026",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:6/25/2026"
+        },
+        {
+            "no": 2,
+            "stock": "OLAELEC",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:OLAELEC"
+        },
+        {
+            "no": 3,
+            "stock": "IDFCFIRSTB",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:IDFCFIRSTB"
+        },
+        {
+            "no": 4,
+            "stock": "NBCC",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:NBCC"
+        },
+        {
+            "no": 5,
+            "stock": "GAIL",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:GAIL"
+        },
+        {
+            "no": 6,
+            "stock": "JSWCEMENT",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:JSWCEMENT"
+        },
+        {
+            "no": 7,
+            "stock": "IIFL",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:IIFL"
+        },
+        {
+            "no": 8,
+            "stock": "CUB",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:CUB"
+        },
+        {
+            "no": 9,
+            "stock": "PETRONET",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:PETRONET"
+        },
+        {
+            "no": 10,
+            "stock": "SHRINGARMS",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:SHRINGARMS"
+        }
     ]
 }
