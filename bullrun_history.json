@@ -1705,41 +1705,66 @@
         },
         {
             "no": 3,
+            "stock": "SUZLON",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:SUZLON"
+        },
+        {
+            "no": 4,
+            "stock": "GTLINFRA",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:GTLINFRA"
+        },
+        {
+            "no": 5,
             "stock": "IDFCFIRSTB",
             "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:IDFCFIRSTB"
         },
         {
-            "no": 4,
+            "no": 6,
+            "stock": "EXIDEIND",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:EXIDEIND"
+        },
+        {
+            "no": 7,
             "stock": "NBCC",
             "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:NBCC"
         },
         {
-            "no": 5,
+            "no": 8,
+            "stock": "AXISBANK",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:AXISBANK"
+        },
+        {
+            "no": 9,
             "stock": "GAIL",
             "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:GAIL"
         },
         {
-            "no": 6,
+            "no": 10,
+            "stock": "LTF",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:LTF"
+        },
+        {
+            "no": 11,
             "stock": "JSWCEMENT",
             "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:JSWCEMENT"
         },
         {
-            "no": 7,
+            "no": 12,
             "stock": "IIFL",
             "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:IIFL"
         },
         {
-            "no": 8,
+            "no": 13,
             "stock": "CUB",
             "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:CUB"
         },
         {
-            "no": 9,
+            "no": 14,
             "stock": "PETRONET",
             "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:PETRONET"
         },
         {
-            "no": 10,
+            "no": 15,
             "stock": "SHRINGARMS",
             "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:SHRINGARMS"
         }
