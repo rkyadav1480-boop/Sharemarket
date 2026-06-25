@@ -941,5 +941,77 @@
             "stock": "CAMS",
             "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:CAMS"
         }
+    ],
+    "25-06-2026": [
+        {
+            "no": 1,
+            "stock": "AXISBANK",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:AXISBANK"
+        },
+        {
+            "no": 2,
+            "stock": "LT",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:LT"
+        },
+        {
+            "no": 3,
+            "stock": "OLAELEC",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:OLAELEC"
+        },
+        {
+            "no": 4,
+            "stock": "SUZLON",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:SUZLON"
+        },
+        {
+            "no": 5,
+            "stock": "EXIDEIND",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:EXIDEIND"
+        },
+        {
+            "no": 6,
+            "stock": "ASIANPAINT",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:ASIANPAINT"
+        },
+        {
+            "no": 7,
+            "stock": "TITAN",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:TITAN"
+        },
+        {
+            "no": 8,
+            "stock": "EICHERMOT",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:EICHERMOT"
+        },
+        {
+            "no": 9,
+            "stock": "IIFL",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:IIFL"
+        },
+        {
+            "no": 10,
+            "stock": "DIVISLAB",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:DIVISLAB"
+        },
+        {
+            "no": 11,
+            "stock": "INDUSINDBK",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:INDUSINDBK"
+        },
+        {
+            "no": 12,
+            "stock": "TIINDIA",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:TIINDIA"
+        },
+        {
+            "no": 13,
+            "stock": "MANKIND",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:MANKIND"
+        },
+        {
+            "no": 14,
+            "stock": "IDFCFIRSTB",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:IDFCFIRSTB"
+        }
     ]
 }
