@@ -1349,5 +1349,112 @@
             "stock": "NBCC",
             "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:NBCC"
         }
+    ],
+    "29-06-2026": [
+        {
+            "no": 1,
+            "stock": "LT",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:LT"
+        },
+        {
+            "no": 2,
+            "stock": "AXISBANK",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:AXISBANK"
+        },
+        {
+            "no": 3,
+            "stock": "CHOLAFIN",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:CHOLAFIN"
+        },
+        {
+            "no": 4,
+            "stock": "ASIANPAINT",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:ASIANPAINT"
+        },
+        {
+            "no": 5,
+            "stock": "EICHERMOT",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:EICHERMOT"
+        },
+        {
+            "no": 6,
+            "stock": "OLAELEC",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:OLAELEC"
+        },
+        {
+            "no": 7,
+            "stock": "TITAN",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:TITAN"
+        },
+        {
+            "no": 8,
+            "stock": "PAGEIND",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:PAGEIND"
+        },
+        {
+            "no": 9,
+            "stock": "BOSCHLTD",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:BOSCHLTD"
+        },
+        {
+            "no": 10,
+            "stock": "LTF",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:LTF"
+        },
+        {
+            "no": 11,
+            "stock": "MANAPPURAM",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:MANAPPURAM"
+        },
+        {
+            "no": 12,
+            "stock": "EXIDEIND",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:EXIDEIND"
+        },
+        {
+            "no": 13,
+            "stock": "GAIL",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:GAIL"
+        },
+        {
+            "no": 14,
+            "stock": "DMART",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:DMART"
+        },
+        {
+            "no": 15,
+            "stock": "TIINDIA",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:TIINDIA"
+        },
+        {
+            "no": 16,
+            "stock": "AADHARHFC",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:AADHARHFC"
+        },
+        {
+            "no": 17,
+            "stock": "OBEROIRLTY",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:OBEROIRLTY"
+        },
+        {
+            "no": 18,
+            "stock": "INDUSINDBK",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:INDUSINDBK"
+        },
+        {
+            "no": 19,
+            "stock": "CAMS",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:CAMS"
+        },
+        {
+            "no": 20,
+            "stock": "IDFCFIRSTB",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:IDFCFIRSTB"
+        },
+        {
+            "no": 21,
+            "stock": "NBCC",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:NBCC"
+        }
     ]
 }
