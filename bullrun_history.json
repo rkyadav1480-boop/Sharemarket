@@ -2307,43 +2307,58 @@
         },
         {
             "no": 5,
+            "stock": "BAJFINANCE",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:BAJFINANCE"
+        },
+        {
+            "no": 6,
+            "stock": "BHARATCOAL",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:BHARATCOAL"
+        },
+        {
+            "no": 7,
             "stock": "IVALUE",
             "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:IVALUE"
         },
         {
-            "no": 6,
+            "no": 8,
             "stock": "GAIL",
             "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:GAIL"
         },
         {
-            "no": 7,
+            "no": 9,
             "stock": "AXISBANK",
             "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:AXISBANK"
         },
         {
-            "no": 8,
+            "no": 10,
             "stock": "INDHOTEL",
             "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:INDHOTEL"
         },
         {
-            "no": 9,
+            "no": 11,
             "stock": "EXIDEIND",
             "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:EXIDEIND"
         },
         {
-            "no": 10,
-            "stock": "PETRONET",
-            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:PETRONET"
+            "no": 12,
+            "stock": "MANAPPURAM",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:MANAPPURAM"
         },
         {
-            "no": 11,
+            "no": 13,
             "stock": "VINCOFE",
             "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:VINCOFE"
         },
         {
-            "no": 12,
+            "no": 14,
             "stock": "JSWCEMENT",
             "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:JSWCEMENT"
+        },
+        {
+            "no": 15,
+            "stock": "PNBGILTS",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:PNBGILTS"
         }
     ]
 }
