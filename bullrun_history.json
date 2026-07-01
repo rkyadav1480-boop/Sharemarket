@@ -2283,5 +2283,67 @@
             "stock": "INDUSINDBK",
             "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:INDUSINDBK"
         }
+    ],
+    "01-07-2026": [
+        {
+            "no": 1,
+            "stock": "7/1/2026",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:7/1/2026"
+        },
+        {
+            "no": 2,
+            "stock": "GTLINFRA",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:GTLINFRA"
+        },
+        {
+            "no": 3,
+            "stock": "IDFCFIRSTB",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:IDFCFIRSTB"
+        },
+        {
+            "no": 4,
+            "stock": "NBCC",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:NBCC"
+        },
+        {
+            "no": 5,
+            "stock": "IVALUE",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:IVALUE"
+        },
+        {
+            "no": 6,
+            "stock": "GAIL",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:GAIL"
+        },
+        {
+            "no": 7,
+            "stock": "AXISBANK",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:AXISBANK"
+        },
+        {
+            "no": 8,
+            "stock": "INDHOTEL",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:INDHOTEL"
+        },
+        {
+            "no": 9,
+            "stock": "EXIDEIND",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:EXIDEIND"
+        },
+        {
+            "no": 10,
+            "stock": "PETRONET",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:PETRONET"
+        },
+        {
+            "no": 11,
+            "stock": "VINCOFE",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:VINCOFE"
+        },
+        {
+            "no": 12,
+            "stock": "JSWCEMENT",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:JSWCEMENT"
+        }
     ]
 }
