@@ -1518,5 +1518,87 @@
             "stock": "NH",
             "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:NH"
         }
+    ],
+    "01-07-2026": [
+        {
+            "no": 1,
+            "stock": "BAJFINANCE",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:BAJFINANCE"
+        },
+        {
+            "no": 2,
+            "stock": "AXISBANK",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:AXISBANK"
+        },
+        {
+            "no": 3,
+            "stock": "LT",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:LT"
+        },
+        {
+            "no": 4,
+            "stock": "TITAN",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:TITAN"
+        },
+        {
+            "no": 5,
+            "stock": "ASIANPAINT",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:ASIANPAINT"
+        },
+        {
+            "no": 6,
+            "stock": "SUNPHARMA",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:SUNPHARMA"
+        },
+        {
+            "no": 7,
+            "stock": "INDHOTEL",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:INDHOTEL"
+        },
+        {
+            "no": 8,
+            "stock": "IVALUE",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:IVALUE"
+        },
+        {
+            "no": 9,
+            "stock": "IDFCFIRSTB",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:IDFCFIRSTB"
+        },
+        {
+            "no": 10,
+            "stock": "INDUSINDBK",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:INDUSINDBK"
+        },
+        {
+            "no": 11,
+            "stock": "NBCC",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:NBCC"
+        },
+        {
+            "no": 12,
+            "stock": "MANKIND",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:MANKIND"
+        },
+        {
+            "no": 13,
+            "stock": "GAIL",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:GAIL"
+        },
+        {
+            "no": 14,
+            "stock": "DMART",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:DMART"
+        },
+        {
+            "no": 15,
+            "stock": "EXIDEIND",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:EXIDEIND"
+        },
+        {
+            "no": 16,
+            "stock": "CAMS",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:CAMS"
+        }
     ]
 }
