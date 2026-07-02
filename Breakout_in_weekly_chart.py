@@ -1,17 +1,18 @@
 import yfinance as yf
-from datetime import datetime
+import time
+import re
 import pandas as pd
-import requests # For Telegram API
-import os # For environment variables
+import requests
+import os
 
 def get_daily_data(symbol, period="2y"):
-    """yfinance से raw daily OHLCV list of dicts nikalo (no pandas)"""
+    """yfinance से raw daily OHLCV list of dicts nikalo"""
     ticker = yf.Ticker(symbol)
     try:
         hist = ticker.history(period=period)
         if hist.empty:
             return []
-    except Exception as e:
+    except Exception:
         return []
 
     hist = hist.reset_index()
@@ -29,8 +30,9 @@ def get_daily_data(symbol, period="2y"):
         })
     return data
 
+
 def to_weekly(daily_data):
-    """Daily candles को ISO week के हिसाब से weekly OHLCV में aggregate करो"""
+    """Daily candles ko ISO week ke hisaab se weekly OHLCV mein aggregate karo"""
     weeks = {}
     for row in daily_data:
         year, week, _ = row['date'].isocalendar()
@@ -45,12 +47,12 @@ def to_weekly(daily_data):
             w = weeks[key]
             w['high'] = max(w['high'], row['high'])
             w['low'] = min(w['low'], row['low'])
-            w['close'] = row['close']          # last close of week
+            w['close'] = row['close']
             w['volume'] += row['volume']
-            w['date'] = row['date']            # update to last date in week
+            w['date'] = row['date']
 
-    # sorted list return करो (chronological)
     return [weeks[k] for k in sorted(weeks.keys())]
+
 
 def weekly_breakout_scan(symbol, lookback_weeks=20, vol_multiplier=1.5):
     daily = get_daily_data(symbol)
@@ -58,19 +60,15 @@ def weekly_breakout_scan(symbol, lookback_weeks=20, vol_multiplier=1.5):
         return None
 
     weekly = to_weekly(daily)
-
     if len(weekly) < lookback_weeks + 11:
-        return None  # पर्याप्त डेटा नहीं
+        return None
 
     latest = weekly[-1]
-
-    # rolling high of previous N weeks (excluding current week)
-    prev_weeks = weekly[-(lookback_weeks+1):-1]
+    prev_weeks = weekly[-(lookback_weeks + 1):-1]
     if not prev_weeks:
         return None
     rolling_high = max(w['high'] for w in prev_weeks)
 
-    # avg volume of last 10 weeks (excluding current)
     vol_window = weekly[-11:-1]
     if not vol_window:
         return None
@@ -90,22 +88,53 @@ def weekly_breakout_scan(symbol, lookback_weeks=20, vol_multiplier=1.5):
         'signal': breakout and vol_confirm and strong_close
     }
 
-def send_telegram_message(message, bot_token, chat_id):
-    url = f"https://api.telegram.org/bot{bot_token}/sendMessage"
-    payload = {
-        'chat_id': chat_id,
-        'text': message,
-        'parse_mode': 'Markdown'
-    }
-    try:
-        response = requests.post(url, json=payload)
-        response.raise_for_status() # Raise an exception for HTTP errors
-        print("Telegram message sent successfully.")
-    except requests.exceptions.RequestException as e:
-        print(f"Error sending Telegram message: {e}")
 
-# --- Nifty 500 के लिए परिवर्तन शुरू ---
-print("Nifty 500 सिंबल लाए जा रहे हैं...")
+def escape_markdown(text):
+    """Telegram legacy Markdown ke liye special chars escape karo"""
+    escape_chars = r'_*`['
+    return re.sub(r'([%s])' % re.escape(escape_chars), r'\\\1', text)
+
+
+def send_telegram_message(message, bot_token, chat_id):
+    """4096 char limit ke hisaab se message chunks mein bhejo"""
+    url = f"https://api.telegram.org/bot{bot_token}/sendMessage"
+    MAX_LEN = 4000  # safety margin
+
+    chunks = []
+    while len(message) > MAX_LEN:
+        split_at = message.rfind('\n', 0, MAX_LEN)
+        if split_at == -1:
+            split_at = MAX_LEN
+        chunks.append(message[:split_at])
+        message = message[split_at:]
+    chunks.append(message)
+
+    for i, chunk in enumerate(chunks):
+        payload = {
+            'chat_id': chat_id,
+            'text': chunk,
+            'parse_mode': 'Markdown',
+            'disable_web_page_preview': True
+        }
+        try:
+            response = requests.post(url, json=payload, timeout=15)
+            response.raise_for_status()
+            print(f"Telegram chunk {i+1}/{len(chunks)} sent successfully.")
+        except requests.exceptions.RequestException as e:
+            # Markdown parse error aane par plain text retry karo
+            print(f"Error sending chunk {i+1}: {e}. Retrying without Markdown...")
+            payload['parse_mode'] = None
+            try:
+                response = requests.post(url, json=payload, timeout=15)
+                response.raise_for_status()
+                print(f"Chunk {i+1} sent as plain text.")
+            except requests.exceptions.RequestException as e2:
+                print(f"Chunk {i+1} failed completely: {e2}")
+        time.sleep(0.5)  # Telegram rate limit se bachne ke liye
+
+
+# --- Nifty 500 symbols fetch ---
+print("Nifty 500 symbol laaye ja rahe hain...")
 try:
     url = 'https://en.wikipedia.org/wiki/NIFTY_500'
     tables = pd.read_html(url, storage_options={'User-Agent': "Mozilla/5.0"}, match='Symbol', header=0)
@@ -119,59 +148,61 @@ try:
     if nifty500_df is not None:
         symbols_list = nifty500_df['Symbol'].dropna().astype(str).tolist()
         symbols = [symbol + ".NS" for symbol in symbols_list if not symbol.startswith('^')]
-        print(f"सफलतापूर्वक {len(symbols)} Nifty 500 सिंबल लाए गए।")
+        print(f"Safaltapoorvak {len(symbols)} Nifty 500 symbol laaye gaye.")
     else:
-        print("Wikipedia पर NIFTY 500 तालिका नहीं मिली। डिफ़ॉल्ट सिंबल का उपयोग किया जा रहा है।")
-        symbols = ["RELIANCE.NS", "TCS.NS", "INFY.NS"] # मूल पर वापस आ रहा है
+        print("Wikipedia par NIFTY 500 table nahi mili. Default symbols use ho rahe hain.")
+        symbols = ["RELIANCE.NS", "TCS.NS", "INFY.NS"]
 except Exception as e:
-    print(f"Wikipedia से Nifty 500 सिंबल लाने में त्रुटि: {e}। डिफ़ॉल्ट सिंबल का उपयोग किया जा रहा है।")
-    symbols = ["RELIANCE.NS", "TCS.NS", "INFY.NS"] # मूल पर वापस आ रहा है
-# --- Nifty 500 के लिए परिवर्तन समाप्त ---
+    print(f"Wikipedia se symbols laane mein error: {e}. Default symbols use ho rahe hain.")
+    symbols = ["RELIANCE.NS", "TCS.NS", "INFY.NS"]
 
+print("Nifty 500 stocks ke liye weekly breakout scan chalaya ja raha hai...")
 
-print("Nifty 500 स्टॉक्स के लिए साप्ताहिक ब्रेकआउट स्कैन चलाया जा रहा है...")
+breakout_signals = []
+data_fetch_errors = []
 
-breakout_signals = [] # सिग्नल True वाले स्टॉक्स को स्टोर करने के लिए सूची
-data_fetch_errors = [] # yfinance data fetching errors को स्टोर करने के लिए सूची
-
-for sym in symbols:
+for idx, sym in enumerate(symbols):
     result = weekly_breakout_scan(sym)
     if result is None:
         data_fetch_errors.append(sym)
-        continue # Skip to next symbol
-
-    if result['signal']:
-        # print(f"BREAKOUT SIGNAL: {result}") # अगर आप सभी रिजल्ट देखना चाहते हैं तो इसे अनकमेंट करें
+    elif result['signal']:
         breakout_signals.append(result)
 
-# Construct the message for Telegram
+    # progress + rate-limit friendly delay
+    if (idx + 1) % 25 == 0:
+        print(f"{idx + 1}/{len(symbols)} stocks processed...")
+    time.sleep(0.3)  # Yahoo Finance block hone se bachne ke liye
+
+# --- Telegram message banao ---
 telegram_message_parts = ["*Nifty 500 Weekly Breakout Scan Results*\n"]
 
 if breakout_signals:
-    telegram_message_parts.append("\n*--- ब्रेकआउट सिग्नल वाले स्टॉक्स ---*\n")
+    telegram_message_parts.append("\n*--- Breakout Signal Wale Stocks ---*\n")
     for signal_data in breakout_signals:
         b_sym = signal_data['symbol']
         tv_symbol = b_sym.replace('.NS', '')
         tradingview_link = f"https://in.tradingview.com/chart/?symbol=NSE%3A{tv_symbol}"
-        telegram_message_parts.append(f"- {b_sym}: [TradingView]({tradingview_link})\n  `Close: {signal_data['close']}, Rolling High: {signal_data['rolling_high']}`")
+        safe_sym = escape_markdown(b_sym)
+        telegram_message_parts.append(
+            f"- {safe_sym}: [TradingView]({tradingview_link})\n  `Close: {signal_data['close']}, Rolling High: {signal_data['rolling_high']}`"
+        )
 else:
-    telegram_message_parts.append("इस स्कैन में कोई ब्रेकआउट सिग्नल नहीं मिला।")
+    telegram_message_parts.append("Is scan mein koi breakout signal nahi mila.")
 
+# Sirf count bhejo, poori list nahi (500 stocks ki list message ko bloat kar degi)
 if data_fetch_errors:
-    telegram_message_parts.append("\n*--- डेटा नहीं मिल पाया वाले स्टॉक्स (छोड़ा गया) ---*\n")
-    telegram_message_parts.append("निम्नलिखित स्टॉक्स के लिए ऐतिहासिक डेटा उपलब्ध नहीं था या उसे प्राप्त करने में त्रुटि हुई:\n")
-    for err_sym in data_fetch_errors:
-        telegram_message_parts.append(f"- {err_sym}")
+    telegram_message_parts.append(
+        f"\n*--- Data Fetch Errors ---*\n{len(data_fetch_errors)} stocks ke liye data nahi mila (skip kiya gaya)."
+    )
 
 final_telegram_message = "\n".join(telegram_message_parts)
 
-# Get Telegram credentials from environment variables
 bot_token = os.getenv('BOT_TOKEN')
 chat_id = os.getenv('MY_CHAT_ID')
 
 if bot_token and chat_id:
     send_telegram_message(final_telegram_message, bot_token, chat_id)
 else:
-    print("Telegram BOT_TOKEN या MY_CHAT_ID वातावरण चर में सेट नहीं हैं। Telegram संदेश नहीं भेजा गया।")
-    print("\n--- Final Results (Printed to Console) ---")
-    print(final_telegram_message) # Print to console if Telegram not configured
+    print("Telegram BOT_TOKEN ya MY_CHAT_ID environment variables mein set nahi hain.")
+    print("\n--- Final Results (Console) ---")
+    print(final_telegram_message)
