@@ -2360,5 +2360,62 @@
             "stock": "PNBGILTS",
             "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:PNBGILTS"
         }
+    ],
+    "02-07-2026": [
+        {
+            "no": 1,
+            "stock": "7/2/2026",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:7/2/2026"
+        },
+        {
+            "no": 2,
+            "stock": "ZEEL",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:ZEEL"
+        },
+        {
+            "no": 3,
+            "stock": "GTLINFRA",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:GTLINFRA"
+        },
+        {
+            "no": 4,
+            "stock": "IDFCFIRSTB",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:IDFCFIRSTB"
+        },
+        {
+            "no": 5,
+            "stock": "NBCC",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:NBCC"
+        },
+        {
+            "no": 6,
+            "stock": "BAJFINANCE",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:BAJFINANCE"
+        },
+        {
+            "no": 7,
+            "stock": "GAIL",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:GAIL"
+        },
+        {
+            "no": 8,
+            "stock": "REDINGTON",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:REDINGTON"
+        },
+        {
+            "no": 9,
+            "stock": "IVALUE",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:IVALUE"
+        },
+        {
+            "no": 10,
+            "stock": "AXISBANK",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:AXISBANK"
+        },
+        {
+            "no": 11,
+            "stock": "INDHOTEL",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:INDHOTEL"
+        }
     ]
 }
