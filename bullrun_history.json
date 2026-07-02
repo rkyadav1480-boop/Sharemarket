@@ -2369,51 +2369,36 @@
         },
         {
             "no": 2,
-            "stock": "ZEEL",
-            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:ZEEL"
-        },
-        {
-            "no": 3,
-            "stock": "GTLINFRA",
-            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:GTLINFRA"
-        },
-        {
-            "no": 4,
             "stock": "IDFCFIRSTB",
             "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:IDFCFIRSTB"
         },
         {
-            "no": 5,
-            "stock": "NBCC",
-            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:NBCC"
-        },
-        {
-            "no": 6,
+            "no": 3,
             "stock": "BAJFINANCE",
             "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:BAJFINANCE"
         },
         {
-            "no": 7,
+            "no": 4,
             "stock": "GAIL",
             "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:GAIL"
         },
         {
-            "no": 8,
+            "no": 5,
             "stock": "REDINGTON",
             "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:REDINGTON"
         },
         {
-            "no": 9,
+            "no": 6,
             "stock": "IVALUE",
             "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:IVALUE"
         },
         {
-            "no": 10,
+            "no": 7,
             "stock": "AXISBANK",
             "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:AXISBANK"
         },
         {
-            "no": 11,
+            "no": 8,
             "stock": "INDHOTEL",
             "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:INDHOTEL"
         }
