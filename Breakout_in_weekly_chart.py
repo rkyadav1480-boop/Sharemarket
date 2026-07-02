@@ -6,7 +6,7 @@ import requests
 import os
 
 def get_daily_data(symbol, period="2y"):
-    """yfinance से raw daily OHLCV list of dicts nikalo"""
+    """yfinance se raw daily OHLCV list of dicts nikalo"""
     ticker = yf.Ticker(symbol)
     try:
         hist = ticker.history(period=period)
@@ -78,10 +78,14 @@ def weekly_breakout_scan(symbol, lookback_weeks=20, vol_multiplier=1.5):
     vol_confirm = latest['volume'] > vol_multiplier * avg_vol
     strong_close = latest['close'] > (latest['low'] + 0.66 * (latest['high'] - latest['low']))
 
+    # margin % - kitne % se breakout hua (sirf jab breakout True ho tab meaningful)
+    margin_pct = ((latest['close'] - rolling_high) / rolling_high) * 100 if rolling_high else 0
+
     return {
         'symbol': symbol,
         'close': round(latest['close'], 2),
         'rolling_high': round(rolling_high, 2),
+        'margin_pct': round(margin_pct, 2),
         'breakout': breakout,
         'vol_confirm': vol_confirm,
         'strong_close': strong_close,
@@ -158,41 +162,74 @@ except Exception as e:
 
 print("Nifty 500 stocks ke liye weekly breakout scan chalaya ja raha hai...")
 
-breakout_signals = []
+strict_signals = []      # breakout + vol_confirm + strong_close (sab True)
+breakout_only = []       # breakout True hai, but vol_confirm ya strong_close fail
 data_fetch_errors = []
 
 for idx, sym in enumerate(symbols):
     result = weekly_breakout_scan(sym)
     if result is None:
         data_fetch_errors.append(sym)
-    elif result['signal']:
-        breakout_signals.append(result)
+    elif result['breakout']:
+        # Debug print - console mein har breakout ka pura detail dikhega
+        print(
+            f"{sym}: close={result['close']} rolling_high={result['rolling_high']} "
+            f"margin={result['margin_pct']}% vol_confirm={result['vol_confirm']} "
+            f"strong_close={result['strong_close']} => signal={result['signal']}"
+        )
+        if result['signal']:
+            strict_signals.append(result)
+        else:
+            breakout_only.append(result)
 
     # progress + rate-limit friendly delay
     if (idx + 1) % 25 == 0:
         print(f"{idx + 1}/{len(symbols)} stocks processed...")
     time.sleep(0.3)  # Yahoo Finance block hone se bachne ke liye
 
+# breakout_only ko margin % ke hisaab se sort karo (best pehle)
+breakout_only.sort(key=lambda x: x['margin_pct'], reverse=True)
+strict_signals.sort(key=lambda x: x['margin_pct'], reverse=True)
+
+
+def format_stock_line(signal_data, show_flags=False):
+    b_sym = signal_data['symbol']
+    tv_symbol = b_sym.replace('.NS', '')
+    tradingview_link = f"https://in.tradingview.com/chart/?symbol=NSE%3A{tv_symbol}"
+    safe_sym = escape_markdown(b_sym)
+    line = (
+        f"- {safe_sym}: [TradingView]({tradingview_link})\n"
+        f"  `Close: {signal_data['close']} | High: {signal_data['rolling_high']} | Margin: +{signal_data['margin_pct']}%`"
+    )
+    if show_flags:
+        vol_mark = "✅" if signal_data['vol_confirm'] else "❌"
+        close_mark = "✅" if signal_data['strong_close'] else "❌"
+        line += f"\n  `Vol Confirm: {vol_mark}  Strong Close: {close_mark}`"
+    return line
+
+
 # --- Telegram message banao ---
-telegram_message_parts = ["*Nifty 500 Weekly Breakout Scan Results*\n"]
+telegram_message_parts = ["*Nifty 500 Weekly Breakout Scan Results*"]
 
-if breakout_signals:
-    telegram_message_parts.append("\n*--- Breakout Signal Wale Stocks ---*\n")
-    for signal_data in breakout_signals:
-        b_sym = signal_data['symbol']
-        tv_symbol = b_sym.replace('.NS', '')
-        tradingview_link = f"https://in.tradingview.com/chart/?symbol=NSE%3A{tv_symbol}"
-        safe_sym = escape_markdown(b_sym)
-        telegram_message_parts.append(
-            f"- {safe_sym}: [TradingView]({tradingview_link})\n  `Close: {signal_data['close']}, Rolling High: {signal_data['rolling_high']}`"
-        )
+if strict_signals:
+    telegram_message_parts.append(
+        f"\n*✅ CONFIRMED SIGNALS ({len(strict_signals)})*\n_Breakout + Volume + Strong Close - sab confirm_\n"
+    )
+    for s in strict_signals:
+        telegram_message_parts.append(format_stock_line(s))
 else:
-    telegram_message_parts.append("Is scan mein koi breakout signal nahi mila.")
+    telegram_message_parts.append("\n*✅ CONFIRMED SIGNALS*\nKoi fully confirmed signal nahi mila is scan mein.")
 
-# Sirf count bhejo, poori list nahi (500 stocks ki list message ko bloat kar degi)
+if breakout_only:
+    telegram_message_parts.append(
+        f"\n\n*⚠️ BREAKOUT ONLY - WEAK ({len(breakout_only)})*\n_Price breakout hua, lekin volume ya close weak - caution ke saath dekhein_\n"
+    )
+    for s in breakout_only:
+        telegram_message_parts.append(format_stock_line(s, show_flags=True))
+
 if data_fetch_errors:
     telegram_message_parts.append(
-        f"\n*--- Data Fetch Errors ---*\n{len(data_fetch_errors)} stocks ke liye data nahi mila (skip kiya gaya)."
+        f"\n\n*--- Data Fetch Errors ---*\n{len(data_fetch_errors)} stocks ke liye data nahi mila (skip kiya gaya)."
     )
 
 final_telegram_message = "\n".join(telegram_message_parts)
