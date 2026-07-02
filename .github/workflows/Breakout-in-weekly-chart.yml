@@ -31,4 +31,3 @@ jobs:
         MY_CHAT_ID: ${{ secrets.MY_CHAT_ID }}
       run: |
         python breakout_in_weekly_chart.py
-```
