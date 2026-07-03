@@ -29,5 +29,5 @@ jobs:
         BOT_TOKEN: ${{ secrets.BOT_TOKEN }}
         MY_CHAT_ID: ${{ secrets.MY_CHAT_ID }}
       run: |
-        python BREAKOUTONLY.py
+        python onlybreakout.py
       continue-on-error: false
