@@ -394,5 +394,27 @@
     "Media": "neutral",
     "Cap Goods": "negative",
     "Telecom": "negative"
+  },
+  "2026-07-03": {
+    "IT": "positive",
+    "NBFC": "positive",
+    "Realty": "positive",
+    "Pharma": "positive",
+    "Metals": "positive",
+    "Infra": "positive",
+    "Telecom": "neutral",
+    "Hospitality": "neutral",
+    "Chemicals": "neutral",
+    "Diversified": "neutral",
+    "Others": "neutral",
+    "FMCG": "neutral",
+    "Industrial": "neutral",
+    "Auto": "neutral",
+    "Consumer": "negative",
+    "Energy": "negative",
+    "Building Mat": "negative",
+    "Media": "negative",
+    "Banking": "negative",
+    "Cap Goods": "negative"
   }
 }
