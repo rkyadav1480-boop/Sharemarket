@@ -2402,5 +2402,57 @@
             "stock": "INDHOTEL",
             "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:INDHOTEL"
         }
+    ],
+    "03-07-2026": [
+        {
+            "no": 1,
+            "stock": "7/3/2026",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:7/3/2026"
+        },
+        {
+            "no": 2,
+            "stock": "IDFCFIRSTB",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:IDFCFIRSTB"
+        },
+        {
+            "no": 3,
+            "stock": "NBCC",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:NBCC"
+        },
+        {
+            "no": 4,
+            "stock": "BAJFINANCE",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:BAJFINANCE"
+        },
+        {
+            "no": 5,
+            "stock": "AXISBANK",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:AXISBANK"
+        },
+        {
+            "no": 6,
+            "stock": "REDINGTON",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:REDINGTON"
+        },
+        {
+            "no": 7,
+            "stock": "GAIL",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:GAIL"
+        },
+        {
+            "no": 8,
+            "stock": "INDHOTEL",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:INDHOTEL"
+        },
+        {
+            "no": 9,
+            "stock": "HUDCO",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:HUDCO"
+        },
+        {
+            "no": 10,
+            "stock": "VINCOFE",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:VINCOFE"
+        }
     ]
 }
