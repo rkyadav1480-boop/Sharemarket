@@ -1,5 +1,5 @@
 ```yaml
-name: Weekly Stock Breakout Scan
+name: ONLY Weekly Stock 
 
 on:
   schedule:
