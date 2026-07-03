@@ -2411,46 +2411,61 @@
         },
         {
             "no": 2,
+            "stock": "SUZLON",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:SUZLON"
+        },
+        {
+            "no": 3,
             "stock": "IDFCFIRSTB",
             "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:IDFCFIRSTB"
         },
         {
-            "no": 3,
-            "stock": "NBCC",
-            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:NBCC"
+            "no": 4,
+            "stock": "BHARATCOAL",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:BHARATCOAL"
         },
         {
-            "no": 4,
+            "no": 5,
+            "stock": "MEESHO",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:MEESHO"
+        },
+        {
+            "no": 6,
             "stock": "BAJFINANCE",
             "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:BAJFINANCE"
         },
         {
-            "no": 5,
+            "no": 7,
+            "stock": "RECLTD",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:RECLTD"
+        },
+        {
+            "no": 8,
             "stock": "AXISBANK",
             "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:AXISBANK"
         },
         {
-            "no": 6,
+            "no": 9,
             "stock": "REDINGTON",
             "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:REDINGTON"
         },
         {
-            "no": 7,
+            "no": 10,
             "stock": "GAIL",
             "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:GAIL"
         },
         {
-            "no": 8,
+            "no": 11,
             "stock": "INDHOTEL",
             "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:INDHOTEL"
         },
         {
-            "no": 9,
+            "no": 12,
             "stock": "HUDCO",
             "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:HUDCO"
         },
         {
-            "no": 10,
+            "no": 13,
             "stock": "VINCOFE",
             "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:VINCOFE"
         }
