@@ -1724,5 +1724,72 @@
             "stock": "FORTIS",
             "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:FORTIS"
         }
+    ],
+    "04-07-2026": [
+        {
+            "no": 1,
+            "stock": "BAJFINANCE",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:BAJFINANCE"
+        },
+        {
+            "no": 2,
+            "stock": "AXISBANK",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:AXISBANK"
+        },
+        {
+            "no": 3,
+            "stock": "SUZLON",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:SUZLON"
+        },
+        {
+            "no": 4,
+            "stock": "INDHOTEL",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:INDHOTEL"
+        },
+        {
+            "no": 5,
+            "stock": "RECLTD",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:RECLTD"
+        },
+        {
+            "no": 6,
+            "stock": "DIVISLAB",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:DIVISLAB"
+        },
+        {
+            "no": 7,
+            "stock": "MEESHO",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:MEESHO"
+        },
+        {
+            "no": 8,
+            "stock": "IDFCFIRSTB",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:IDFCFIRSTB"
+        },
+        {
+            "no": 9,
+            "stock": "CIPLA",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:CIPLA"
+        },
+        {
+            "no": 10,
+            "stock": "CHOLAFIN",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:CHOLAFIN"
+        },
+        {
+            "no": 11,
+            "stock": "HUDCO",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:HUDCO"
+        },
+        {
+            "no": 12,
+            "stock": "ASIANPAINT",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:ASIANPAINT"
+        },
+        {
+            "no": 13,
+            "stock": "CAMS",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:CAMS"
+        }
     ]
 }
