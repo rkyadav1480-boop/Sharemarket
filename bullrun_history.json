@@ -2531,5 +2531,67 @@
             "stock": "DENTA",
             "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:DENTA"
         }
+    ],
+    "05-07-2026": [
+        {
+            "no": 1,
+            "stock": "7/5/2026",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:7/5/2026"
+        },
+        {
+            "no": 2,
+            "stock": "SUZLON",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:SUZLON"
+        },
+        {
+            "no": 3,
+            "stock": "IDFCFIRSTB",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:IDFCFIRSTB"
+        },
+        {
+            "no": 4,
+            "stock": "BHARATCOAL",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:BHARATCOAL"
+        },
+        {
+            "no": 5,
+            "stock": "MEESHO",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:MEESHO"
+        },
+        {
+            "no": 6,
+            "stock": "BAJFINANCE",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:BAJFINANCE"
+        },
+        {
+            "no": 7,
+            "stock": "HUDCO",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:HUDCO"
+        },
+        {
+            "no": 8,
+            "stock": "RECLTD",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:RECLTD"
+        },
+        {
+            "no": 9,
+            "stock": "GAIL",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:GAIL"
+        },
+        {
+            "no": 10,
+            "stock": "INDHOTEL",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:INDHOTEL"
+        },
+        {
+            "no": 11,
+            "stock": "AXISBANK",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:AXISBANK"
+        },
+        {
+            "no": 12,
+            "stock": "DENTA",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:DENTA"
+        }
     ]
 }
