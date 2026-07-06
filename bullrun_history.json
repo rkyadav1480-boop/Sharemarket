@@ -2602,8 +2602,8 @@
         },
         {
             "no": 2,
-            "stock": "SUZLON",
-            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:SUZLON"
+            "stock": "OLAELEC",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:OLAELEC"
         },
         {
             "no": 3,
@@ -2669,11 +2669,6 @@
             "no": 15,
             "stock": "STALLION",
             "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:STALLION"
-        },
-        {
-            "no": 16,
-            "stock": "RBA",
-            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:RBA"
         }
     ]
 }
