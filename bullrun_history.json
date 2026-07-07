@@ -2699,8 +2699,8 @@
         },
         {
             "no": 6,
-            "stock": "CCAVENUE",
-            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:CCAVENUE"
+            "stock": "ICICIBANK",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:ICICIBANK"
         },
         {
             "no": 7,
@@ -2709,51 +2709,41 @@
         },
         {
             "no": 8,
+            "stock": "SAMMAANCAP",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:SAMMAANCAP"
+        },
+        {
+            "no": 9,
             "stock": "RBA",
             "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:RBA"
         },
         {
-            "no": 9,
-            "stock": "AVANTEL",
-            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:AVANTEL"
-        },
-        {
             "no": 10,
-            "stock": "PATELENG",
-            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:PATELENG"
-        },
-        {
-            "no": 11,
             "stock": "AXISBANK",
             "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:AXISBANK"
         },
         {
-            "no": 12,
+            "no": 11,
             "stock": "BAJFINANCE",
             "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:BAJFINANCE"
         },
         {
-            "no": 13,
+            "no": 12,
             "stock": "INOXGREEN",
             "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:INOXGREEN"
         },
         {
-            "no": 14,
-            "stock": "RECLTD",
-            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:RECLTD"
-        },
-        {
-            "no": 15,
+            "no": 13,
             "stock": "GAIL",
             "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:GAIL"
         },
         {
-            "no": 16,
+            "no": 14,
             "stock": "SMALLCAP",
             "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:SMALLCAP"
         },
         {
-            "no": 17,
+            "no": 15,
             "stock": "SHRIRAMPPS",
             "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:SHRIRAMPPS"
         }
