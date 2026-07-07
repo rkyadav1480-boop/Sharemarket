@@ -2670,5 +2670,92 @@
             "stock": "STALLION",
             "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:STALLION"
         }
+    ],
+    "07-07-2026": [
+        {
+            "no": 1,
+            "stock": "7/7/2026",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:7/7/2026"
+        },
+        {
+            "no": 2,
+            "stock": "OLAELEC",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:OLAELEC"
+        },
+        {
+            "no": 3,
+            "stock": "IDFCFIRSTB",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:IDFCFIRSTB"
+        },
+        {
+            "no": 4,
+            "stock": "ZEEL",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:ZEEL"
+        },
+        {
+            "no": 5,
+            "stock": "BHARATCOAL",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:BHARATCOAL"
+        },
+        {
+            "no": 6,
+            "stock": "CCAVENUE",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:CCAVENUE"
+        },
+        {
+            "no": 7,
+            "stock": "PVTBANKADD",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:PVTBANKADD"
+        },
+        {
+            "no": 8,
+            "stock": "RBA",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:RBA"
+        },
+        {
+            "no": 9,
+            "stock": "AVANTEL",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:AVANTEL"
+        },
+        {
+            "no": 10,
+            "stock": "PATELENG",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:PATELENG"
+        },
+        {
+            "no": 11,
+            "stock": "AXISBANK",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:AXISBANK"
+        },
+        {
+            "no": 12,
+            "stock": "BAJFINANCE",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:BAJFINANCE"
+        },
+        {
+            "no": 13,
+            "stock": "INOXGREEN",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:INOXGREEN"
+        },
+        {
+            "no": 14,
+            "stock": "RECLTD",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:RECLTD"
+        },
+        {
+            "no": 15,
+            "stock": "GAIL",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:GAIL"
+        },
+        {
+            "no": 16,
+            "stock": "SMALLCAP",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:SMALLCAP"
+        },
+        {
+            "no": 17,
+            "stock": "SHRIRAMPPS",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:SHRIRAMPPS"
+        }
     ]
 }
