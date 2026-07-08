@@ -2761,66 +2761,51 @@
         },
         {
             "no": 3,
-            "stock": "ZEEL",
-            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:ZEEL"
-        },
-        {
-            "no": 4,
             "stock": "IDFCFIRSTB",
             "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:IDFCFIRSTB"
         },
         {
-            "no": 5,
+            "no": 4,
             "stock": "ICICIBANK",
             "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:ICICIBANK"
         },
         {
-            "no": 6,
-            "stock": "BHARATCOAL",
-            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:BHARATCOAL"
-        },
-        {
-            "no": 7,
+            "no": 5,
             "stock": "CCAVENUE",
             "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:CCAVENUE"
         },
         {
-            "no": 8,
-            "stock": "SAMMAANCAP",
-            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:SAMMAANCAP"
-        },
-        {
-            "no": 9,
+            "no": 6,
             "stock": "BAJFINANCE",
             "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:BAJFINANCE"
         },
         {
-            "no": 10,
+            "no": 7,
+            "stock": "TRENT",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:TRENT"
+        },
+        {
+            "no": 8,
             "stock": "VINCOFE",
             "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:VINCOFE"
         },
         {
-            "no": 11,
+            "no": 9,
             "stock": "AXISBANK",
             "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:AXISBANK"
         },
         {
-            "no": 12,
-            "stock": "GAIL",
-            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:GAIL"
-        },
-        {
-            "no": 13,
+            "no": 10,
             "stock": "PATELENG",
             "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:PATELENG"
         },
         {
-            "no": 14,
+            "no": 11,
             "stock": "SMALLCAP",
             "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:SMALLCAP"
         },
         {
-            "no": 15,
+            "no": 12,
             "stock": "INDHOTEL",
             "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:INDHOTEL"
         }
