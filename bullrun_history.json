@@ -2833,43 +2833,33 @@
         },
         {
             "no": 5,
-            "stock": "CCAVENUE",
-            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:CCAVENUE"
-        },
-        {
-            "no": 6,
             "stock": "ICICIBANK",
             "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:ICICIBANK"
         },
         {
-            "no": 7,
-            "stock": "SAMMAANCAP",
-            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:SAMMAANCAP"
-        },
-        {
-            "no": 8,
+            "no": 6,
             "stock": "BAJFINANCE",
             "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:BAJFINANCE"
         },
         {
-            "no": 9,
+            "no": 7,
             "stock": "PATELENG",
             "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:PATELENG"
         },
         {
-            "no": 10,
-            "stock": "RBA",
-            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:RBA"
-        },
-        {
-            "no": 11,
+            "no": 8,
             "stock": "REDINGTON",
             "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:REDINGTON"
         },
         {
-            "no": 12,
+            "no": 9,
             "stock": "MOSMALL250",
             "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:MOSMALL250"
+        },
+        {
+            "no": 10,
+            "stock": "FEDFINA",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:FEDFINA"
         }
     ]
 }
