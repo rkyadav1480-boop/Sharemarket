@@ -1,26 +1,4 @@
 {
-  "2026-06-08": {
-    "Industrial": "neutral",
-    "Pharma": "neutral",
-    "FMCG": "neutral",
-    "Banking": "negative",
-    "Consumer": "negative",
-    "Chemicals": "negative",
-    "Auto": "negative",
-    "Hospitality": "negative",
-    "Energy": "negative",
-    "IT": "negative",
-    "Building Mat": "negative",
-    "Infra": "negative",
-    "Others": "negative",
-    "Cap Goods": "negative",
-    "Media": "negative",
-    "Diversified": "negative",
-    "NBFC": "negative",
-    "Realty": "negative",
-    "Metals": "negative",
-    "Telecom": "negative"
-  },
   "2026-06-09": {
     "Banking": "positive",
     "Diversified": "positive",
@@ -482,5 +460,27 @@
     "Media": "negative",
     "IT": "negative",
     "Hospitality": "negative"
+  },
+  "2026-07-09": {
+    "Media": "positive",
+    "Diversified": "positive",
+    "Realty": "positive",
+    "NBFC": "positive",
+    "Others": "positive",
+    "Telecom": "positive",
+    "Pharma": "positive",
+    "Banking": "positive",
+    "FMCG": "positive",
+    "Cap Goods": "positive",
+    "Infra": "positive",
+    "Metals": "positive",
+    "IT": "positive",
+    "Industrial": "positive",
+    "Energy": "positive",
+    "Auto": "neutral",
+    "Chemicals": "neutral",
+    "Hospitality": "neutral",
+    "Consumer": "neutral",
+    "Building Mat": "neutral"
   }
 }
