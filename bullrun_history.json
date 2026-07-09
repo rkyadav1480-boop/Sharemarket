@@ -2809,5 +2809,67 @@
             "stock": "INDHOTEL",
             "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:INDHOTEL"
         }
+    ],
+    "09-07-2026": [
+        {
+            "no": 1,
+            "stock": "7/9/2026",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:7/9/2026"
+        },
+        {
+            "no": 2,
+            "stock": "OLAELEC",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:OLAELEC"
+        },
+        {
+            "no": 3,
+            "stock": "ZEEL",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:ZEEL"
+        },
+        {
+            "no": 4,
+            "stock": "IDFCFIRSTB",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:IDFCFIRSTB"
+        },
+        {
+            "no": 5,
+            "stock": "CCAVENUE",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:CCAVENUE"
+        },
+        {
+            "no": 6,
+            "stock": "ICICIBANK",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:ICICIBANK"
+        },
+        {
+            "no": 7,
+            "stock": "SAMMAANCAP",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:SAMMAANCAP"
+        },
+        {
+            "no": 8,
+            "stock": "BAJFINANCE",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:BAJFINANCE"
+        },
+        {
+            "no": 9,
+            "stock": "PATELENG",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:PATELENG"
+        },
+        {
+            "no": 10,
+            "stock": "RBA",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:RBA"
+        },
+        {
+            "no": 11,
+            "stock": "REDINGTON",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:REDINGTON"
+        },
+        {
+            "no": 12,
+            "stock": "MOSMALL250",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:MOSMALL250"
+        }
     ]
 }
