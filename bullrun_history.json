@@ -3102,5 +3102,72 @@
             "stock": "JSWCEMENT",
             "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:JSWCEMENT"
         }
+    ],
+    "13-07-2026": [
+        {
+            "no": 1,
+            "stock": "7/13/2026",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:7/13/2026"
+        },
+        {
+            "no": 2,
+            "stock": "OLAELEC",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:OLAELEC"
+        },
+        {
+            "no": 3,
+            "stock": "IDFCFIRSTB",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:IDFCFIRSTB"
+        },
+        {
+            "no": 4,
+            "stock": "SAMMAANCAP",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:SAMMAANCAP"
+        },
+        {
+            "no": 5,
+            "stock": "BAJFINANCE",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:BAJFINANCE"
+        },
+        {
+            "no": 6,
+            "stock": "ICICIBANK",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:ICICIBANK"
+        },
+        {
+            "no": 7,
+            "stock": "PATELENG",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:PATELENG"
+        },
+        {
+            "no": 8,
+            "stock": "RBA",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:RBA"
+        },
+        {
+            "no": 9,
+            "stock": "LICI",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:LICI"
+        },
+        {
+            "no": 10,
+            "stock": "GAIL",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:GAIL"
+        },
+        {
+            "no": 11,
+            "stock": "INDHOTEL",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:INDHOTEL"
+        },
+        {
+            "no": 12,
+            "stock": "SINDHUTRAD",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:SINDHUTRAD"
+        },
+        {
+            "no": 13,
+            "stock": "JSWCEMENT",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:JSWCEMENT"
+        }
     ]
 }
