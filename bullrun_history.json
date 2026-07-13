@@ -3111,8 +3111,8 @@
         },
         {
             "no": 2,
-            "stock": "OLAELEC",
-            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:OLAELEC"
+            "stock": "ETERNAL",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:ETERNAL"
         },
         {
             "no": 3,
@@ -3161,11 +3161,16 @@
         },
         {
             "no": 12,
+            "stock": "CHOICEIN",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:CHOICEIN"
+        },
+        {
+            "no": 13,
             "stock": "SINDHUTRAD",
             "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:SINDHUTRAD"
         },
         {
-            "no": 13,
+            "no": 14,
             "stock": "JSWCEMENT",
             "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:JSWCEMENT"
         }
