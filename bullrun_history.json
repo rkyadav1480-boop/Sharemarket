@@ -3198,63 +3198,73 @@
         },
         {
             "no": 5,
+            "stock": "MEESHO",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:MEESHO"
+        },
+        {
+            "no": 6,
             "stock": "PATELENG",
             "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:PATELENG"
         },
         {
-            "no": 6,
+            "no": 7,
+            "stock": "COFORGE",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:COFORGE"
+        },
+        {
+            "no": 8,
             "stock": "BAJFINANCE",
             "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:BAJFINANCE"
         },
         {
-            "no": 7,
+            "no": 9,
             "stock": "INDHOTEL",
             "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:INDHOTEL"
         },
         {
-            "no": 8,
+            "no": 10,
             "stock": "HDFCNIFBAN",
             "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:HDFCNIFBAN"
         },
         {
-            "no": 9,
+            "no": 11,
             "stock": "GAIL",
             "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:GAIL"
         },
         {
-            "no": 10,
+            "no": 12,
+            "stock": "PACEDIGITK",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:PACEDIGITK"
+        },
+        {
+            "no": 13,
             "stock": "REDINGTON",
             "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:REDINGTON"
         },
         {
-            "no": 11,
+            "no": 14,
             "stock": "JSWCEMENT",
             "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:JSWCEMENT"
         },
         {
-            "no": 12,
-            "stock": "MOSCHIP",
-            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:MOSCHIP"
-        },
-        {
-            "no": 13,
+            "no": 15,
             "stock": "FEDFINA",
             "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:FEDFINA"
         },
         {
-            "no": 14,
+            "no": 16,
             "stock": "VINCOFE",
             "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:VINCOFE"
         },
         {
-            "no": 15,
+            "no": 17,
             "stock": "BANKNIFTY1",
             "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:BANKNIFTY1"
         },
         {
-            "no": 16,
-            "stock": "RBA",
-            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:RBA"
+            "no": 18,
+            "stock": "KARURVYSYA",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:KARURVYSYA"
         }
     ]
 }
