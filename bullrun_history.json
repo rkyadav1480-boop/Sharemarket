@@ -3310,23 +3310,23 @@
         },
         {
             "no": 9,
-            "stock": "MEESHO",
-            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:MEESHO"
-        },
-        {
-            "no": 10,
             "stock": "PATELENG",
             "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:PATELENG"
         },
         {
-            "no": 11,
+            "no": 10,
             "stock": "LICI",
             "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:LICI"
         },
         {
-            "no": 12,
+            "no": 11,
             "stock": "COFORGE",
             "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:COFORGE"
+        },
+        {
+            "no": 12,
+            "stock": "REDINGTON",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:REDINGTON"
         },
         {
             "no": 13,
