@@ -3338,5 +3338,82 @@
             "stock": "MAXHEALTH",
             "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:MAXHEALTH"
         }
+    ],
+    "16-07-2026": [
+        {
+            "no": 1,
+            "stock": "7/16/2026",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:7/16/2026"
+        },
+        {
+            "no": 2,
+            "stock": "ETERNAL",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:ETERNAL"
+        },
+        {
+            "no": 3,
+            "stock": "FEDFINA",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:FEDFINA"
+        },
+        {
+            "no": 4,
+            "stock": "ICICIBANK",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:ICICIBANK"
+        },
+        {
+            "no": 5,
+            "stock": "MEESHO",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:MEESHO"
+        },
+        {
+            "no": 6,
+            "stock": "IDFCFIRSTB",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:IDFCFIRSTB"
+        },
+        {
+            "no": 7,
+            "stock": "GAIL",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:GAIL"
+        },
+        {
+            "no": 8,
+            "stock": "BAJFINANCE",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:BAJFINANCE"
+        },
+        {
+            "no": 9,
+            "stock": "LICI",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:LICI"
+        },
+        {
+            "no": 10,
+            "stock": "PATELENG",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:PATELENG"
+        },
+        {
+            "no": 11,
+            "stock": "MOSMALL250",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:MOSMALL250"
+        },
+        {
+            "no": 12,
+            "stock": "COFORGE",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:COFORGE"
+        },
+        {
+            "no": 13,
+            "stock": "MAXHEALTH",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:MAXHEALTH"
+        },
+        {
+            "no": 14,
+            "stock": "AHCL",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:AHCL"
+        },
+        {
+            "no": 15,
+            "stock": "AVANTEL",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:AVANTEL"
+        }
     ]
 }
