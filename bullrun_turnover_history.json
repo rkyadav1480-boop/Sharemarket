@@ -2618,5 +2618,102 @@
             "stock": "PAGEIND",
             "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:PAGEIND"
         }
+    ],
+    "16-07-2026": [
+        {
+            "no": 1,
+            "stock": "ICICIBANK",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:ICICIBANK"
+        },
+        {
+            "no": 2,
+            "stock": "ETERNAL",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:ETERNAL"
+        },
+        {
+            "no": 3,
+            "stock": "BAJFINANCE",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:BAJFINANCE"
+        },
+        {
+            "no": 4,
+            "stock": "EICHERMOT",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:EICHERMOT"
+        },
+        {
+            "no": 5,
+            "stock": "COFORGE",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:COFORGE"
+        },
+        {
+            "no": 6,
+            "stock": "INDIGO",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:INDIGO"
+        },
+        {
+            "no": 7,
+            "stock": "FEDFINA",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:FEDFINA"
+        },
+        {
+            "no": 8,
+            "stock": "MAXHEALTH",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:MAXHEALTH"
+        },
+        {
+            "no": 9,
+            "stock": "ASIANPAINT",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:ASIANPAINT"
+        },
+        {
+            "no": 10,
+            "stock": "MEESHO",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:MEESHO"
+        },
+        {
+            "no": 11,
+            "stock": "HAL",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:HAL"
+        },
+        {
+            "no": 12,
+            "stock": "LICI",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:LICI"
+        },
+        {
+            "no": 13,
+            "stock": "RKFORGE",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:RKFORGE"
+        },
+        {
+            "no": 14,
+            "stock": "UNITDSPR",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:UNITDSPR"
+        },
+        {
+            "no": 15,
+            "stock": "CIPLA",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:CIPLA"
+        },
+        {
+            "no": 16,
+            "stock": "ALKEM",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:ALKEM"
+        },
+        {
+            "no": 17,
+            "stock": "FORTIS",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:FORTIS"
+        },
+        {
+            "no": 18,
+            "stock": "INDHOTEL",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:INDHOTEL"
+        },
+        {
+            "no": 19,
+            "stock": "PAGEIND",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:PAGEIND"
+        }
     ]
 }
