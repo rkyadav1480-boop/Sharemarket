@@ -3420,5 +3420,92 @@
             "stock": "AVANTEL",
             "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:AVANTEL"
         }
+    ],
+    "17-07-2026": [
+        {
+            "no": 1,
+            "stock": "7/17/2026",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:7/17/2026"
+        },
+        {
+            "no": 2,
+            "stock": "ETERNAL",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:ETERNAL"
+        },
+        {
+            "no": 3,
+            "stock": "IDFCFIRSTB",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:IDFCFIRSTB"
+        },
+        {
+            "no": 4,
+            "stock": "RKFORGE",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:RKFORGE"
+        },
+        {
+            "no": 5,
+            "stock": "BANK10ADD",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:BANK10ADD"
+        },
+        {
+            "no": 6,
+            "stock": "ICICIBANK",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:ICICIBANK"
+        },
+        {
+            "no": 7,
+            "stock": "BAJFINANCE",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:BAJFINANCE"
+        },
+        {
+            "no": 8,
+            "stock": "GAIL",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:GAIL"
+        },
+        {
+            "no": 9,
+            "stock": "MEESHO",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:MEESHO"
+        },
+        {
+            "no": 10,
+            "stock": "IIFL",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:IIFL"
+        },
+        {
+            "no": 11,
+            "stock": "INDHOTEL",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:INDHOTEL"
+        },
+        {
+            "no": 12,
+            "stock": "HDBFS",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:HDBFS"
+        },
+        {
+            "no": 13,
+            "stock": "FEDFINA",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:FEDFINA"
+        },
+        {
+            "no": 14,
+            "stock": "AHCL",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:AHCL"
+        },
+        {
+            "no": 15,
+            "stock": "SMALLCAP",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:SMALLCAP"
+        },
+        {
+            "no": 16,
+            "stock": "PNBGILTS",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:PNBGILTS"
+        },
+        {
+            "no": 17,
+            "stock": "AVANTEL",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:AVANTEL"
+        }
     ]
 }
