@@ -1,36 +1,4 @@
 {
-  "2026-06-16": [
-    "SONATSOFTW",
-    "FACT",
-    "MMTC",
-    "PGEL",
-    "ABREL",
-    "JAINREC",
-    "NETWEB",
-    "BRIGADE",
-    "PARADEEP",
-    "VISL",
-    "KPIL",
-    "SAPPHIRE",
-    "HFCL",
-    "COFORGE",
-    "SUZLON",
-    "MGL",
-    "TITAGARH",
-    "GLAXO",
-    "COROMANDEL",
-    "ZENTEC",
-    "HCLTECH",
-    "SBICARD",
-    "CHAMBLFERT",
-    "PRESTIGE",
-    "TIMKEN",
-    "AWL",
-    "KAYNES",
-    "CUB",
-    "HSCL",
-    "SCHAEFFLER"
-  ],
   "2026-06-17": [
     "IDBI",
     "CARTRADE",
@@ -712,5 +680,12 @@
     "SIEMENS",
     "GLAND",
     "DEEPAKFERT"
+  ],
+  "2026-07-17": [
+    "AFCONS",
+    "JIOFIN",
+    "NAM-INDIA",
+    "BHARATFORG",
+    "DLF"
   ]
 }
