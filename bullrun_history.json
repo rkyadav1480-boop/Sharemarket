@@ -3559,5 +3559,72 @@
             "stock": "INDHOTEL",
             "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:INDHOTEL"
         }
+    ],
+    "19-07-2026": [
+        {
+            "no": 1,
+            "stock": "7/19/2026",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:7/19/2026"
+        },
+        {
+            "no": 2,
+            "stock": "ETERNAL",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:ETERNAL"
+        },
+        {
+            "no": 3,
+            "stock": "PVTBANKADD",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:PVTBANKADD"
+        },
+        {
+            "no": 4,
+            "stock": "BAJFINANCE",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:BAJFINANCE"
+        },
+        {
+            "no": 5,
+            "stock": "IDFCFIRSTB",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:IDFCFIRSTB"
+        },
+        {
+            "no": 6,
+            "stock": "MEESHO",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:MEESHO"
+        },
+        {
+            "no": 7,
+            "stock": "ICICIBANK",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:ICICIBANK"
+        },
+        {
+            "no": 8,
+            "stock": "GAIL",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:GAIL"
+        },
+        {
+            "no": 9,
+            "stock": "LICI",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:LICI"
+        },
+        {
+            "no": 10,
+            "stock": "MIRZAINT",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:MIRZAINT"
+        },
+        {
+            "no": 11,
+            "stock": "AIIL",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:AIIL"
+        },
+        {
+            "no": 12,
+            "stock": "SMALLCAP",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:SMALLCAP"
+        },
+        {
+            "no": 13,
+            "stock": "INDHOTEL",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:INDHOTEL"
+        }
     ]
 }
