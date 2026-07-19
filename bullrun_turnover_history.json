@@ -2889,5 +2889,92 @@
             "stock": "IIFL",
             "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:IIFL"
         }
+    ],
+    "19-07-2026": [
+        {
+            "no": 1,
+            "stock": "ICICIBANK",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:ICICIBANK"
+        },
+        {
+            "no": 2,
+            "stock": "BAJFINANCE",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:BAJFINANCE"
+        },
+        {
+            "no": 3,
+            "stock": "ETERNAL",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:ETERNAL"
+        },
+        {
+            "no": 4,
+            "stock": "BAJAJ-AUTO",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:BAJAJ-AUTO"
+        },
+        {
+            "no": 5,
+            "stock": "EICHERMOT",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:EICHERMOT"
+        },
+        {
+            "no": 6,
+            "stock": "INDIGO",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:INDIGO"
+        },
+        {
+            "no": 7,
+            "stock": "TVSMOTOR",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:TVSMOTOR"
+        },
+        {
+            "no": 8,
+            "stock": "HAL",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:HAL"
+        },
+        {
+            "no": 9,
+            "stock": "LICI",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:LICI"
+        },
+        {
+            "no": 10,
+            "stock": "MEESHO",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:MEESHO"
+        },
+        {
+            "no": 11,
+            "stock": "NESTLEIND",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:NESTLEIND"
+        },
+        {
+            "no": 12,
+            "stock": "MAXHEALTH",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:MAXHEALTH"
+        },
+        {
+            "no": 13,
+            "stock": "GAIL",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:GAIL"
+        },
+        {
+            "no": 14,
+            "stock": "INDHOTEL",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:INDHOTEL"
+        },
+        {
+            "no": 15,
+            "stock": "AIIL",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:AIIL"
+        },
+        {
+            "no": 16,
+            "stock": "ASIANPAINT",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:ASIANPAINT"
+        },
+        {
+            "no": 17,
+            "stock": "IIFL",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:IIFL"
+        }
     ]
 }
