@@ -3675,26 +3675,31 @@
         },
         {
             "no": 10,
+            "stock": "ANANTRAJ",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:ANANTRAJ"
+        },
+        {
+            "no": 11,
             "stock": "MIRZAINT",
             "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:MIRZAINT"
         },
         {
-            "no": 11,
-            "stock": "AHCL",
-            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:AHCL"
+            "no": 12,
+            "stock": "BORORENEW",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:BORORENEW"
         },
         {
-            "no": 12,
+            "no": 13,
             "stock": "AIIL",
             "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:AIIL"
         },
         {
-            "no": 13,
+            "no": 14,
             "stock": "SMALLCAP",
             "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:SMALLCAP"
         },
         {
-            "no": 14,
+            "no": 15,
             "stock": "INDHOTEL",
             "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:INDHOTEL"
         }
