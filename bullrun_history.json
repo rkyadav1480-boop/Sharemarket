@@ -3727,36 +3727,21 @@
         },
         {
             "no": 5,
-            "stock": "MEESHO",
-            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:MEESHO"
-        },
-        {
-            "no": 6,
             "stock": "POONAWALLA",
             "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:POONAWALLA"
         },
         {
-            "no": 7,
+            "no": 6,
             "stock": "GAIL",
             "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:GAIL"
         },
         {
-            "no": 8,
-            "stock": "ANANTRAJ",
-            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:ANANTRAJ"
-        },
-        {
-            "no": 9,
+            "no": 7,
             "stock": "MAHLOG",
             "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:MAHLOG"
         },
         {
-            "no": 10,
-            "stock": "AHCL",
-            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:AHCL"
-        },
-        {
-            "no": 11,
+            "no": 8,
             "stock": "SMALLCAP",
             "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:SMALLCAP"
         }
