@@ -3703,5 +3703,62 @@
             "stock": "INDHOTEL",
             "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:INDHOTEL"
         }
+    ],
+    "21-07-2026": [
+        {
+            "no": 1,
+            "stock": "7/21/2026",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:7/21/2026"
+        },
+        {
+            "no": 2,
+            "stock": "IDFCFIRSTB",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:IDFCFIRSTB"
+        },
+        {
+            "no": 3,
+            "stock": "ICICIBANK",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:ICICIBANK"
+        },
+        {
+            "no": 4,
+            "stock": "ETERNAL",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:ETERNAL"
+        },
+        {
+            "no": 5,
+            "stock": "MEESHO",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:MEESHO"
+        },
+        {
+            "no": 6,
+            "stock": "POONAWALLA",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:POONAWALLA"
+        },
+        {
+            "no": 7,
+            "stock": "GAIL",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:GAIL"
+        },
+        {
+            "no": 8,
+            "stock": "ANANTRAJ",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:ANANTRAJ"
+        },
+        {
+            "no": 9,
+            "stock": "MAHLOG",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:MAHLOG"
+        },
+        {
+            "no": 10,
+            "stock": "AHCL",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:AHCL"
+        },
+        {
+            "no": 11,
+            "stock": "SMALLCAP",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:SMALLCAP"
+        }
     ]
 }
