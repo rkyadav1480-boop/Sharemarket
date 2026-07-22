@@ -3769,13 +3769,13 @@
         },
         {
             "no": 5,
-            "stock": "SINDHUTRAD",
-            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:SINDHUTRAD"
+            "stock": "BAJFINANCE",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:BAJFINANCE"
         },
         {
             "no": 6,
-            "stock": "BAJFINANCE",
-            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:BAJFINANCE"
+            "stock": "ACE",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:ACE"
         },
         {
             "no": 7,
@@ -3794,16 +3794,36 @@
         },
         {
             "no": 10,
+            "stock": "JSWCEMENT",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:JSWCEMENT"
+        },
+        {
+            "no": 11,
+            "stock": "JAMNAAUTO",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:JAMNAAUTO"
+        },
+        {
+            "no": 12,
             "stock": "INDHOTEL",
             "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:INDHOTEL"
         },
         {
-            "no": 11,
+            "no": 13,
+            "stock": "IIFL",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:IIFL"
+        },
+        {
+            "no": 14,
+            "stock": "TECHM",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:TECHM"
+        },
+        {
+            "no": 15,
             "stock": "TVSMOTOR",
             "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:TVSMOTOR"
         },
         {
-            "no": 12,
+            "no": 16,
             "stock": "RKFORGE",
             "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:RKFORGE"
         }
