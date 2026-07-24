@@ -3904,5 +3904,92 @@
             "stock": "PNGJL",
             "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:PNGJL"
         }
+    ],
+    "24-07-2026": [
+        {
+            "no": 1,
+            "stock": "7/24/2026",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:7/24/2026"
+        },
+        {
+            "no": 2,
+            "stock": "ETERNAL",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:ETERNAL"
+        },
+        {
+            "no": 3,
+            "stock": "ICICIBANK",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:ICICIBANK"
+        },
+        {
+            "no": 4,
+            "stock": "IDFCFIRSTB",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:IDFCFIRSTB"
+        },
+        {
+            "no": 5,
+            "stock": "ZEEL",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:ZEEL"
+        },
+        {
+            "no": 6,
+            "stock": "BAJFINANCE",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:BAJFINANCE"
+        },
+        {
+            "no": 7,
+            "stock": "CCAVENUE",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:CCAVENUE"
+        },
+        {
+            "no": 8,
+            "stock": "SHRIRAMFIN",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:SHRIRAMFIN"
+        },
+        {
+            "no": 9,
+            "stock": "IIFL",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:IIFL"
+        },
+        {
+            "no": 10,
+            "stock": "JKPAPER",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:JKPAPER"
+        },
+        {
+            "no": 11,
+            "stock": "MAHLIFE",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:MAHLIFE"
+        },
+        {
+            "no": 12,
+            "stock": "PWL",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:PWL"
+        },
+        {
+            "no": 13,
+            "stock": "INDHOTEL",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:INDHOTEL"
+        },
+        {
+            "no": 14,
+            "stock": "ANANTRAJ",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:ANANTRAJ"
+        },
+        {
+            "no": 15,
+            "stock": "TECHM",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:TECHM"
+        },
+        {
+            "no": 16,
+            "stock": "MOSCHIP",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:MOSCHIP"
+        },
+        {
+            "no": 17,
+            "stock": "VINCOFE",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:VINCOFE"
+        }
     ]
 }
