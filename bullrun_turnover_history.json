@@ -3319,5 +3319,107 @@
             "stock": "IDFCFIRSTB",
             "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:IDFCFIRSTB"
         }
+    ],
+    "24-07-2026": [
+        {
+            "no": 1,
+            "stock": "ETERNAL",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:ETERNAL"
+        },
+        {
+            "no": 2,
+            "stock": "ICICIBANK",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:ICICIBANK"
+        },
+        {
+            "no": 3,
+            "stock": "BAJFINANCE",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:BAJFINANCE"
+        },
+        {
+            "no": 4,
+            "stock": "SHRIRAMFIN",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:SHRIRAMFIN"
+        },
+        {
+            "no": 5,
+            "stock": "TECHM",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:TECHM"
+        },
+        {
+            "no": 6,
+            "stock": "IIFL",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:IIFL"
+        },
+        {
+            "no": 7,
+            "stock": "EICHERMOT",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:EICHERMOT"
+        },
+        {
+            "no": 8,
+            "stock": "HAL",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:HAL"
+        },
+        {
+            "no": 9,
+            "stock": "UNITDSPR",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:UNITDSPR"
+        },
+        {
+            "no": 10,
+            "stock": "GODREJPROP",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:GODREJPROP"
+        },
+        {
+            "no": 11,
+            "stock": "INDHOTEL",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:INDHOTEL"
+        },
+        {
+            "no": 12,
+            "stock": "ANANTRAJ",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:ANANTRAJ"
+        },
+        {
+            "no": 13,
+            "stock": "MAHLIFE",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:MAHLIFE"
+        },
+        {
+            "no": 14,
+            "stock": "MEESHO",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:MEESHO"
+        },
+        {
+            "no": 15,
+            "stock": "MAXHEALTH",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:MAXHEALTH"
+        },
+        {
+            "no": 16,
+            "stock": "PAGEIND",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:PAGEIND"
+        },
+        {
+            "no": 17,
+            "stock": "PNGJL",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:PNGJL"
+        },
+        {
+            "no": 18,
+            "stock": "SUNDRMFAST",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:SUNDRMFAST"
+        },
+        {
+            "no": 19,
+            "stock": "IDFCFIRSTB",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:IDFCFIRSTB"
+        },
+        {
+            "no": 20,
+            "stock": "PGEL",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:PGEL"
+        }
     ]
 }
