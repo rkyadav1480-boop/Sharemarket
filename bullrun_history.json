@@ -4159,51 +4159,41 @@
         },
         {
             "no": 5,
-            "stock": "MEESHO",
-            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:MEESHO"
-        },
-        {
-            "no": 6,
             "stock": "CCAVENUE",
             "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:CCAVENUE"
         },
         {
-            "no": 7,
-            "stock": "SHRIRAMFIN",
-            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:SHRIRAMFIN"
-        },
-        {
-            "no": 8,
-            "stock": "IIFL",
-            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:IIFL"
-        },
-        {
-            "no": 9,
+            "no": 6,
             "stock": "GAIL",
             "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:GAIL"
         },
         {
-            "no": 10,
+            "no": 7,
+            "stock": "TIMETECHNO",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:TIMETECHNO"
+        },
+        {
+            "no": 8,
             "stock": "MAHLIFE",
             "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:MAHLIFE"
         },
         {
-            "no": 11,
+            "no": 9,
             "stock": "PWL",
             "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:PWL"
         },
         {
-            "no": 12,
+            "no": 10,
             "stock": "INDHOTEL",
             "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:INDHOTEL"
         },
         {
-            "no": 13,
+            "no": 11,
             "stock": "TECHM",
             "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:TECHM"
         },
         {
-            "no": 14,
+            "no": 12,
             "stock": "VINCOFE",
             "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:VINCOFE"
         }
