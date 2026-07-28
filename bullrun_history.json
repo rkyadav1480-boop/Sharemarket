@@ -4197,5 +4197,72 @@
             "stock": "VINCOFE",
             "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:VINCOFE"
         }
+    ],
+    "28-07-2026": [
+        {
+            "no": 1,
+            "stock": "7/28/2026",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:7/28/2026"
+        },
+        {
+            "no": 2,
+            "stock": "ETERNAL",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:ETERNAL"
+        },
+        {
+            "no": 3,
+            "stock": "DCBBANK",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:DCBBANK"
+        },
+        {
+            "no": 4,
+            "stock": "GAIL",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:GAIL"
+        },
+        {
+            "no": 5,
+            "stock": "ICICIBANK",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:ICICIBANK"
+        },
+        {
+            "no": 6,
+            "stock": "PWL",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:PWL"
+        },
+        {
+            "no": 7,
+            "stock": "REDINGTON",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:REDINGTON"
+        },
+        {
+            "no": 8,
+            "stock": "CCAVENUE",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:CCAVENUE"
+        },
+        {
+            "no": 9,
+            "stock": "BAJFINANCE",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:BAJFINANCE"
+        },
+        {
+            "no": 10,
+            "stock": "GENUSPOWER",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:GENUSPOWER"
+        },
+        {
+            "no": 11,
+            "stock": "VINCOFE",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:VINCOFE"
+        },
+        {
+            "no": 12,
+            "stock": "MOSMALL250",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:MOSMALL250"
+        },
+        {
+            "no": 13,
+            "stock": "SMALLCAP",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:SMALLCAP"
+        }
     ]
 }
