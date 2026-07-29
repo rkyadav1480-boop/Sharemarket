@@ -4278,11 +4278,6 @@
         },
         {
             "no": 7,
-            "stock": "REDINGTON",
-            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:REDINGTON"
-        },
-        {
-            "no": 8,
             "stock": "JKPAPER",
             "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:JKPAPER"
         }
