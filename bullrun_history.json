@@ -4244,5 +4244,47 @@
             "stock": "SMALLCAP",
             "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:SMALLCAP"
         }
+    ],
+    "29-07-2026": [
+        {
+            "no": 1,
+            "stock": "7/29/2026",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:7/29/2026"
+        },
+        {
+            "no": 2,
+            "stock": "ICICIBANK",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:ICICIBANK"
+        },
+        {
+            "no": 3,
+            "stock": "GAIL",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:GAIL"
+        },
+        {
+            "no": 4,
+            "stock": "PWL",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:PWL"
+        },
+        {
+            "no": 5,
+            "stock": "BAJFINANCE",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:BAJFINANCE"
+        },
+        {
+            "no": 6,
+            "stock": "CCAVENUE",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:CCAVENUE"
+        },
+        {
+            "no": 7,
+            "stock": "REDINGTON",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:REDINGTON"
+        },
+        {
+            "no": 8,
+            "stock": "JKPAPER",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:JKPAPER"
+        }
     ]
 }
