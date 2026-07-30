@@ -4290,41 +4290,46 @@
         },
         {
             "no": 2,
+            "stock": "PCBL",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:PCBL"
+        },
+        {
+            "no": 3,
             "stock": "ICICIBANK",
             "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:ICICIBANK"
         },
         {
-            "no": 3,
+            "no": 4,
             "stock": "GAIL",
             "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:GAIL"
         },
         {
-            "no": 4,
+            "no": 5,
             "stock": "BAJFINANCE",
             "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:BAJFINANCE"
         },
         {
-            "no": 5,
+            "no": 6,
             "stock": "PWL",
             "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:PWL"
         },
         {
-            "no": 6,
+            "no": 7,
             "stock": "CCAVENUE",
             "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:CCAVENUE"
         },
         {
-            "no": 7,
+            "no": 8,
             "stock": "SHRIRAMFIN",
             "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:SHRIRAMFIN"
         },
         {
-            "no": 8,
+            "no": 9,
             "stock": "ASIANPAINT",
             "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:ASIANPAINT"
         },
         {
-            "no": 9,
+            "no": 10,
             "stock": "MOSMALL250",
             "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:MOSMALL250"
         }
