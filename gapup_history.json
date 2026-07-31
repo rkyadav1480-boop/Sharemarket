@@ -5,5 +5,12 @@
         "stocks": [
             "NSE:BPCL"
         ]
+    },
+    "31-07-2026": {
+        "time": "11:37 AM",
+        "day": "Friday",
+        "stocks": [
+            "NSE:HYUNDAI"
+        ]
     }
 }
