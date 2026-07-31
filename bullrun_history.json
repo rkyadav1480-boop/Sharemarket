@@ -4333,5 +4333,52 @@
             "stock": "MOSMALL250",
             "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:MOSMALL250"
         }
+    ],
+    "31-07-2026": [
+        {
+            "no": 1,
+            "stock": "7/31/2026",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:7/31/2026"
+        },
+        {
+            "no": 2,
+            "stock": "MEESHO",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:MEESHO"
+        },
+        {
+            "no": 3,
+            "stock": "ICICIBANK",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:ICICIBANK"
+        },
+        {
+            "no": 4,
+            "stock": "PCBL",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:PCBL"
+        },
+        {
+            "no": 5,
+            "stock": "CCAVENUE",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:CCAVENUE"
+        },
+        {
+            "no": 6,
+            "stock": "GAIL",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:GAIL"
+        },
+        {
+            "no": 7,
+            "stock": "CONSUMER",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:CONSUMER"
+        },
+        {
+            "no": 8,
+            "stock": "ASIANPAINT",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:ASIANPAINT"
+        },
+        {
+            "no": 9,
+            "stock": "INDHOTEL",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:INDHOTEL"
+        }
     ]
 }
