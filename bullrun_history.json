@@ -4380,5 +4380,57 @@
             "stock": "INDHOTEL",
             "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:INDHOTEL"
         }
+    ],
+    "01-08-2026": [
+        {
+            "no": 1,
+            "stock": "8/1/2026",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:8/1/2026"
+        },
+        {
+            "no": 2,
+            "stock": "GAIL",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:GAIL"
+        },
+        {
+            "no": 3,
+            "stock": "ETERNAL",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:ETERNAL"
+        },
+        {
+            "no": 4,
+            "stock": "CCAVENUE",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:CCAVENUE"
+        },
+        {
+            "no": 5,
+            "stock": "PCBL",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:PCBL"
+        },
+        {
+            "no": 6,
+            "stock": "ICICIBANK",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:ICICIBANK"
+        },
+        {
+            "no": 7,
+            "stock": "PWL",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:PWL"
+        },
+        {
+            "no": 8,
+            "stock": "INDHOTEL",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:INDHOTEL"
+        },
+        {
+            "no": 9,
+            "stock": "POONAWALLA",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:POONAWALLA"
+        },
+        {
+            "no": 10,
+            "stock": "MANKIND",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:MANKIND"
+        }
     ]
 }
