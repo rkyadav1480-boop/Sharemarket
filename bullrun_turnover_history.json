@@ -4049,5 +4049,72 @@
             "stock": "PRESTIGE",
             "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:PRESTIGE"
         }
+    ],
+    "03-08-2026": [
+        {
+            "no": 1,
+            "stock": "GAIL",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:GAIL"
+        },
+        {
+            "no": 2,
+            "stock": "MANKIND",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:MANKIND"
+        },
+        {
+            "no": 3,
+            "stock": "EICHERMOT",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:EICHERMOT"
+        },
+        {
+            "no": 4,
+            "stock": "ULTRACEMCO",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:ULTRACEMCO"
+        },
+        {
+            "no": 5,
+            "stock": "HAL",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:HAL"
+        },
+        {
+            "no": 6,
+            "stock": "PCBL",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:PCBL"
+        },
+        {
+            "no": 7,
+            "stock": "ASIANPAINT",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:ASIANPAINT"
+        },
+        {
+            "no": 8,
+            "stock": "MAXHEALTH",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:MAXHEALTH"
+        },
+        {
+            "no": 9,
+            "stock": "INDHOTEL",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:INDHOTEL"
+        },
+        {
+            "no": 10,
+            "stock": "TRENT",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:TRENT"
+        },
+        {
+            "no": 11,
+            "stock": "POONAWALLA",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:POONAWALLA"
+        },
+        {
+            "no": 12,
+            "stock": "GODREJPROP",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:GODREJPROP"
+        },
+        {
+            "no": 13,
+            "stock": "PRESTIGE",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:PRESTIGE"
+        }
     ]
 }
