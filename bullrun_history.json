@@ -4577,6 +4577,16 @@
         },
         {
             "no": 3,
+            "stock": "MEESHO",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:MEESHO"
+        },
+        {
+            "no": 4,
+            "stock": "RECLTD",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:RECLTD"
+        },
+        {
+            "no": 5,
             "stock": "PWL",
             "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:PWL"
         }
