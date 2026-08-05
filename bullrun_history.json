@@ -4563,5 +4563,22 @@
             "stock": "MOMENTUM50",
             "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:MOMENTUM50"
         }
+    ],
+    "05-08-2026": [
+        {
+            "no": 1,
+            "stock": "8/5/2026",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:8/5/2026"
+        },
+        {
+            "no": 2,
+            "stock": "GAIL",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:GAIL"
+        },
+        {
+            "no": 3,
+            "stock": "PWL",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:PWL"
+        }
     ]
 }
