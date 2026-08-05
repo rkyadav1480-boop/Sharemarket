@@ -483,5 +483,27 @@
     "NBFC": "negative",
     "Diversified": "negative",
     "Realty": "negative"
+  },
+  "2026-08-05": {
+    "Hospitality": "positive",
+    "Realty": "positive",
+    "Auto": "positive",
+    "Metals": "positive",
+    "Cap Goods": "positive",
+    "Telecom": "positive",
+    "NBFC": "neutral",
+    "Others": "neutral",
+    "Infra": "neutral",
+    "Diversified": "neutral",
+    "IT": "neutral",
+    "FMCG": "neutral",
+    "Chemicals": "neutral",
+    "Consumer": "neutral",
+    "Pharma": "neutral",
+    "Banking": "neutral",
+    "Energy": "neutral",
+    "Media": "negative",
+    "Industrial": "negative",
+    "Building Mat": "negative"
   }
 }
