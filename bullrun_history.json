@@ -4590,5 +4590,47 @@
             "stock": "PWL",
             "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:PWL"
         }
+    ],
+    "06-08-2026": [
+        {
+            "no": 1,
+            "stock": "8/6/2026",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:8/6/2026"
+        },
+        {
+            "no": 2,
+            "stock": "MEESHO",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:MEESHO"
+        },
+        {
+            "no": 3,
+            "stock": "PWL",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:PWL"
+        },
+        {
+            "no": 4,
+            "stock": "DEEPAKNTR",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:DEEPAKNTR"
+        },
+        {
+            "no": 5,
+            "stock": "RECLTD",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:RECLTD"
+        },
+        {
+            "no": 6,
+            "stock": "INDHOTEL",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:INDHOTEL"
+        },
+        {
+            "no": 7,
+            "stock": "SMALLCAP",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:SMALLCAP"
+        },
+        {
+            "no": 8,
+            "stock": "POONAWALLA",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:POONAWALLA"
+        }
     ]
 }
