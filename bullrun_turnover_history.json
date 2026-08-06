@@ -4215,5 +4215,62 @@
             "stock": "INDHOTEL",
             "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:INDHOTEL"
         }
+    ],
+    "06-08-2026": [
+        {
+            "no": 1,
+            "stock": "DEEPAKNTR",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:DEEPAKNTR"
+        },
+        {
+            "no": 2,
+            "stock": "TECHM",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:TECHM"
+        },
+        {
+            "no": 3,
+            "stock": "EICHERMOT",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:EICHERMOT"
+        },
+        {
+            "no": 4,
+            "stock": "ULTRACEMCO",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:ULTRACEMCO"
+        },
+        {
+            "no": 5,
+            "stock": "GAIL",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:GAIL"
+        },
+        {
+            "no": 6,
+            "stock": "360ONE",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:360ONE"
+        },
+        {
+            "no": 7,
+            "stock": "PGEL",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:PGEL"
+        },
+        {
+            "no": 8,
+            "stock": "ASIANPAINT",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:ASIANPAINT"
+        },
+        {
+            "no": 9,
+            "stock": "INDHOTEL",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:INDHOTEL"
+        },
+        {
+            "no": 10,
+            "stock": "CIPLA",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:CIPLA"
+        },
+        {
+            "no": 11,
+            "stock": "RECLTD",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:RECLTD"
+        }
     ]
 }
