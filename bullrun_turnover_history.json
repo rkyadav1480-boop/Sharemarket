@@ -4411,5 +4411,67 @@
             "stock": "GODREJPROP",
             "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:GODREJPROP"
         }
+    ],
+    "09-08-2026": [
+        {
+            "no": 1,
+            "stock": "TECHM",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:TECHM"
+        },
+        {
+            "no": 2,
+            "stock": "TRENT",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:TRENT"
+        },
+        {
+            "no": 3,
+            "stock": "BAJAJFINSV",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:BAJAJFINSV"
+        },
+        {
+            "no": 4,
+            "stock": "DEEPAKNTR",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:DEEPAKNTR"
+        },
+        {
+            "no": 5,
+            "stock": "ASIANPAINT",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:ASIANPAINT"
+        },
+        {
+            "no": 6,
+            "stock": "INDIGO",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:INDIGO"
+        },
+        {
+            "no": 7,
+            "stock": "ULTRACEMCO",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:ULTRACEMCO"
+        },
+        {
+            "no": 8,
+            "stock": "360ONE",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:360ONE"
+        },
+        {
+            "no": 9,
+            "stock": "RECLTD",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:RECLTD"
+        },
+        {
+            "no": 10,
+            "stock": "INDHOTEL",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:INDHOTEL"
+        },
+        {
+            "no": 11,
+            "stock": "CIPLA",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:CIPLA"
+        },
+        {
+            "no": 12,
+            "stock": "GODREJPROP",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:GODREJPROP"
+        }
     ]
 }
