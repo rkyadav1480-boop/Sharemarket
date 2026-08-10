@@ -4742,26 +4742,21 @@
         },
         {
             "no": 2,
+            "stock": "PWL",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:PWL"
+        },
+        {
+            "no": 3,
             "stock": "TECHM",
             "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:TECHM"
         },
         {
-            "no": 3,
-            "stock": "TIMETECHNO",
-            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:TIMETECHNO"
-        },
-        {
             "no": 4,
-            "stock": "RECLTD",
-            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:RECLTD"
-        },
-        {
-            "no": 5,
             "stock": "TRENT",
             "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:TRENT"
         },
         {
-            "no": 6,
+            "no": 5,
             "stock": "BAJAJFINSV",
             "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:BAJAJFINSV"
         }
