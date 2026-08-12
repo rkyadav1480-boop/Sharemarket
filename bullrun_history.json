@@ -4812,5 +4812,52 @@
             "stock": "M&M",
             "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:M&M"
         }
+    ],
+    "12-08-2026": [
+        {
+            "no": 1,
+            "stock": "8/12/2026",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:8/12/2026"
+        },
+        {
+            "no": 2,
+            "stock": "CCAVENUE",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:CCAVENUE"
+        },
+        {
+            "no": 3,
+            "stock": "GAIL",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:GAIL"
+        },
+        {
+            "no": 4,
+            "stock": "VAML",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:VAML"
+        },
+        {
+            "no": 5,
+            "stock": "MEESHO",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:MEESHO"
+        },
+        {
+            "no": 6,
+            "stock": "TMCV",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:TMCV"
+        },
+        {
+            "no": 7,
+            "stock": "HDFCBSE500",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:HDFCBSE500"
+        },
+        {
+            "no": 8,
+            "stock": "PWL",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:PWL"
+        },
+        {
+            "no": 9,
+            "stock": "M&M",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:M&M"
+        }
     ]
 }
