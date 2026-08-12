@@ -4831,13 +4831,13 @@
         },
         {
             "no": 4,
-            "stock": "VAML",
-            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:VAML"
+            "stock": "PNB",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:PNB"
         },
         {
             "no": 5,
-            "stock": "MEESHO",
-            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:MEESHO"
+            "stock": "VAML",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:VAML"
         },
         {
             "no": 6,
@@ -4851,11 +4851,6 @@
         },
         {
             "no": 8,
-            "stock": "PWL",
-            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:PWL"
-        },
-        {
-            "no": 9,
             "stock": "M&M",
             "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:M&M"
         }
