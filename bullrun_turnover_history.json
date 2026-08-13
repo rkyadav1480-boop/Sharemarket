@@ -4674,5 +4674,87 @@
             "stock": "GODREJPROP",
             "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:GODREJPROP"
         }
+    ],
+    "13-08-2026": [
+        {
+            "no": 1,
+            "stock": "AGARWALEYE",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:AGARWALEYE"
+        },
+        {
+            "no": 2,
+            "stock": "LT",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:LT"
+        },
+        {
+            "no": 3,
+            "stock": "M&M",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:M&M"
+        },
+        {
+            "no": 4,
+            "stock": "TECHM",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:TECHM"
+        },
+        {
+            "no": 5,
+            "stock": "PNB",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:PNB"
+        },
+        {
+            "no": 6,
+            "stock": "HEROMOTOCO",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:HEROMOTOCO"
+        },
+        {
+            "no": 7,
+            "stock": "ARE&M",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:ARE&M"
+        },
+        {
+            "no": 8,
+            "stock": "PERSISTENT",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:PERSISTENT"
+        },
+        {
+            "no": 9,
+            "stock": "ASHOKLEY",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:ASHOKLEY"
+        },
+        {
+            "no": 10,
+            "stock": "ASIANPAINT",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:ASIANPAINT"
+        },
+        {
+            "no": 11,
+            "stock": "HYUNDAI",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:HYUNDAI"
+        },
+        {
+            "no": 12,
+            "stock": "GAIL",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:GAIL"
+        },
+        {
+            "no": 13,
+            "stock": "CONCOR",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:CONCOR"
+        },
+        {
+            "no": 14,
+            "stock": "360ONE",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:360ONE"
+        },
+        {
+            "no": 15,
+            "stock": "BAJAJFINSV",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:BAJAJFINSV"
+        },
+        {
+            "no": 16,
+            "stock": "INDIGO",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:INDIGO"
+        }
     ]
 }
