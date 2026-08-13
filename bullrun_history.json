@@ -4854,5 +4854,52 @@
             "stock": "M&M",
             "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:M&M"
         }
+    ],
+    "13-08-2026": [
+        {
+            "no": 1,
+            "stock": "8/13/2026",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:8/13/2026"
+        },
+        {
+            "no": 2,
+            "stock": "PNB",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:PNB"
+        },
+        {
+            "no": 3,
+            "stock": "AGARWALEYE",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:AGARWALEYE"
+        },
+        {
+            "no": 4,
+            "stock": "CCAVENUE",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:CCAVENUE"
+        },
+        {
+            "no": 5,
+            "stock": "VAML",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:VAML"
+        },
+        {
+            "no": 6,
+            "stock": "GAIL",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:GAIL"
+        },
+        {
+            "no": 7,
+            "stock": "TMCV",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:TMCV"
+        },
+        {
+            "no": 8,
+            "stock": "TECHM",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:TECHM"
+        },
+        {
+            "no": 9,
+            "stock": "CONCOR",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:CONCOR"
+        }
     ]
 }
