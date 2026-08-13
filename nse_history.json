@@ -1,34 +1,4 @@
 {
-  "2026-07-13": [
-    "NEWGEN",
-    "MAPMYINDIA",
-    "KALYANKJIL",
-    "JSWINFRA",
-    "SONATSOFTW",
-    "PINELABS",
-    "ZENSARTECH",
-    "TATATECH",
-    "TCS",
-    "SHYAMMETL",
-    "HEG",
-    "GALLANTT",
-    "HCLTECH",
-    "PCBL",
-    "AFFLE",
-    "TECHM",
-    "RRKABEL",
-    "HEXT",
-    "CANHLIFE",
-    "SAREGAMA",
-    "BHEL",
-    "VOLTAS",
-    "INFY",
-    "SUMICHEM",
-    "INTELLECT",
-    "BALRAMCHIN",
-    "BSOFT",
-    "LTM"
-  ],
   "2026-07-14": [
     "CARTRADE",
     "NUVOCO",
@@ -567,5 +537,22 @@
     "APARINDS",
     "DATAPATTNS",
     "BOSCHLTD"
+  ],
+  "2026-08-13": [
+    "SARDAEN",
+    "ASTRAL",
+    "GPIL",
+    "NETWEB",
+    "IFCI",
+    "BHARTIHEXA",
+    "FLUOROCHEM",
+    "CYIENT",
+    "URBANCO",
+    "ABDL",
+    "HONASA",
+    "TMCV",
+    "HFCL",
+    "NATCOPHARM",
+    "ABREL"
   ]
 }
