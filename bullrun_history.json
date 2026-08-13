@@ -4873,13 +4873,13 @@
         },
         {
             "no": 4,
-            "stock": "CCAVENUE",
-            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:CCAVENUE"
+            "stock": "SBIN",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:SBIN"
         },
         {
             "no": 5,
-            "stock": "VAML",
-            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:VAML"
+            "stock": "ASHOKLEY",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:ASHOKLEY"
         },
         {
             "no": 6,
@@ -4888,8 +4888,8 @@
         },
         {
             "no": 7,
-            "stock": "TMCV",
-            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:TMCV"
+            "stock": "ARE&M",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:ARE&M"
         },
         {
             "no": 8,
@@ -4898,6 +4898,11 @@
         },
         {
             "no": 9,
+            "stock": "TIMETECHNO",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:TIMETECHNO"
+        },
+        {
+            "no": 10,
             "stock": "CONCOR",
             "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:CONCOR"
         }
