@@ -4756,5 +4756,92 @@
             "stock": "INDIGO",
             "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:INDIGO"
         }
+    ],
+    "14-08-2026": [
+        {
+            "no": 1,
+            "stock": "SBIN",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:SBIN"
+        },
+        {
+            "no": 2,
+            "stock": "LT",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:LT"
+        },
+        {
+            "no": 3,
+            "stock": "M&M",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:M&M"
+        },
+        {
+            "no": 4,
+            "stock": "TECHM",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:TECHM"
+        },
+        {
+            "no": 5,
+            "stock": "ASHOKLEY",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:ASHOKLEY"
+        },
+        {
+            "no": 6,
+            "stock": "HEROMOTOCO",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:HEROMOTOCO"
+        },
+        {
+            "no": 7,
+            "stock": "CONCOR",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:CONCOR"
+        },
+        {
+            "no": 8,
+            "stock": "MEESHO",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:MEESHO"
+        },
+        {
+            "no": 9,
+            "stock": "BAJAJFINSV",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:BAJAJFINSV"
+        },
+        {
+            "no": 10,
+            "stock": "GAIL",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:GAIL"
+        },
+        {
+            "no": 11,
+            "stock": "HYUNDAI",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:HYUNDAI"
+        },
+        {
+            "no": 12,
+            "stock": "PERSISTENT",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:PERSISTENT"
+        },
+        {
+            "no": 13,
+            "stock": "INDIGO",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:INDIGO"
+        },
+        {
+            "no": 14,
+            "stock": "INDHOTEL",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:INDHOTEL"
+        },
+        {
+            "no": 15,
+            "stock": "PGEL",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:PGEL"
+        },
+        {
+            "no": 16,
+            "stock": "PNB",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:PNB"
+        },
+        {
+            "no": 17,
+            "stock": "UNOMINDA",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:UNOMINDA"
+        }
     ]
 }
