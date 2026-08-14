@@ -4915,13 +4915,13 @@
         },
         {
             "no": 2,
-            "stock": "URBANCO",
-            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:URBANCO"
+            "stock": "ASHOKLEY",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:ASHOKLEY"
         },
         {
             "no": 3,
-            "stock": "ASHOKLEY",
-            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:ASHOKLEY"
+            "stock": "MEESHO",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:MEESHO"
         },
         {
             "no": 4,
@@ -4940,26 +4940,51 @@
         },
         {
             "no": 7,
+            "stock": "SMALLCAP",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:SMALLCAP"
+        },
+        {
+            "no": 8,
+            "stock": "HINDALCO",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:HINDALCO"
+        },
+        {
+            "no": 9,
             "stock": "CONCOR",
             "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:CONCOR"
         },
         {
-            "no": 8,
+            "no": 10,
             "stock": "TECHM",
             "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:TECHM"
         },
         {
-            "no": 9,
+            "no": 11,
+            "stock": "RGL",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:RGL"
+        },
+        {
+            "no": 12,
             "stock": "TIMETECHNO",
             "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:TIMETECHNO"
         },
         {
-            "no": 10,
+            "no": 13,
+            "stock": "ONEPOINT",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:ONEPOINT"
+        },
+        {
+            "no": 14,
+            "stock": "PETRONET",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:PETRONET"
+        },
+        {
+            "no": 15,
             "stock": "LT",
             "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:LT"
         },
         {
-            "no": 11,
+            "no": 16,
             "stock": "M&M",
             "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:M&M"
         }
