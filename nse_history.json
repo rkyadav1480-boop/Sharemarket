@@ -1,16 +1,4 @@
 {
-  "2026-07-14": [
-    "CARTRADE",
-    "NUVOCO",
-    "BIOCON",
-    "CONCOR",
-    "ADANIPOWER",
-    "GLAXO",
-    "IDBI",
-    "ADANIGREEN",
-    "KALYANKJIL",
-    "MCX"
-  ],
   "2026-07-15": [
     "NUVOCO",
     "ATHERENERG",
@@ -554,5 +542,21 @@
     "HFCL",
     "NATCOPHARM",
     "ABREL"
+  ],
+  "2026-08-14": [
+    "LGEINDIA",
+    "ZEEL",
+    "WELSPUNLIV",
+    "MINDACORP",
+    "CEMPRO",
+    "ASAHIINDIA",
+    "DEVYANI",
+    "ELGIEQUIP",
+    "IDEA",
+    "BHARTIHEXA",
+    "BATAINDIA",
+    "AIAENG",
+    "APOLLOHOSP",
+    "TBOTEK"
   ]
 }
