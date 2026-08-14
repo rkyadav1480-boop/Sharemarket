@@ -4906,5 +4906,62 @@
             "stock": "CONCOR",
             "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:CONCOR"
         }
+    ],
+    "14-08-2026": [
+        {
+            "no": 1,
+            "stock": "8/14/2026",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:8/14/2026"
+        },
+        {
+            "no": 2,
+            "stock": "URBANCO",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:URBANCO"
+        },
+        {
+            "no": 3,
+            "stock": "ASHOKLEY",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:ASHOKLEY"
+        },
+        {
+            "no": 4,
+            "stock": "PNB",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:PNB"
+        },
+        {
+            "no": 5,
+            "stock": "SBIN",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:SBIN"
+        },
+        {
+            "no": 6,
+            "stock": "GAIL",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:GAIL"
+        },
+        {
+            "no": 7,
+            "stock": "CONCOR",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:CONCOR"
+        },
+        {
+            "no": 8,
+            "stock": "TECHM",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:TECHM"
+        },
+        {
+            "no": 9,
+            "stock": "TIMETECHNO",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:TIMETECHNO"
+        },
+        {
+            "no": 10,
+            "stock": "LT",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:LT"
+        },
+        {
+            "no": 11,
+            "stock": "M&M",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:M&M"
+        }
     ]
 }
