@@ -4935,5 +4935,97 @@
             "stock": "GODREJPROP",
             "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:GODREJPROP"
         }
+    ],
+    "16-08-2026": [
+        {
+            "no": 1,
+            "stock": "ASHOKLEY",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:ASHOKLEY"
+        },
+        {
+            "no": 2,
+            "stock": "SBIN",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:SBIN"
+        },
+        {
+            "no": 3,
+            "stock": "TECHM",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:TECHM"
+        },
+        {
+            "no": 4,
+            "stock": "LT",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:LT"
+        },
+        {
+            "no": 5,
+            "stock": "HINDALCO",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:HINDALCO"
+        },
+        {
+            "no": 6,
+            "stock": "M&M",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:M&M"
+        },
+        {
+            "no": 7,
+            "stock": "PERSISTENT",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:PERSISTENT"
+        },
+        {
+            "no": 8,
+            "stock": "HEROMOTOCO",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:HEROMOTOCO"
+        },
+        {
+            "no": 9,
+            "stock": "BAJAJFINSV",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:BAJAJFINSV"
+        },
+        {
+            "no": 10,
+            "stock": "KRBL",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:KRBL"
+        },
+        {
+            "no": 11,
+            "stock": "CONCOR",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:CONCOR"
+        },
+        {
+            "no": 12,
+            "stock": "HYUNDAI",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:HYUNDAI"
+        },
+        {
+            "no": 13,
+            "stock": "PNB",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:PNB"
+        },
+        {
+            "no": 14,
+            "stock": "PETRONET",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:PETRONET"
+        },
+        {
+            "no": 15,
+            "stock": "MEESHO",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:MEESHO"
+        },
+        {
+            "no": 16,
+            "stock": "CIPLA",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:CIPLA"
+        },
+        {
+            "no": 17,
+            "stock": "INDIGO",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:INDIGO"
+        },
+        {
+            "no": 18,
+            "stock": "GODREJPROP",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:GODREJPROP"
+        }
     ]
 }
