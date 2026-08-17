@@ -1,59 +1,4 @@
 {
-  "2026-07-15": [
-    "NUVOCO",
-    "ATHERENERG",
-    "AEGISLOG",
-    "LTTS",
-    "GABRIEL",
-    "BANDHANBNK",
-    "J&KBANK",
-    "APARINDS",
-    "HFCL",
-    "OLAELEC",
-    "GROWW",
-    "FLUOROCHEM",
-    "CHENNPETRO",
-    "ACE",
-    "ABB",
-    "POWERINDIA",
-    "AARTIIND",
-    "FORCEMOT",
-    "KEC",
-    "HYUNDAI",
-    "GVT&D",
-    "SIGNATURE",
-    "POLICYBZR",
-    "AIAENG",
-    "JYOTICNC",
-    "KPRMILL",
-    "GODREJIND",
-    "BANKINDIA",
-    "AAVAS",
-    "HEG"
-  ],
-  "2026-07-16": [
-    "MRPL",
-    "ABB",
-    "CHENNPETRO",
-    "HSCL",
-    "DIXON",
-    "EMMVEE",
-    "RRKABEL",
-    "IIFL",
-    "UPL",
-    "SRF",
-    "SWIGGY",
-    "SIEMENS",
-    "GLAND",
-    "DEEPAKFERT"
-  ],
-  "2026-07-17": [
-    "AFCONS",
-    "JIOFIN",
-    "NAM-INDIA",
-    "BHARATFORG",
-    "DLF"
-  ],
   "2026-07-20": [
     "PNB",
     "TORNTPHARM",
@@ -558,5 +503,15 @@
     "AIAENG",
     "APOLLOHOSP",
     "TBOTEK"
+  ],
+  "2026-08-17": [
+    "PWL",
+    "IPCALAB",
+    "HINDCOPPER",
+    "FINCABLES",
+    "THERMAX",
+    "CEMPRO",
+    "CONCORDBIO",
+    "ENDURANCE"
   ]
 }
