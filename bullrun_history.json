@@ -5194,5 +5194,52 @@
             "stock": "CONCOR",
             "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:CONCOR"
         }
+    ],
+    "18-08-2026": [
+        {
+            "no": 1,
+            "stock": "8/18/2026",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:8/18/2026"
+        },
+        {
+            "no": 2,
+            "stock": "ASHOKLEY",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:ASHOKLEY"
+        },
+        {
+            "no": 3,
+            "stock": "PNB",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:PNB"
+        },
+        {
+            "no": 4,
+            "stock": "SBIN",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:SBIN"
+        },
+        {
+            "no": 5,
+            "stock": "RGL",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:RGL"
+        },
+        {
+            "no": 6,
+            "stock": "PETRONET",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:PETRONET"
+        },
+        {
+            "no": 7,
+            "stock": "KRBL",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:KRBL"
+        },
+        {
+            "no": 8,
+            "stock": "TECHM",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:TECHM"
+        },
+        {
+            "no": 9,
+            "stock": "CONCOR",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:CONCOR"
+        }
     ]
 }
