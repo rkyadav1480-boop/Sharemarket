@@ -5345,5 +5345,47 @@
             "stock": "HINDALCO",
             "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:HINDALCO"
         }
+    ],
+    "21-08-2026": [
+        {
+            "no": 1,
+            "stock": "8/21/2026",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:8/21/2026"
+        },
+        {
+            "no": 2,
+            "stock": "VISL",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:VISL"
+        },
+        {
+            "no": 3,
+            "stock": "UNIONBANK",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:UNIONBANK"
+        },
+        {
+            "no": 4,
+            "stock": "PNB",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:PNB"
+        },
+        {
+            "no": 5,
+            "stock": "SBIN",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:SBIN"
+        },
+        {
+            "no": 6,
+            "stock": "ASHOKLEY",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:ASHOKLEY"
+        },
+        {
+            "no": 7,
+            "stock": "HINDALCO",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:HINDALCO"
+        },
+        {
+            "no": 8,
+            "stock": "PETRONET",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:PETRONET"
+        }
     ]
 }
