@@ -5407,5 +5407,92 @@
             "stock": "PNB",
             "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:PNB"
         }
+    ],
+    "22-08-2026": [
+        {
+            "no": 1,
+            "stock": "SBIN",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:SBIN"
+        },
+        {
+            "no": 2,
+            "stock": "M&M",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:M&M"
+        },
+        {
+            "no": 3,
+            "stock": "LT",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:LT"
+        },
+        {
+            "no": 4,
+            "stock": "HINDALCO",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:HINDALCO"
+        },
+        {
+            "no": 5,
+            "stock": "HEROMOTOCO",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:HEROMOTOCO"
+        },
+        {
+            "no": 6,
+            "stock": "EICHERMOT",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:EICHERMOT"
+        },
+        {
+            "no": 7,
+            "stock": "TECHM",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:TECHM"
+        },
+        {
+            "no": 8,
+            "stock": "PERSISTENT",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:PERSISTENT"
+        },
+        {
+            "no": 9,
+            "stock": "HYUNDAI",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:HYUNDAI"
+        },
+        {
+            "no": 10,
+            "stock": "BAJAJFINSV",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:BAJAJFINSV"
+        },
+        {
+            "no": 11,
+            "stock": "PNB",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:PNB"
+        },
+        {
+            "no": 12,
+            "stock": "PRESTIGE",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:PRESTIGE"
+        },
+        {
+            "no": 13,
+            "stock": "VINCOFE",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:VINCOFE"
+        },
+        {
+            "no": 14,
+            "stock": "UNIONBANK",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:UNIONBANK"
+        },
+        {
+            "no": 15,
+            "stock": "MAZDOCK",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:MAZDOCK"
+        },
+        {
+            "no": 16,
+            "stock": "MRPL",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:MRPL"
+        },
+        {
+            "no": 17,
+            "stock": "ASHOKLEY",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:ASHOKLEY"
+        }
     ]
 }
