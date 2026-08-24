@@ -1,35 +1,4 @@
 {
-  "2026-07-22": [
-    "DATAPATTNS",
-    "M&MFIN",
-    "BAJAJ-AUTO",
-    "CRISIL",
-    "AEGISVOPAK",
-    "TVSMOTOR",
-    "KALYANKJIL",
-    "CHENNPETRO"
-  ],
-  "2026-07-23": [
-    "GRAPHITE",
-    "NTPCGREEN",
-    "HEG",
-    "CPPLUS",
-    "WHIRLPOOL",
-    "MAPMYINDIA",
-    "HEROMOTOCO",
-    "PPLPHARMA",
-    "NUVAMA"
-  ],
-  "2026-07-24": [
-    "PVRINOX",
-    "UNITDSPR",
-    "TATAELXSI",
-    "APARINDS",
-    "ACE",
-    "RRKABEL",
-    "KPITTECH",
-    "PAYTM"
-  ],
   "2026-07-27": [
     "CARTRADE",
     "KFINTECH",
@@ -551,5 +520,21 @@
     "DATAPATTNS",
     "FACT",
     "VMM"
+  ],
+  "2026-08-24": [
+    "LTFOODS",
+    "VMM",
+    "URBANCO",
+    "EIDPARRY",
+    "MUTHOOTFIN",
+    "REDINGTON",
+    "HFCL",
+    "HEXT",
+    "SAIL",
+    "ABREL",
+    "ZYDUSWELL",
+    "HSCL",
+    "SIEMENS",
+    "PCBL"
   ]
 }
