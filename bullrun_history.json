@@ -5520,28 +5520,23 @@
         },
         {
             "no": 6,
-            "stock": "SBIN",
-            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:SBIN"
-        },
-        {
-            "no": 7,
             "stock": "ASHOKLEY",
             "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:ASHOKLEY"
         },
         {
-            "no": 8,
+            "no": 7,
             "stock": "HDFCBSE500",
             "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:HDFCBSE500"
         },
         {
-            "no": 9,
-            "stock": "HINDALCO",
-            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:HINDALCO"
-        },
-        {
-            "no": 10,
+            "no": 8,
             "stock": "CONSUMER",
             "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:CONSUMER"
+        },
+        {
+            "no": 9,
+            "stock": "DLF",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:DLF"
         }
     ]
 }
