@@ -5538,5 +5538,42 @@
             "stock": "DLF",
             "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:DLF"
         }
+    ],
+    "25-08-2026": [
+        {
+            "no": 1,
+            "stock": "8/25/2026",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:8/25/2026"
+        },
+        {
+            "no": 2,
+            "stock": "PNB",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:PNB"
+        },
+        {
+            "no": 3,
+            "stock": "ASHOKLEY",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:ASHOKLEY"
+        },
+        {
+            "no": 4,
+            "stock": "MRPL",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:MRPL"
+        },
+        {
+            "no": 5,
+            "stock": "DLF",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:DLF"
+        },
+        {
+            "no": 6,
+            "stock": "UNIONBANK",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:UNIONBANK"
+        },
+        {
+            "no": 7,
+            "stock": "PARADEEP",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:PARADEEP"
+        }
     ]
 }
