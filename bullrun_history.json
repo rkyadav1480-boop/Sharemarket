@@ -5676,5 +5676,57 @@
             "stock": "NATIONALUM",
             "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:NATIONALUM"
         }
+    ],
+    "29-08-2026": [
+        {
+            "no": 1,
+            "stock": "8/29/2026",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:8/29/2026"
+        },
+        {
+            "no": 2,
+            "stock": "ASHOKLEY",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:ASHOKLEY"
+        },
+        {
+            "no": 3,
+            "stock": "PNB",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:PNB"
+        },
+        {
+            "no": 4,
+            "stock": "BANKNIFTY1",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:BANKNIFTY1"
+        },
+        {
+            "no": 5,
+            "stock": "UNIONBANK",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:UNIONBANK"
+        },
+        {
+            "no": 6,
+            "stock": "CANHLIFE",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:CANHLIFE"
+        },
+        {
+            "no": 7,
+            "stock": "HINDALCO",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:HINDALCO"
+        },
+        {
+            "no": 8,
+            "stock": "MRPL",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:MRPL"
+        },
+        {
+            "no": 9,
+            "stock": "EDELWEISS",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:EDELWEISS"
+        },
+        {
+            "no": 10,
+            "stock": "NATIONALUM",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:NATIONALUM"
+        }
     ]
 }
