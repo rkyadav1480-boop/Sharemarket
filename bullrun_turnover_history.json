@@ -6050,5 +6050,72 @@
             "stock": "OIL",
             "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:OIL"
         }
+    ],
+    "31-08-2026": [
+        {
+            "no": 1,
+            "stock": "M&M",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:M&M"
+        },
+        {
+            "no": 2,
+            "stock": "PERSISTENT",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:PERSISTENT"
+        },
+        {
+            "no": 3,
+            "stock": "TECHM",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:TECHM"
+        },
+        {
+            "no": 4,
+            "stock": "LT",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:LT"
+        },
+        {
+            "no": 5,
+            "stock": "EICHERMOT",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:EICHERMOT"
+        },
+        {
+            "no": 6,
+            "stock": "HEROMOTOCO",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:HEROMOTOCO"
+        },
+        {
+            "no": 7,
+            "stock": "ASHOKLEY",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:ASHOKLEY"
+        },
+        {
+            "no": 8,
+            "stock": "HYUNDAI",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:HYUNDAI"
+        },
+        {
+            "no": 9,
+            "stock": "BALKRISIND",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:BALKRISIND"
+        },
+        {
+            "no": 10,
+            "stock": "ASTRAL",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:ASTRAL"
+        },
+        {
+            "no": 11,
+            "stock": "BEML",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:BEML"
+        },
+        {
+            "no": 12,
+            "stock": "BAJAJFINSV",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:BAJAJFINSV"
+        },
+        {
+            "no": 13,
+            "stock": "OIL",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:OIL"
+        }
     ]
 }
