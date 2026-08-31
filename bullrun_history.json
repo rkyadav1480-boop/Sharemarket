@@ -5744,13 +5744,28 @@
     "31-08-2026": [
         {
             "no": 1,
-            "stock": "8/31/2026",
-            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:8/31/2026"
+            "stock": "9/1/2026",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:9/1/2026"
         },
         {
             "no": 2,
-            "stock": "\u0915\u094b\u0908 \u0938\u094d\u091f\u0949\u0915 \u0928\u0939\u0940\u0902 \u092e\u093f\u0932\u093e",
-            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:\u0915\u094b\u0908 \u0938\u094d\u091f\u0949\u0915 \u0928\u0939\u0940\u0902 \u092e\u093f\u0932\u093e"
+            "stock": "VISL",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:VISL"
+        },
+        {
+            "no": 3,
+            "stock": "ASHOKLEY",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:ASHOKLEY"
+        },
+        {
+            "no": 4,
+            "stock": "UNIONBANK",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:UNIONBANK"
+        },
+        {
+            "no": 5,
+            "stock": "MRPL",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:MRPL"
         }
     ]
 }
