@@ -5767,5 +5767,37 @@
             "stock": "MRPL",
             "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:MRPL"
         }
+    ],
+    "01-09-2026": [
+        {
+            "no": 1,
+            "stock": "9/1/2026",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:9/1/2026"
+        },
+        {
+            "no": 2,
+            "stock": "ASHOKLEY",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:ASHOKLEY"
+        },
+        {
+            "no": 3,
+            "stock": "ASTRAL",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:ASTRAL"
+        },
+        {
+            "no": 4,
+            "stock": "BALKRISIND",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:BALKRISIND"
+        },
+        {
+            "no": 5,
+            "stock": "OIL",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:OIL"
+        },
+        {
+            "no": 6,
+            "stock": "GPPL",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:GPPL"
+        }
     ]
 }
