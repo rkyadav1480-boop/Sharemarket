@@ -5776,28 +5776,48 @@
         },
         {
             "no": 2,
-            "stock": "ASHOKLEY",
-            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:ASHOKLEY"
+            "stock": "VOGL",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:VOGL"
         },
         {
             "no": 3,
-            "stock": "ASTRAL",
-            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:ASTRAL"
+            "stock": "VISL",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:VISL"
         },
         {
             "no": 4,
+            "stock": "UNIONBANK",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:UNIONBANK"
+        },
+        {
+            "no": 5,
             "stock": "BALKRISIND",
             "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:BALKRISIND"
         },
         {
-            "no": 5,
+            "no": 6,
+            "stock": "CANHLIFE",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:CANHLIFE"
+        },
+        {
+            "no": 7,
+            "stock": "MRPL",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:MRPL"
+        },
+        {
+            "no": 8,
             "stock": "OIL",
             "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:OIL"
         },
         {
-            "no": 6,
+            "no": 9,
             "stock": "GPPL",
             "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:GPPL"
+        },
+        {
+            "no": 10,
+            "stock": "DLF",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:DLF"
         }
     ]
 }
