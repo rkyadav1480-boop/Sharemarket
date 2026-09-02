@@ -482,5 +482,27 @@
     "Consumer": "negative",
     "Realty": "negative",
     "Hospitality": "negative"
+  },
+  "2026-09-02": {
+    "Energy": "neutral",
+    "Industrial": "neutral",
+    "Chemicals": "neutral",
+    "Banking": "neutral",
+    "Consumer": "neutral",
+    "NBFC": "neutral",
+    "Hospitality": "neutral",
+    "Infra": "neutral",
+    "Others": "neutral",
+    "Pharma": "neutral",
+    "FMCG": "negative",
+    "Metals": "negative",
+    "Diversified": "negative",
+    "Telecom": "negative",
+    "Realty": "negative",
+    "IT": "negative",
+    "Cap Goods": "negative",
+    "Building Mat": "negative",
+    "Media": "negative",
+    "Auto": "negative"
   }
 }
