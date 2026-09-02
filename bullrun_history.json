@@ -5828,56 +5828,71 @@
         },
         {
             "no": 2,
+            "stock": "PCJEWELLER",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:PCJEWELLER"
+        },
+        {
+            "no": 3,
             "stock": "VOGL",
             "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:VOGL"
         },
         {
-            "no": 3,
+            "no": 4,
             "stock": "VISL",
             "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:VISL"
         },
         {
-            "no": 4,
+            "no": 5,
             "stock": "MOTISONS",
             "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:MOTISONS"
         },
         {
-            "no": 5,
+            "no": 6,
             "stock": "MRPL",
             "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:MRPL"
         },
         {
-            "no": 6,
+            "no": 7,
+            "stock": "UTKARSHBNK",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:UTKARSHBNK"
+        },
+        {
+            "no": 8,
             "stock": "PNB",
             "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:PNB"
         },
         {
-            "no": 7,
+            "no": 9,
             "stock": "TMCV",
             "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:TMCV"
         },
         {
-            "no": 8,
+            "no": 10,
             "stock": "UNIONBANK",
             "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:UNIONBANK"
         },
         {
-            "no": 9,
+            "no": 11,
             "stock": "MOSMALL250",
             "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:MOSMALL250"
         },
         {
-            "no": 10,
+            "no": 12,
             "stock": "ARIS",
             "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:ARIS"
         },
         {
-            "no": 11,
+            "no": 13,
+            "stock": "HINDZINC",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:HINDZINC"
+        },
+        {
+            "no": 14,
             "stock": "DLF",
             "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:DLF"
         },
         {
-            "no": 12,
+            "no": 15,
             "stock": "GPPL",
             "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:GPPL"
         }
