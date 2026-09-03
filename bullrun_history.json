@@ -5905,8 +5905,73 @@
         },
         {
             "no": 2,
-            "stock": "\u0915\u094b\u0908 \u0938\u094d\u091f\u0949\u0915 \u0928\u0939\u0940\u0902 \u092e\u093f\u0932\u093e",
-            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:\u0915\u094b\u0908 \u0938\u094d\u091f\u0949\u0915 \u0928\u0939\u0940\u0902 \u092e\u093f\u0932\u093e"
+            "stock": "PCJEWELLER",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:PCJEWELLER"
+        },
+        {
+            "no": 3,
+            "stock": "VOGL",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:VOGL"
+        },
+        {
+            "no": 4,
+            "stock": "VISL",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:VISL"
+        },
+        {
+            "no": 5,
+            "stock": "MOTISONS",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:MOTISONS"
+        },
+        {
+            "no": 6,
+            "stock": "PNB",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:PNB"
+        },
+        {
+            "no": 7,
+            "stock": "TMCV",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:TMCV"
+        },
+        {
+            "no": 8,
+            "stock": "IDBI",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:IDBI"
+        },
+        {
+            "no": 9,
+            "stock": "MRPL",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:MRPL"
+        },
+        {
+            "no": 10,
+            "stock": "UNIONBANK",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:UNIONBANK"
+        },
+        {
+            "no": 11,
+            "stock": "GAIL",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:GAIL"
+        },
+        {
+            "no": 12,
+            "stock": "OIL",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:OIL"
+        },
+        {
+            "no": 13,
+            "stock": "HINDZINC",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:HINDZINC"
+        },
+        {
+            "no": 14,
+            "stock": "UTKARSHBNK",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:UTKARSHBNK"
+        },
+        {
+            "no": 15,
+            "stock": "DLF",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:DLF"
         }
     ]
 }
