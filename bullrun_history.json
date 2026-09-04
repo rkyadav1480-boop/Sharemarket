@@ -6007,23 +6007,43 @@
         },
         {
             "no": 7,
+            "stock": "TMCV",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:TMCV"
+        },
+        {
+            "no": 8,
             "stock": "UTKARSHBNK",
             "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:UTKARSHBNK"
         },
         {
-            "no": 8,
+            "no": 9,
             "stock": "IDBI",
             "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:IDBI"
         },
         {
-            "no": 9,
+            "no": 10,
+            "stock": "WAKEFIT",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:WAKEFIT"
+        },
+        {
+            "no": 11,
             "stock": "HINDZINC",
             "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:HINDZINC"
         },
         {
-            "no": 10,
+            "no": 12,
             "stock": "DLF",
             "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:DLF"
+        },
+        {
+            "no": 13,
+            "stock": "MARSONS",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:MARSONS"
+        },
+        {
+            "no": 14,
+            "stock": "MOREALTY",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:MOREALTY"
         }
     ]
 }
