@@ -6045,5 +6045,62 @@
             "stock": "MOREALTY",
             "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:MOREALTY"
         }
+    ],
+    "05-09-2026": [
+        {
+            "no": 1,
+            "stock": "9/5/2026",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:9/5/2026"
+        },
+        {
+            "no": 2,
+            "stock": "VOGL",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:VOGL"
+        },
+        {
+            "no": 3,
+            "stock": "VISL",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:VISL"
+        },
+        {
+            "no": 4,
+            "stock": "MARSONS",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:MARSONS"
+        },
+        {
+            "no": 5,
+            "stock": "PNB",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:PNB"
+        },
+        {
+            "no": 6,
+            "stock": "UNIONBANK",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:UNIONBANK"
+        },
+        {
+            "no": 7,
+            "stock": "TMCV",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:TMCV"
+        },
+        {
+            "no": 8,
+            "stock": "UTKARSHBNK",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:UTKARSHBNK"
+        },
+        {
+            "no": 9,
+            "stock": "IDBI",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:IDBI"
+        },
+        {
+            "no": 10,
+            "stock": "HINDZINC",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:HINDZINC"
+        },
+        {
+            "no": 11,
+            "stock": "MRPL",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:MRPL"
+        }
     ]
 }
