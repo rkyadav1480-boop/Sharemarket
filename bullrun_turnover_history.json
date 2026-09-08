@@ -6466,5 +6466,57 @@
             "stock": "HYUNDAI",
             "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:HYUNDAI"
         }
+    ],
+    "08-09-2026": [
+        {
+            "no": 1,
+            "stock": "CDSL",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:CDSL"
+        },
+        {
+            "no": 2,
+            "stock": "PERSISTENT",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:PERSISTENT"
+        },
+        {
+            "no": 3,
+            "stock": "HINDZINC",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:HINDZINC"
+        },
+        {
+            "no": 4,
+            "stock": "UNIONBANK",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:UNIONBANK"
+        },
+        {
+            "no": 5,
+            "stock": "TMCV",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:TMCV"
+        },
+        {
+            "no": 6,
+            "stock": "GAIL",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:GAIL"
+        },
+        {
+            "no": 7,
+            "stock": "OIL",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:OIL"
+        },
+        {
+            "no": 8,
+            "stock": "PNB",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:PNB"
+        },
+        {
+            "no": 9,
+            "stock": "BALUFORGE",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:BALUFORGE"
+        },
+        {
+            "no": 10,
+            "stock": "HYUNDAI",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:HYUNDAI"
+        }
     ]
 }
