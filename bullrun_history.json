@@ -6230,33 +6230,33 @@
         },
         {
             "no": 5,
-            "stock": "IDBI",
-            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:IDBI"
-        },
-        {
-            "no": 6,
             "stock": "MARSONS",
             "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:MARSONS"
         },
         {
-            "no": 7,
+            "no": 6,
             "stock": "TMCV",
             "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:TMCV"
         },
         {
-            "no": 8,
+            "no": 7,
             "stock": "HINDZINC",
             "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:HINDZINC"
         },
         {
-            "no": 9,
+            "no": 8,
             "stock": "OIL",
             "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:OIL"
         },
         {
-            "no": 10,
+            "no": 9,
             "stock": "CDSL",
             "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:CDSL"
+        },
+        {
+            "no": 10,
+            "stock": "NDL",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:NDL"
         }
     ]
 }
