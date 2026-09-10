@@ -6325,5 +6325,47 @@
             "stock": "NAUKRI",
             "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:NAUKRI"
         }
+    ],
+    "10-09-2026": [
+        {
+            "no": 1,
+            "stock": "9/10/2026",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:9/10/2026"
+        },
+        {
+            "no": 2,
+            "stock": "UTKARSHBNK",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:UTKARSHBNK"
+        },
+        {
+            "no": 3,
+            "stock": "MRPL",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:MRPL"
+        },
+        {
+            "no": 4,
+            "stock": "PNB",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:PNB"
+        },
+        {
+            "no": 5,
+            "stock": "KOTAKBANK",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:KOTAKBANK"
+        },
+        {
+            "no": 6,
+            "stock": "UNIONBANK",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:UNIONBANK"
+        },
+        {
+            "no": 7,
+            "stock": "HINDZINC",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:HINDZINC"
+        },
+        {
+            "no": 8,
+            "stock": "GAIL",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:GAIL"
+        }
     ]
 }
