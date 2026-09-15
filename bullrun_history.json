@@ -6544,13 +6544,13 @@
         },
         {
             "no": 2,
-            "stock": "MRPL",
-            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:MRPL"
+            "stock": "KOTAKBANK",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:KOTAKBANK"
         },
         {
             "no": 3,
-            "stock": "KOTAKBANK",
-            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:KOTAKBANK"
+            "stock": "LICHSGFIN",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:LICHSGFIN"
         },
         {
             "no": 4,
@@ -6559,11 +6559,26 @@
         },
         {
             "no": 5,
+            "stock": "MOTISONS",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:MOTISONS"
+        },
+        {
+            "no": 6,
+            "stock": "WESTLIFE",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:WESTLIFE"
+        },
+        {
+            "no": 7,
             "stock": "OIL",
             "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:OIL"
         },
         {
-            "no": 6,
+            "no": 8,
+            "stock": "GROWWNET",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:GROWWNET"
+        },
+        {
+            "no": 9,
             "stock": "PARAGMILK",
             "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:PARAGMILK"
         }
