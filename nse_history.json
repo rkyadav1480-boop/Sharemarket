@@ -1,52 +1,4 @@
 {
-  "2026-08-12": [
-    "FINCABLES",
-    "KPIL",
-    "NATIONALUM",
-    "PFIZER",
-    "HINDCOPPER",
-    "FORCEMOT",
-    "BERGEPAINT",
-    "PNB",
-    "SPLPETRO",
-    "MAHABANK",
-    "APARINDS",
-    "DATAPATTNS",
-    "BOSCHLTD"
-  ],
-  "2026-08-13": [
-    "SARDAEN",
-    "ASTRAL",
-    "GPIL",
-    "NETWEB",
-    "IFCI",
-    "BHARTIHEXA",
-    "FLUOROCHEM",
-    "CYIENT",
-    "URBANCO",
-    "ABDL",
-    "HONASA",
-    "TMCV",
-    "HFCL",
-    "NATCOPHARM",
-    "ABREL"
-  ],
-  "2026-08-14": [
-    "LGEINDIA",
-    "ZEEL",
-    "WELSPUNLIV",
-    "MINDACORP",
-    "CEMPRO",
-    "ASAHIINDIA",
-    "DEVYANI",
-    "ELGIEQUIP",
-    "IDEA",
-    "BHARTIHEXA",
-    "BATAINDIA",
-    "AIAENG",
-    "APOLLOHOSP",
-    "TBOTEK"
-  ],
   "2026-08-17": [
     "PWL",
     "IPCALAB",
@@ -474,5 +426,18 @@
     "INDIAMART",
     "JBMA",
     "ONESOURCE"
+  ],
+  "2026-09-15": [
+    "TATACHEM",
+    "FSL",
+    "TATAINVEST",
+    "SONATSOFTW",
+    "ACMESOLAR",
+    "HCLTECH",
+    "HEXT",
+    "INFY",
+    "MPHASIS",
+    "ZENSARTECH",
+    "AFCONS"
   ]
 }
