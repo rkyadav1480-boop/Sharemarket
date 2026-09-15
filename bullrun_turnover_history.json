@@ -6800,5 +6800,52 @@
             "stock": "POLICYBZR",
             "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:POLICYBZR"
         }
+    ],
+    "15-09-2026": [
+        {
+            "no": 1,
+            "stock": "LICHSGFIN",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:LICHSGFIN"
+        },
+        {
+            "no": 2,
+            "stock": "KOTAKBANK",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:KOTAKBANK"
+        },
+        {
+            "no": 3,
+            "stock": "WESTLIFE",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:WESTLIFE"
+        },
+        {
+            "no": 4,
+            "stock": "OIL",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:OIL"
+        },
+        {
+            "no": 5,
+            "stock": "PERSISTENT",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:PERSISTENT"
+        },
+        {
+            "no": 6,
+            "stock": "PNB",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:PNB"
+        },
+        {
+            "no": 7,
+            "stock": "APLAPOLLO",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:APLAPOLLO"
+        },
+        {
+            "no": 8,
+            "stock": "HYUNDAI",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:HYUNDAI"
+        },
+        {
+            "no": 9,
+            "stock": "POLICYBZR",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:POLICYBZR"
+        }
     ]
 }
