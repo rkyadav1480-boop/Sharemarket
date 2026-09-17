@@ -6623,11 +6623,16 @@
         },
         {
             "no": 4,
+            "stock": "PWL",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:PWL"
+        },
+        {
+            "no": 5,
             "stock": "SMALLCAP",
             "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:SMALLCAP"
         },
         {
-            "no": 5,
+            "no": 6,
             "stock": "LICHSGFIN",
             "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:LICHSGFIN"
         }
