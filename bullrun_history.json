@@ -6636,5 +6636,37 @@
             "stock": "LICHSGFIN",
             "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:LICHSGFIN"
         }
+    ],
+    "18-09-2026": [
+        {
+            "no": 1,
+            "stock": "9/18/2026",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:9/18/2026"
+        },
+        {
+            "no": 2,
+            "stock": "PNB",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:PNB"
+        },
+        {
+            "no": 3,
+            "stock": "KOTAKBANK",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:KOTAKBANK"
+        },
+        {
+            "no": 4,
+            "stock": "POLICYBZR",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:POLICYBZR"
+        },
+        {
+            "no": 5,
+            "stock": "CASTROLIND",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:CASTROLIND"
+        },
+        {
+            "no": 6,
+            "stock": "LICHSGFIN",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:LICHSGFIN"
+        }
     ]
 }
