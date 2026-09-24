@@ -6843,5 +6843,32 @@
             "stock": "OIL",
             "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:OIL"
         }
+    ],
+    "24-09-2026": [
+        {
+            "no": 1,
+            "stock": "9/24/2026",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:9/24/2026"
+        },
+        {
+            "no": 2,
+            "stock": "KOTAKBANK",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:KOTAKBANK"
+        },
+        {
+            "no": 3,
+            "stock": "CASTROLIND",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:CASTROLIND"
+        },
+        {
+            "no": 4,
+            "stock": "LICHSGFIN",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:LICHSGFIN"
+        },
+        {
+            "no": 5,
+            "stock": "PARAGMILK",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:PARAGMILK"
+        }
     ]
 }
