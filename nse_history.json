@@ -1,20 +1,4 @@
 {
-  "2026-08-24": [
-    "LTFOODS",
-    "VMM",
-    "URBANCO",
-    "EIDPARRY",
-    "MUTHOOTFIN",
-    "REDINGTON",
-    "HFCL",
-    "HEXT",
-    "SAIL",
-    "ABREL",
-    "ZYDUSWELL",
-    "HSCL",
-    "SIEMENS",
-    "PCBL"
-  ],
   "2026-08-25": [
     "FACT",
     "PARADEEP",
@@ -578,5 +562,12 @@
     "BAJFINANCE",
     "360ONE",
     "FIRSTCRY"
+  ],
+  "2026-09-24": [
+    "ABDL",
+    "ICICIGI",
+    "SUNTV",
+    "CARBORUNIV",
+    "CAPLIPOINT"
   ]
 }
