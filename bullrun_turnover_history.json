@@ -7098,5 +7098,12 @@
             "stock": "PNB",
             "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:PNB"
         }
+    ],
+    "24-09-2026": [
+        {
+            "no": 1,
+            "stock": "PNB",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:PNB"
+        }
     ]
 }
