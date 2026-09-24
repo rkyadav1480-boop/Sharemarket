@@ -6852,21 +6852,26 @@
         },
         {
             "no": 2,
+            "stock": "PNB",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:PNB"
+        },
+        {
+            "no": 3,
             "stock": "KOTAKBANK",
             "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:KOTAKBANK"
         },
         {
-            "no": 3,
+            "no": 4,
             "stock": "CASTROLIND",
             "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:CASTROLIND"
         },
         {
-            "no": 4,
+            "no": 5,
             "stock": "LICHSGFIN",
             "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:LICHSGFIN"
         },
         {
-            "no": 5,
+            "no": 6,
             "stock": "PARAGMILK",
             "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:PARAGMILK"
         }
