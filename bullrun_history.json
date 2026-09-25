@@ -6884,11 +6884,6 @@
         },
         {
             "no": 2,
-            "stock": "KOTAKBANK",
-            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:KOTAKBANK"
-        },
-        {
-            "no": 3,
             "stock": "PNB",
             "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:PNB"
         }
