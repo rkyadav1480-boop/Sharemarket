@@ -6875,5 +6875,22 @@
             "stock": "PARAGMILK",
             "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:PARAGMILK"
         }
+    ],
+    "25-09-2026": [
+        {
+            "no": 1,
+            "stock": "9/25/2026",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:9/25/2026"
+        },
+        {
+            "no": 2,
+            "stock": "KOTAKBANK",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:KOTAKBANK"
+        },
+        {
+            "no": 3,
+            "stock": "PNB",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:PNB"
+        }
     ]
 }
