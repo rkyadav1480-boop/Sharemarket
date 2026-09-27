@@ -7124,5 +7124,17 @@
             "stock": "PNB",
             "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:PNB"
         }
+    ],
+    "27-09-2026": [
+        {
+            "no": 1,
+            "stock": "CASTROLIND",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:CASTROLIND"
+        },
+        {
+            "no": 2,
+            "stock": "PNB",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:PNB"
+        }
     ]
 }
