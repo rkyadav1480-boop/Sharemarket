@@ -6925,13 +6925,18 @@
     "28-09-2026": [
         {
             "no": 1,
-            "stock": "9/28/2026",
-            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:9/28/2026"
+            "stock": "9/29/2026",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:9/29/2026"
         },
         {
             "no": 2,
             "stock": "CASTROLIND",
             "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:CASTROLIND"
+        },
+        {
+            "no": 3,
+            "stock": "PWL",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:PWL"
         }
     ]
 }
