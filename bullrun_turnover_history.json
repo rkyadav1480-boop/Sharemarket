@@ -7148,5 +7148,22 @@
             "stock": "PWL",
             "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:PWL"
         }
+    ],
+    "29-09-2026": [
+        {
+            "no": 1,
+            "stock": "ADANIPORTS",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:ADANIPORTS"
+        },
+        {
+            "no": 2,
+            "stock": "LICHSGFIN",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:LICHSGFIN"
+        },
+        {
+            "no": 3,
+            "stock": "CASTROLIND",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:CASTROLIND"
+        }
     ]
 }
