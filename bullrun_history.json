@@ -6952,11 +6952,6 @@
         },
         {
             "no": 3,
-            "stock": "PETRONET",
-            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:PETRONET"
-        },
-        {
-            "no": 4,
             "stock": "LICHSGFIN",
             "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:LICHSGFIN"
         }
