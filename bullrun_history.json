@@ -6955,5 +6955,17 @@
             "stock": "LICHSGFIN",
             "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:LICHSGFIN"
         }
+    ],
+    "30-09-2026": [
+        {
+            "no": 1,
+            "stock": "9/30/2026",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:9/30/2026"
+        },
+        {
+            "no": 2,
+            "stock": "CASTROLIND",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:CASTROLIND"
+        }
     ]
 }
