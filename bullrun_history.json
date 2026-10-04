@@ -7028,5 +7028,22 @@
             "stock": "CASTROLIND",
             "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:CASTROLIND"
         }
+    ],
+    "04-10-2026": [
+        {
+            "no": 1,
+            "stock": "10/4/2026",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:10/4/2026"
+        },
+        {
+            "no": 2,
+            "stock": "DLF",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:DLF"
+        },
+        {
+            "no": 3,
+            "stock": "CASTROLIND",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:CASTROLIND"
+        }
     ]
 }
