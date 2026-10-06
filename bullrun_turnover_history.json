@@ -7232,5 +7232,22 @@
             "stock": "DLF",
             "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:DLF"
         }
+    ],
+    "06-10-2026": [
+        {
+            "no": 1,
+            "stock": "DLF",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:DLF"
+        },
+        {
+            "no": 2,
+            "stock": "APLAPOLLO",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:APLAPOLLO"
+        },
+        {
+            "no": 3,
+            "stock": "MANKIND",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:MANKIND"
+        }
     ]
 }
