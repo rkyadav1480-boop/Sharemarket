@@ -7062,5 +7062,32 @@
             "stock": "CASTROLIND",
             "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:CASTROLIND"
         }
+    ],
+    "06-10-2026": [
+        {
+            "no": 1,
+            "stock": "10/6/2026",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:10/6/2026"
+        },
+        {
+            "no": 2,
+            "stock": "TEXRAIL",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:TEXRAIL"
+        },
+        {
+            "no": 3,
+            "stock": "DLF",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:DLF"
+        },
+        {
+            "no": 4,
+            "stock": "PETRONET",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:PETRONET"
+        },
+        {
+            "no": 5,
+            "stock": "CASTROLIND",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:CASTROLIND"
+        }
     ]
 }
