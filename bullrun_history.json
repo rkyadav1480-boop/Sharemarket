@@ -7089,5 +7089,17 @@
             "stock": "CASTROLIND",
             "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:CASTROLIND"
         }
+    ],
+    "07-10-2026": [
+        {
+            "no": 1,
+            "stock": "10/7/2026",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:10/7/2026"
+        },
+        {
+            "no": 2,
+            "stock": "PETRONET",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:PETRONET"
+        }
     ]
 }
