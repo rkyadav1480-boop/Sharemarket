@@ -438,5 +438,27 @@
     "Realty": "neutral",
     "Media": "neutral",
     "IT": "negative"
+  },
+  "2026-10-07": {
+    "Building Mat": "positive",
+    "Hospitality": "neutral",
+    "Telecom": "neutral",
+    "Banking": "neutral",
+    "Others": "neutral",
+    "Industrial": "neutral",
+    "Pharma": "neutral",
+    "Cap Goods": "neutral",
+    "NBFC": "negative",
+    "Chemicals": "negative",
+    "IT": "negative",
+    "Diversified": "negative",
+    "Energy": "negative",
+    "FMCG": "negative",
+    "Media": "negative",
+    "Infra": "negative",
+    "Auto": "negative",
+    "Consumer": "negative",
+    "Realty": "negative",
+    "Metals": "negative"
   }
 }
