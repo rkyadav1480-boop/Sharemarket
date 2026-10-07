@@ -7249,5 +7249,12 @@
             "stock": "MANKIND",
             "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:MANKIND"
         }
+    ],
+    "07-10-2026": [
+        {
+            "no": 1,
+            "stock": "PETRONET",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:PETRONET"
+        }
     ]
 }
