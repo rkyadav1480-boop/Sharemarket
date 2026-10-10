@@ -7125,5 +7125,17 @@
             "stock": "PETRONET",
             "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:PETRONET"
         }
+    ],
+    "10-10-2026": [
+        {
+            "no": 1,
+            "stock": "10/10/2026",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:10/10/2026"
+        },
+        {
+            "no": 2,
+            "stock": "\u0915\u094b\u0908 \u0938\u094d\u091f\u0949\u0915 \u0928\u0939\u0940\u0902 \u092e\u093f\u0932\u093e",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:\u0915\u094b\u0908 \u0938\u094d\u091f\u0949\u0915 \u0928\u0939\u0940\u0902 \u092e\u093f\u0932\u093e"
+        }
     ]
 }
