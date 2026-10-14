@@ -438,5 +438,27 @@
     "Metals": "positive",
     "Chemicals": "neutral",
     "Pharma": "neutral"
+  },
+  "2026-10-14": {
+    "Building Mat": "positive",
+    "Media": "positive",
+    "Energy": "positive",
+    "FMCG": "positive",
+    "Chemicals": "positive",
+    "Industrial": "positive",
+    "Cap Goods": "positive",
+    "IT": "positive",
+    "Hospitality": "neutral",
+    "Others": "neutral",
+    "Consumer": "neutral",
+    "Telecom": "neutral",
+    "Banking": "neutral",
+    "Auto": "neutral",
+    "Infra": "neutral",
+    "Realty": "negative",
+    "Pharma": "negative",
+    "Diversified": "negative",
+    "Metals": "negative",
+    "NBFC": "negative"
   }
 }
