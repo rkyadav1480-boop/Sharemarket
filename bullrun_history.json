@@ -7190,5 +7190,22 @@
             "stock": "KOTAKBANK",
             "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:KOTAKBANK"
         }
+    ],
+    "15-10-2026": [
+        {
+            "no": 1,
+            "stock": "10/15/2026",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:10/15/2026"
+        },
+        {
+            "no": 2,
+            "stock": "BLEL",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:BLEL"
+        },
+        {
+            "no": 3,
+            "stock": "PETRONET",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:PETRONET"
+        }
     ]
 }
