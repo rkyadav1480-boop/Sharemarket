@@ -7305,5 +7305,27 @@
             "stock": "KOTAKBANK",
             "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:KOTAKBANK"
         }
+    ],
+    "15-10-2026": [
+        {
+            "no": 1,
+            "stock": "PERSISTENT",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:PERSISTENT"
+        },
+        {
+            "no": 2,
+            "stock": "MRPL",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:MRPL"
+        },
+        {
+            "no": 3,
+            "stock": "BLEL",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:BLEL"
+        },
+        {
+            "no": 4,
+            "stock": "GESHIP",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:GESHIP"
+        }
     ]
 }
