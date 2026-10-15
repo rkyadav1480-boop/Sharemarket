@@ -7199,11 +7199,16 @@
         },
         {
             "no": 2,
+            "stock": "MRPL",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:MRPL"
+        },
+        {
+            "no": 3,
             "stock": "BLEL",
             "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:BLEL"
         },
         {
-            "no": 3,
+            "no": 4,
             "stock": "PETRONET",
             "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:PETRONET"
         }
