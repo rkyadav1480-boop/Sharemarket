@@ -1,17 +1,4 @@
 {
-  "2026-09-15": [
-    "TATACHEM",
-    "FSL",
-    "TATAINVEST",
-    "SONATSOFTW",
-    "ACMESOLAR",
-    "HCLTECH",
-    "HEXT",
-    "INFY",
-    "MPHASIS",
-    "ZENSARTECH",
-    "AFCONS"
-  ],
   "2026-09-16": [
     "PATANJALI",
     "POLICYBZR",
@@ -675,5 +662,31 @@
     "BHARTIARTL",
     "SIGNATURE",
     "ZENSARTECH"
+  ],
+  "2026-10-16": [
+    "HBLENGINE",
+    "TECHM",
+    "THANGAMAYL",
+    "WIPRO",
+    "HFCL",
+    "KPITTECH",
+    "AIIL",
+    "DALBHARAT",
+    "TCS",
+    "PFOCUS",
+    "INFY",
+    "SHRIPISTON",
+    "SHYAMMETL",
+    "TATAELXSI",
+    "INDHOTEL",
+    "LTM",
+    "ACC",
+    "LINDEINDIA",
+    "WELCORP",
+    "VAML",
+    "CGPOWER",
+    "URBANCO",
+    "BBOX",
+    "IIFL"
   ]
 }
