@@ -7327,5 +7327,22 @@
             "stock": "GESHIP",
             "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:GESHIP"
         }
+    ],
+    "16-10-2026": [
+        {
+            "no": 1,
+            "stock": "MRPL",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:MRPL"
+        },
+        {
+            "no": 2,
+            "stock": "PERSISTENT",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:PERSISTENT"
+        },
+        {
+            "no": 3,
+            "stock": "GESHIP",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:GESHIP"
+        }
     ]
 }
