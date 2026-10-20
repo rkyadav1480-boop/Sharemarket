@@ -7265,5 +7265,22 @@
             "stock": "MRPL",
             "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:MRPL"
         }
+    ],
+    "20-10-2026": [
+        {
+            "no": 1,
+            "stock": "10/20/2026",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:10/20/2026"
+        },
+        {
+            "no": 2,
+            "stock": "PNB",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:PNB"
+        },
+        {
+            "no": 3,
+            "stock": "MRPL",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:MRPL"
+        }
     ]
 }
