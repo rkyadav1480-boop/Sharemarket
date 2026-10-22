@@ -7308,6 +7308,11 @@
         },
         {
             "no": 3,
+            "stock": "SHANKESH",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:SHANKESH"
+        },
+        {
+            "no": 4,
             "stock": "PETRONET",
             "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:PETRONET"
         }
