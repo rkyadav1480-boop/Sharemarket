@@ -1,26 +1,4 @@
 {
-  "2026-09-22": [
-    "GABRIEL",
-    "MEESHO",
-    "SUNTV",
-    "JAINREC",
-    "ENGINERSIN",
-    "CEMPRO",
-    "JSWINFRA",
-    "RBLBANK",
-    "FINCABLES",
-    "CPPLUS",
-    "REDINGTON",
-    "SWIGGY",
-    "SOLARINDS",
-    "IKS",
-    "TENNIND",
-    "PAGEIND",
-    "SAREGAMA",
-    "PIIND",
-    "COALINDIA",
-    "BANDHANBNK"
-  ],
   "2026-09-23": [
     "WHIRLPOOL",
     "OLAELEC",
@@ -557,5 +535,10 @@
     "ITCHOTELS",
     "BALKRISIND",
     "DEVYANI"
+  ],
+  "2026-10-23": [
+    "IGIL",
+    "CYIENT",
+    "ETERNAL"
   ]
 }
