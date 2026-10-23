@@ -7316,5 +7316,22 @@
             "stock": "PETRONET",
             "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:PETRONET"
         }
+    ],
+    "23-10-2026": [
+        {
+            "no": 1,
+            "stock": "10/23/2026",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:10/23/2026"
+        },
+        {
+            "no": 2,
+            "stock": "PNB",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:PNB"
+        },
+        {
+            "no": 3,
+            "stock": "SHANKESH",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:SHANKESH"
+        }
     ]
 }
