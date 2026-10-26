@@ -7371,13 +7371,23 @@
     "26-10-2026": [
         {
             "no": 1,
-            "stock": "10/26/2026",
-            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:10/26/2026"
+            "stock": "10/27/2026",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:10/27/2026"
         },
         {
             "no": 2,
             "stock": "PNB",
             "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:PNB"
+        },
+        {
+            "no": 3,
+            "stock": "HCLTECH",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:HCLTECH"
+        },
+        {
+            "no": 4,
+            "stock": "PETRONET",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:PETRONET"
         }
     ]
 }
