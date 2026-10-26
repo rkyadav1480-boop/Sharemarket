@@ -7367,5 +7367,17 @@
             "stock": "SHANKESH",
             "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:SHANKESH"
         }
+    ],
+    "26-10-2026": [
+        {
+            "no": 1,
+            "stock": "10/26/2026",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:10/26/2026"
+        },
+        {
+            "no": 2,
+            "stock": "PNB",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:PNB"
+        }
     ]
 }
