@@ -7571,5 +7571,37 @@
             "stock": "CRISIL",
             "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:CRISIL"
         }
+    ],
+    "28-10-2026": [
+        {
+            "no": 1,
+            "stock": "HCLTECH",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:HCLTECH"
+        },
+        {
+            "no": 2,
+            "stock": "PERSISTENT",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:PERSISTENT"
+        },
+        {
+            "no": 3,
+            "stock": "APLAPOLLO",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:APLAPOLLO"
+        },
+        {
+            "no": 4,
+            "stock": "DRREDDY",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:DRREDDY"
+        },
+        {
+            "no": 5,
+            "stock": "PNB",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:PNB"
+        },
+        {
+            "no": 6,
+            "stock": "MPHASIS",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:MPHASIS"
+        }
     ]
 }
