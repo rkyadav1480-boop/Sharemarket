@@ -7416,5 +7416,17 @@
             "stock": "PETRONET",
             "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:PETRONET"
         }
+    ],
+    "28-10-2026": [
+        {
+            "no": 1,
+            "stock": "10/28/2026",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:10/28/2026"
+        },
+        {
+            "no": 2,
+            "stock": "HCLTECH",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:HCLTECH"
+        }
     ]
 }
