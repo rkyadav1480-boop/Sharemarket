@@ -7425,6 +7425,11 @@
         },
         {
             "no": 2,
+            "stock": "PNB",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:PNB"
+        },
+        {
+            "no": 3,
             "stock": "HCLTECH",
             "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:HCLTECH"
         }
