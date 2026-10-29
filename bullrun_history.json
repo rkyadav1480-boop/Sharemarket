@@ -7433,5 +7433,22 @@
             "stock": "HCLTECH",
             "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:HCLTECH"
         }
+    ],
+    "29-10-2026": [
+        {
+            "no": 1,
+            "stock": "10/29/2026",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:10/29/2026"
+        },
+        {
+            "no": 2,
+            "stock": "PNB",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:PNB"
+        },
+        {
+            "no": 3,
+            "stock": "DRREDDY",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:DRREDDY"
+        }
     ]
 }
