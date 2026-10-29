@@ -7437,8 +7437,8 @@
     "29-10-2026": [
         {
             "no": 1,
-            "stock": "10/29/2026",
-            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:10/29/2026"
+            "stock": "10/30/2026",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:10/30/2026"
         },
         {
             "no": 2,
@@ -7449,6 +7449,11 @@
             "no": 3,
             "stock": "DRREDDY",
             "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:DRREDDY"
+        },
+        {
+            "no": 4,
+            "stock": "TCS",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:TCS"
         }
     ]
 }
