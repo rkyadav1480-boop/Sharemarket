@@ -7603,5 +7603,37 @@
             "stock": "MPHASIS",
             "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:MPHASIS"
         }
+    ],
+    "29-10-2026": [
+        {
+            "no": 1,
+            "stock": "TCS",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:TCS"
+        },
+        {
+            "no": 2,
+            "stock": "DRREDDY",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:DRREDDY"
+        },
+        {
+            "no": 3,
+            "stock": "HCLTECH",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:HCLTECH"
+        },
+        {
+            "no": 4,
+            "stock": "APLAPOLLO",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:APLAPOLLO"
+        },
+        {
+            "no": 5,
+            "stock": "MPHASIS",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:MPHASIS"
+        },
+        {
+            "no": 6,
+            "stock": "PNB",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:PNB"
+        }
     ]
 }
