@@ -7487,5 +7487,32 @@
             "stock": "HCLTECH",
             "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:HCLTECH"
         }
+    ],
+    "31-10-2026": [
+        {
+            "no": 1,
+            "stock": "10/31/2026",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:10/31/2026"
+        },
+        {
+            "no": 2,
+            "stock": "PNB",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:PNB"
+        },
+        {
+            "no": 3,
+            "stock": "UNIONBANK",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:UNIONBANK"
+        },
+        {
+            "no": 4,
+            "stock": "HCLTECH",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:HCLTECH"
+        },
+        {
+            "no": 5,
+            "stock": "TCS",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:TCS"
+        }
     ]
 }
