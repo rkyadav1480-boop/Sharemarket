@@ -12,5 +12,12 @@
         "stocks": [
             "NSE:HYUNDAI"
         ]
+    },
+    "05-11-2026": {
+        "time": "05:30 PM",
+        "day": "Thursday",
+        "stocks": [
+            "NSE:SHRIRAMFIN"
+        ]
     }
 }
