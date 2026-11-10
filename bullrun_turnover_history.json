@@ -8017,5 +8017,32 @@
             "stock": "MRPL",
             "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:MRPL"
         }
+    ],
+    "10-11-2026": [
+        {
+            "no": 1,
+            "stock": "BHARTIARTL",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:BHARTIARTL"
+        },
+        {
+            "no": 2,
+            "stock": "TCS",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:TCS"
+        },
+        {
+            "no": 3,
+            "stock": "HCLTECH",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:HCLTECH"
+        },
+        {
+            "no": 4,
+            "stock": "MPHASIS",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:MPHASIS"
+        },
+        {
+            "no": 5,
+            "stock": "HBLENGINE",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:HBLENGINE"
+        }
     ]
 }
