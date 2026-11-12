@@ -8071,5 +8071,27 @@
             "stock": "NHPC",
             "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:NHPC"
         }
+    ],
+    "12-11-2026": [
+        {
+            "no": 1,
+            "stock": "TCS",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:TCS"
+        },
+        {
+            "no": 2,
+            "stock": "HCLTECH",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:HCLTECH"
+        },
+        {
+            "no": 3,
+            "stock": "CIPLA",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:CIPLA"
+        },
+        {
+            "no": 4,
+            "stock": "MPHASIS",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:MPHASIS"
+        }
     ]
 }
