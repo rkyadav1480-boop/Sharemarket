@@ -8093,5 +8093,27 @@
             "stock": "MPHASIS",
             "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:MPHASIS"
         }
+    ],
+    "13-11-2026": [
+        {
+            "no": 1,
+            "stock": "LT",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:LT"
+        },
+        {
+            "no": 2,
+            "stock": "TCS",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:TCS"
+        },
+        {
+            "no": 3,
+            "stock": "HCLTECH",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:HCLTECH"
+        },
+        {
+            "no": 4,
+            "stock": "IIFLCAPS",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:IIFLCAPS"
+        }
     ]
 }
