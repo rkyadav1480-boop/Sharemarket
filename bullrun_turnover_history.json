@@ -8115,5 +8115,32 @@
             "stock": "IIFLCAPS",
             "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:IIFLCAPS"
         }
+    ],
+    "14-11-2026": [
+        {
+            "no": 1,
+            "stock": "TCS",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:TCS"
+        },
+        {
+            "no": 2,
+            "stock": "LT",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:LT"
+        },
+        {
+            "no": 3,
+            "stock": "IIFLCAPS",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:IIFLCAPS"
+        },
+        {
+            "no": 4,
+            "stock": "HCLTECH",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:HCLTECH"
+        },
+        {
+            "no": 5,
+            "stock": "MPHASIS",
+            "tradingview": "https://www.tradingview.com/chart/?symbol=NSE:MPHASIS"
+        }
     ]
 }
