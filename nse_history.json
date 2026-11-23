@@ -1,33 +1,4 @@
 {
-  "2026-10-21": [
-    "INDIACEM",
-    "LTTS",
-    "FRACTAL",
-    "IPCALAB",
-    "HEXT",
-    "SOBHA",
-    "WIPRO",
-    "PIRAMALFIN",
-    "FSL",
-    "PERSISTENT",
-    "INFY",
-    "MPHASIS"
-  ],
-  "2026-10-22": [
-    "TTML",
-    "IGIL",
-    "CRISIL",
-    "INDHOTEL",
-    "KAYNES",
-    "ITCHOTELS",
-    "BALKRISIND",
-    "DEVYANI"
-  ],
-  "2026-10-23": [
-    "IGIL",
-    "CYIENT",
-    "ETERNAL"
-  ],
   "2026-10-26": [
     "ATHERENERG",
     "MRPL",
@@ -1109,5 +1080,20 @@
     "PARADEEP",
     "SCI",
     "ULTRACEMCO"
+  ],
+  "2026-11-23": [
+    "ITI",
+    "POLICYBZR",
+    "LINDEINDIA",
+    "INTELLECT",
+    "ZYDUSWELL",
+    "ECLERX",
+    "JSWINFRA",
+    "TCS",
+    "LTTS",
+    "ABREL",
+    "LAURUSLABS",
+    "CANFINHOME",
+    "GRAPHITE"
   ]
 }
